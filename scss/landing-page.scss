@@ -1,0 +1,33 @@
+#section-delivered-today {
+  background: url(/images/random-product-background.png) repeat #f2f4ea;
+  .content-area {
+    background-color: #F2F6EA;
+  }
+  h2 {
+    font-size: 2rem;
+    display: inline-block;
+    padding: 2em 5em 1em;
+  }
+  p {
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 0em 0em 1em;
+    width: 50%;
+  }
+  #delivered-today-order-now {
+    margin-top:1em;
+  }
+  #todays-deliveries {
+    margin: 2.25em auto;
+    .todays-date {
+      float: right;
+      margin-right:1em;
+    }
+    h3:after {
+      content: '';
+      display: block;
+      clear: both;
+      margin-bottom: 1em;
+    }
+  }
+}

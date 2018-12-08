@@ -1,0 +1,26 @@
+.flipboard-container {
+  background-color: #333333;
+  color: #eeeeee;
+  text-align: left;
+  position: relative;
+  padding:1em;
+  td.entry-from {
+    width: 35%;
+  }
+  td.entry-description {
+    width: 35%;
+  }
+  .entry-icon {
+    float: left;
+    padding: .2em .3em .2em 0;
+    font-size: 1.5em;
+  }
+  .entry-locale {
+    display:block;
+  }
+  .entry-fish-type {
+    display: block;
+    color: #c3c3c3;
+    font-size: .7em;
+  }
+}
