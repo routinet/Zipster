@@ -22,6 +22,9 @@
     .todays-date {
       float: right;
       margin-right:1em;
+      .flapper {
+        display:inline-block;
+      }
     }
     h3:after {
       content: '';

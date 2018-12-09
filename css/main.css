@@ -79,12 +79,6 @@ header:after {
   position: relative;
   padding: 1em;
 }
-.flipboard-container td.entry-from {
-  width: 35%;
-}
-.flipboard-container td.entry-description {
-  width: 35%;
-}
 .flipboard-container .entry-icon {
   float: left;
   padding: 0.2em 0.3em 0.2em 0;
@@ -125,6 +119,9 @@ header:after {
 #section-delivered-today #todays-deliveries .todays-date {
   float: right;
   margin-right: 1em;
+}
+#section-delivered-today #todays-deliveries .todays-date .flapper {
+  display: inline-block;
 }
 #section-delivered-today #todays-deliveries h3:after {
   content: "";

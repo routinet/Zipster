@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>Landing Page</title>
-  <link type="text/css" href="/css/main.css" rel="stylesheet"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/js/jquery.transform-0.9.3.min.js"></script>
   <script src="/js/jquery.flapper.js"></script>
+  <script src="/js/ZJQ.js"></script>
+  <script src="/js/main.js"></script>
+  <link type="text/css" href="/css/main.css" rel="stylesheet"/>
+  <link type="text/css" href="/css/flapper.css" rel="stylesheet"/>
 </head>
 <body id="landing-page">
 <div id="top-container">
@@ -30,9 +34,9 @@
         <a id="delivered-today-order-now" class="boxed order-now-button">Order Now</a>
         <div id="todays-deliveries" class="flipboard-container">
           <div class="todays-date">
-            <span class="flipboard date-month">Nov</span>
-            <span class="flipboard date-day">31</span>
-            <span class="flipboard date-year">2019</span>
+            <span class="flipboard date-month XXS" data-flip-option="date_month" >Nov</span>
+            <span class="flipboard date-day XXS" data-flip-option="date_day">31</span>
+            <span class="flipboard date-year XXS" data-flip-option="date_year">2019</span>
           </div>
           <h3>Arrivals</h3>
           <table>
@@ -50,9 +54,9 @@
                 <span class="entry-locale">Maguro</span>
                 <span class="entry-fish-type">BIG EYE TUNA</span>
               </td>
-              <td class="entry-from">NORTH CAROLINA</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">NORTH CAROLINA</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -60,9 +64,9 @@
                 <span class="entry-locale">Hamachi</span>
                 <span class="entry-fish-type">YELLOW TAIL</span>
               </td>
-              <td class="entry-from">JAPAN</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">FARM</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">JAPAN</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">FARM</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -70,9 +74,9 @@
                 <span class="entry-locale">Iwana</span>
                 <span class="entry-fish-type">ARCTIC CHAR</span>
               </td>
-              <td class="entry-from">ICELAND</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">ICELAND</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -80,9 +84,9 @@
                 <span class="entry-locale">Hirame</span>
                 <span class="entry-fish-type">FLUKE</span>
               </td>
-              <td class="entry-from">RHODE ISLAND</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">FARM</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">RHODE ISLAND</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">FARM</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -90,9 +94,9 @@
                 <span class="entry-locale">Aji</span>
                 <span class="entry-fish-type">HORSE MACKEREL</span>
               </td>
-              <td class="entry-from">JAPAN</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">JAPAN</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -100,9 +104,9 @@
                 <span class="entry-locale">Ebi</span>
                 <span class="entry-fish-type">SHRIMP</span>
               </td>
-              <td class="entry-from">ARGENTINA</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">ARGENTINA</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -110,9 +114,9 @@
                 <span class="entry-locale">Hotate</span>
                 <span class="entry-fish-type">SCALLOPS</span>
               </td>
-              <td class="entry-from">JAPAN</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">JAPAN</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -120,9 +124,9 @@
                 <span class="entry-locale">Sawara</span>
                 <span class="entry-fish-type">SPANISH MACKEREL</span>
               </td>
-              <td class="entry-from">ICELAND</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">ICELAND</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -130,9 +134,9 @@
                 <span class="entry-locale">Ika</span>
                 <span class="entry-fish-type">SQUID</span>
               </td>
-              <td class="entry-from">LONG ISLAND</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">LONG ISLAND</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -140,9 +144,9 @@
                 <span class="entry-locale">Ikura</span>
                 <span class="entry-fish-type">SALMON FISH ROE</span>
               </td>
-              <td class="entry-from">JAPAN</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">FARM</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">JAPAN</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">FARM</span></td>
             </tr>
             <tr>
               <td class="entry-description">
@@ -150,9 +154,9 @@
                 <span class="entry-locale">Uni</span>
                 <span class="entry-fish-type">SEA URCHIN</span>
               </td>
-              <td class="entry-from">M A I N E</td>
-              <td class="entry-time">5:00</td>
-              <td class="entry-type">WILD</td>
+              <td class="entry-from"><span class="flipboard XXS" data-flip-option="origin">MAINE</span></td>
+              <td class="entry-time"><span class="flipboard XXS" data-flip-option="arrival">5:00</span></td>
+              <td class="entry-type"><span class="flipboard XXS" data-flip-option="source">WILD</span></td>
             </tr>
           </table>
         </div>
