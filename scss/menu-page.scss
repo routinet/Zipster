@@ -1,0 +1,25 @@
+#menu-page main {
+  padding-top: 3em;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+#category-omakase .category-item-preface {
+  background-image: url('/images/category-image-1.png');
+}
+#category-nigiri .category-item-preface {
+  background-image: url('/images/category-image-2.png');
+}
+.category-item-container {
+  margin-bottom: 5em;
+}
+.category-item-preface {
+  height:160px;
+  background: center right 20% no-repeat;
+  padding: 1rem 0 0 1.5rem;
+}
+.category-item-title {
+  margin: 1em 0 .5em;
+  font-size: 1.5em;
+  font-weight: bold;
+}

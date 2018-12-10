@@ -182,6 +182,73 @@ main section {
   font-size: 0.7em;
 }
 
+.product-list-container {
+  text-align: center;
+}
+
+.product-item-container {
+  width: 24%;
+  height: 350px;
+  padding: 3em 1em 1em;
+  display: inline-block;
+  vertical-align: top;
+  text-align: left;
+  position: relative;
+}
+
+.product-item-image {
+  display: block;
+  margin: 0 auto;
+  max-width: max-content;
+}
+
+.product-item-description-container {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  vertical-align: bottom;
+  margin-bottom: 1em;
+  font-size: 0.8em;
+  color: #aaaaaa;
+  left: 1em;
+  right: 1em;
+}
+
+.product-item-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+  color: #333333;
+}
+
+.product-item-description {
+  margin-bottom: 0.5em;
+}
+
+.product-item-flags-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+}
+
+.product-item-flag {
+  width: 24px;
+  height: 23px;
+  display: inline-block;
+}
+
+.product-item-flag-gf {
+  background-image: url("/images/product-flag-gf.png");
+}
+
+.product-item-flag-sf {
+  background-image: url("/images/product-flag-sf.png");
+}
+
+.product-item-flag-vg {
+  background-image: url("/images/product-flag-vg.png");
+}
+
 #section-delivered-today {
   background: url(/images/random-product-background.png) repeat #f2f4ea;
   padding: 0;
@@ -352,71 +419,35 @@ main section {
   font-size: 1.25em;
 }
 
-.product-list-container {
-  text-align: center;
-}
-
-.product-item-container {
-  width: 250px;
-  height: 350px;
-  padding: 3em 1em 1em;
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
-  position: relative;
-}
-
-.product-item-image {
-  display: block;
+#menu-page main {
+  padding-top: 3em;
+  max-width: 1000px;
   margin: 0 auto;
-  max-width: max-content;
+  text-align: left;
 }
 
-.product-item-description-container {
-  position: absolute;
-  bottom: 0;
-  display: block;
-  vertical-align: bottom;
-  margin-bottom: 1em;
-  font-size: 0.8em;
-  color: #aaaaaa;
-  left: 1em;
-  right: 1em;
+#category-omakase .category-item-preface {
+  background-image: url("/images/category-image-1.png");
 }
 
-.product-item-title {
-  font-size: 1.25rem;
-  margin-bottom: 0.5em;
-  color: #333333;
+#category-nigiri .category-item-preface {
+  background-image: url("/images/category-image-2.png");
 }
 
-.product-item-description {
-  margin-bottom: 0.5em;
+.category-item-container {
+  margin-bottom: 5em;
 }
 
-.product-item-flags-container {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  text-align: right;
+.category-item-preface {
+  height: 160px;
+  background: center right 20% no-repeat;
+  padding: 1rem 0 0 1.5rem;
 }
 
-.product-item-flag {
-  width: 24px;
-  height: 23px;
-  display: inline-block;
-}
-
-.product-item-flag-gf {
-  background-image: url("/images/product-flag-gf.png");
-}
-
-.product-item-flag-sf {
-  background-image: url("/images/product-flag-sf.png");
-}
-
-.product-item-flag-vg {
-  background-image: url("/images/product-flag-vg.png");
+.category-item-title {
+  margin: 1em 0 0.5em;
+  font-size: 1.5em;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=main.css.map */
