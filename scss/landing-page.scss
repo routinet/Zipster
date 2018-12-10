@@ -1,7 +1,8 @@
 #section-delivered-today {
   background: url(/images/random-product-background.png) repeat #f2f4ea;
+  padding: 0;
   .content-area {
-    background-color: #F2F6EA;
+    background-color: $ZIP-dark-beige;
   }
   h2 {
     font-size: 2rem;
@@ -18,7 +19,7 @@
     margin-top:1em;
   }
   #todays-deliveries {
-    margin: 2.25em auto;
+    margin: 2.25em auto 0;
     .todays-date {
       float: right;
       margin-right:1em;
@@ -32,5 +33,139 @@
       clear: both;
       margin-bottom: 1em;
     }
+  }
+}
+
+#section-subscribe {
+  background: $ZIP-light-beige;
+  p {
+    font-size: 1.1rem;
+    max-width: 50%;
+    margin: 0 auto 2em;
+  }
+  .subscribe-email-address {
+    font-size: 1rem;
+    line-height: 1.2em;
+    padding: .5em .75em;
+    width: 50%;
+    margin-right: .5em;
+    background: $ZIP-dark-beige;
+    border: 0 none transparent;
+    border-radius: 0.2em;
+  }
+}
+
+#section-quick-order {
+  background: url('/images/clamshell.png') repeat;
+  li {
+    background: none center bottom no-repeat white;
+    padding: 2em 3em 0;
+    width: 20em;
+    display: inline-block;
+    height: 18em;
+    text-align:left;
+    vertical-align: top;
+    &#quick-link-where-to-start {
+      background-image: url("/images/quick-order-1.png");
+    }
+    &#quick-link-sushi-expert {
+      background-image: url("/images/quick-order-2.png");
+    }
+    &#quick-link-planning-event {
+      background-image: url("/images/quick-order-3.png");
+    }
+    h3 {
+      font-size: 1.5em;
+      font-weight: normal;
+      max-width: 75%;
+      height: 3.5em;
+    }
+    span.quick-order-anchor:after {
+      content: '\02192';
+      font-size: 1.5em;
+      margin-left: .5em;
+    }
+  }
+}
+
+#section-favorites {
+  h2 {
+    margin-bottom:.75em;
+  }
+  .product-list-container {
+    margin:2em 0;
+  }
+  #favorites-order-now {
+    padding: 1em 3em;
+  }
+}
+
+#section-process {
+  counter-reset: process-counter;
+  dl {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    &:before {
+      content: '';
+      border-top: 2px dotted #aaaaaa;
+      width: 70%;
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  dd {
+    display: inline-block;
+    width: 30%;
+    margin: 2em 1.5% 0;
+    padding: 0 3em;
+    position: relative;
+    vertical-align: top;
+    &:before {
+      content: counter(process-counter);
+      counter-increment: process-counter;
+      position: absolute;
+      width: 2.5em;
+      height: 2.5em;
+      background-color: #f2f4ea;
+      border-radius: 100%;
+      line-height: 2.5em;
+      top: -2em;
+      left: 50%;
+      transform: translate3d(-50%,-50%,0);
+    }
+  }
+}
+
+#section-sourcing {
+  text-align: left;
+  img {
+    float:right;
+    margin:1em 3em 3em 3em;
+  }
+  h2 {
+    padding: 3em 0 1em;
+    font-size:1.5em;
+  }
+  p {
+    font-size:1.25em;
+  }
+}
+
+#section-philosophy {
+  text-align:left;
+  img {
+    float:left;
+    margin:3em;
+  }
+  h2 {
+    padding: 20% 1em 1em;
+    font-size: 1.5em;
+  }
+  p {
+    font-size:1.25em;
   }
 }

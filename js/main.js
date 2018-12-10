@@ -1,7 +1,10 @@
 ;
 (function ($, document, window, undefined) {
     $(document).ready(function () {
-        $('.flipboard').each(function () {
+        $('.product-item-container').each(function () {
+            $(this).css('background-color', ZJQ.randomColor());
+        });
+        $('.todays-date .flipboard').each(function () {
             var $this = $(this),
                 this_opts = $this.data('flip-option'),
                 opts = JSON.parse(JSON.stringify(ZJQ.flipboard_default_options))

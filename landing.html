@@ -13,7 +13,7 @@
 </head>
 <body id="landing-page">
 <div id="top-container">
-  <header id="top-header">
+  <header id="top-header" class="clearfix">
     <div id="header-logo"><img src="/images/logo.png" alt="Zoku Logo"/></div>
     <nav id="main-nav">
       <ul>
@@ -34,7 +34,7 @@
         <a id="delivered-today-order-now" class="boxed order-now-button">Order Now</a>
         <div id="todays-deliveries" class="flipboard-container">
           <div class="todays-date">
-            <span class="flipboard date-month XXS" data-flip-option="date_month" >Nov</span>
+            <span class="flipboard date-month XXS" data-flip-option="date_month">Nov</span>
             <span class="flipboard date-day XXS" data-flip-option="date_day">31</span>
             <span class="flipboard date-year XXS" data-flip-option="date_year">2019</span>
           </div>
@@ -163,12 +163,14 @@
       </div>
     </section>
     <section id="section-subscribe">
-      <p>The arrivals board is updated at 8:00 am daily with our freshest catches of the day. Subscribe to stay
-        up-to-date.</p>
-      <form id="main-subscription-form" class="subscription-form">
-        <input type="text" class="subscribe-email-address" placeholder="Email Address"/>
-        <input type="submit" class="subscribe-submit" value="Subscribe"/>
-      </form>
+      <div class="content-area">
+        <p>The arrivals board is updated at 8:00 am daily with our freshest catches of the day. Subscribe to stay
+          up-to-date.</p>
+        <form id="main-subscription-form" class="subscription-form">
+          <input type="text" class="subscribe-email-address" placeholder="Email Address"/>
+          <input type="submit" class="subscribe-submit boxed" value="Subscribe"/>
+        </form>
+      </div>
     </section>
     <section id="section-quick-order">
       <nav>
@@ -176,7 +178,7 @@
           <li class="quick-order-link" id="quick-link-where-to-start"><h3>Not sure where to start?</h3>
             <span class="quick-order-anchor">Order Omakase</span></li>
           <li class="quick-order-link" id="quick-link-sushi-expert"><h3>Sushi Expert?</h3>
-            <span class="quick-order-anchor">Order &agrave;-la carte</span></li>
+            <span class="quick-order-anchor">Order &agrave; la carte</span></li>
           <li class="quick-order-link" id="quick-link-planning-event"><h3>Planning an Event?</h3>
             <span class="quick-order-anchor">Catering Menu</span></li>
         </ul>
@@ -187,7 +189,7 @@
       <p>Prepared fresh daily in our Brooklyn Kitchen.</p>
       <div class="product-list-container">
         <div class="product-item-container">
-          <div class="product-item-image"><img src="/images/some-product.png" alt="product image"/></div>
+          <div class="product-item-image"><img src="/images/product-image-1.png" alt="product image"/></div>
           <div class="product-item-description-container">
             <div class="product-item-title">Small Omakase</div>
             <div class="product-item-description">1 Roll + 8 Nigiri</div>
@@ -198,7 +200,7 @@
           </div>
         </div>
         <div class="product-item-container">
-          <div class="product-item-image"><img src="/images/some-product.png" alt="product image"/></div>
+          <div class="product-item-image"><img src="/images/product-image-2.png" alt="product image"/></div>
           <div class="product-item-description-container">
             <div class="product-item-title">Medium Omakase</div>
             <div class="product-item-description">1 Roll + 10 Nigiri</div>
@@ -209,7 +211,7 @@
           </div>
         </div>
         <div class="product-item-container">
-          <div class="product-item-image"><img src="/images/some-product.png" alt="product image"/></div>
+          <div class="product-item-image"><img src="/images/product-image-3.png" alt="product image"/></div>
           <div class="product-item-description-container">
             <div class="product-item-title">Any 4 Roll Combo</div>
             <div class="product-item-description">4 Rolls</div>
@@ -219,7 +221,7 @@
           </div>
         </div>
         <div class="product-item-container">
-          <div class="product-item-image"><img src="/images/some-product.png" alt="product image"/></div>
+          <div class="product-item-image"><img src="/images/product-image-4.png" alt="product image"/></div>
           <div class="product-item-description-container">
             <div class="product-item-title">Temari Omakase Box</div>
             <div class="product-item-description">12 Temari + 1 Roll (Chef's selection)</div>
@@ -239,23 +241,27 @@
       </dl>
     </section>
     <section id="section-sourcing">
-      <img src="/images/some-image.png" alt="Accent Image for Sourcing"/>
-      <h2>From Fishery to Table</h2>
-      <p>We always prefer wild to farmed fish, and only source in-season fish from sustainable fisheries.
-        Check our daily board to learn where today's catches arrived from</p>
-      <div class="flipboard" id="todays-sources">
-        Flipboard for today's deliveries.
+      <div class="content-area">
+        <img src="/images/catch-of-the-day.jpg" alt="Accent Image for Sourcing" />
+        <h2>From Fishery to Table</h2>
+        <p>We always prefer wild to farmed fish, and only source in-season fish from sustainable fisheries.
+          Check our daily board to learn where today's catches arrived from</p>
+        <div class="flipboard" id="todays-sources">
+          Flipboard for today's deliveries.
+        </div>
       </div>
     </section>
     <section id="section-philosophy">
-      <img src="/images/some-image.png" alt="Accent Image for Philosophy"/>
+      <div class="content-area">
+      <img src="/images/philosophy-accent.png" alt="Accent Image for Philosophy"/>
       <h2>Zoku is not a restaurant.</h2>
       <p>We can provide a high quality food at a fair price because we don't have the same costs as a typical
         restaurant.</p>
+      </div>
     </section>
   </main>
-  <footer>
-    <div id="footer-preface"><img src="/images/some-image.png" alt="Zoku Logo Footer?"/></div>
+  <footer id="top-footer" class="clearfix">
+    <div id="footer-preface"><img src="/images/footer-logo.png" alt="Zoku Logo Footer?"/></div>
     <div id="footer-content">
       <div id="footer-support">
         <h4>Support</h4>
@@ -277,7 +283,7 @@
       <h4>Subscribe to Updates</h4>
       <form id="footer-subscription-form" class="subscription-form">
         <input type="text" class="subscribe-zip-code" placeholder="Zip Code"/>
-        <input type="submit" class="subscribe-submit" value="Submit"/>
+        <input type="submit" class="subscribe-submit boxed" value="Submit"/>
       </form>
     </div>
     <div id="footer-copyright">&copy; 2018</div>

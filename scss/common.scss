@@ -1,11 +1,3 @@
-header {
-  &:after {
-    content: '';
-    clear: both;
-    display: block;
-  }
-}
-
 #header-logo {
   float: left;
   img {
@@ -25,5 +17,93 @@ header {
       text-transform: uppercase;
       font-size: .9rem;
     }
+  }
+}
+
+main {
+  section {
+    padding: 3em 0;
+    @extend .clearfix;
+  }
+}
+
+#top-footer {
+  font-size: 0;
+  background-color: #333333;
+  text-align: left;
+  color: #aaaaaa;
+  & > * {
+    font-size: 1rem;
+  }
+  h4 {
+    margin-bottom: 1em;
+  }
+  #footer-preface {
+    float: left;
+    width: 25%;
+    background-color: #373737;
+    height: 30em;
+    position: relative;
+    img {
+      position: absolute;
+      right: 2em;
+      top: 25%;    }
+  }
+  #footer-content {
+    display: inline-block;
+    margin-top: 7em;
+    padding: 2em;
+    width: 35%;
+    vertical-align: top;
+    & > div {
+      display: inline-block;
+      width: 45%;
+      vertical-align: top;
+      &:before {
+        content: '';
+        width: 1.5em;
+        border-top: 1px solid white;
+        display: block;
+        margin-bottom: 2em;
+      }
+    }
+    li {
+      list-style-type: none;
+    }
+  }
+  #footer-subscribe {
+    display: inline-block;
+    margin-top: 7em;
+    padding: 2em;
+    width: 35%;
+    vertical-align: top;
+    &:before {
+      content: '';
+      width: 1.5em;
+      border-top: 1px solid white;
+      display: block;
+      margin-bottom: 2em;
+    }
+    input.subscribe-zip-code {
+      width: 60%;
+      line-height: 2em;
+      padding: .25em .75em;
+      border: 0 none;
+      border-radius: .3em;
+      display: block;
+      margin-bottom: .5em;
+    }
+    input.subscribe-submit {
+      width: 60%;
+      line-height: 2em;
+      padding: 0.25em 0.75em;
+      border-color: white;
+      color: #ffffff;
+    }
+  }
+  #footer-copyright {
+    position: relative;
+    left: 2rem;
+    font-size: .5rem;
   }
 }

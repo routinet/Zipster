@@ -37,4 +37,13 @@ var ZJQ = ZJQ || {};
             chars_preset: 'alpha'
         }
     };
+    ZJQ.randomColor = function() {
+        var minBright=230,
+            mult = 255-minBright,
+            r = (Math.floor(Math.random()*mult) + minBright).toString(16),
+            g = (Math.floor(Math.random()*mult) + minBright).toString(16),
+            b = (Math.floor(Math.random()*mult) + minBright).toString(16)
+        ;
+        return '#'+r+g+b;
+    };
 })(jQuery, document, window);
