@@ -1,3 +1,6 @@
+#landing-page section {
+  text-align: center;
+}
 #section-delivered-today {
   background: url(/images/random-product-background.png) repeat #f2f4ea;
   padding: 0;
@@ -20,6 +23,7 @@
   }
   #todays-deliveries {
     margin: 2.25em auto 0;
+    text-align:left;
     .todays-date {
       float: right;
       margin-right:1em;
@@ -42,6 +46,7 @@
     font-size: 1.1rem;
     max-width: 50%;
     margin: 0 auto 2em;
+    text-align: left;
   }
   .subscribe-email-address {
     font-size: 1rem;
@@ -63,8 +68,8 @@
     width: 20em;
     display: inline-block;
     height: 18em;
-    text-align:left;
     vertical-align: top;
+    text-align: left;
     &#quick-link-where-to-start {
       background-image: url("/images/quick-order-1.png");
     }
@@ -141,7 +146,9 @@
 }
 
 #section-sourcing {
-  text-align: left;
+  .content-area {
+    text-align: left;
+  }
   img {
     float:right;
     margin:1em 3em 3em 3em;
@@ -156,7 +163,9 @@
 }
 
 #section-philosophy {
-  text-align:left;
+  .content-area {
+    text-align: left;
+  }
   img {
     float:left;
     margin:3em;
