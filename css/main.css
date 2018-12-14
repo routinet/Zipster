@@ -9,7 +9,7 @@ body {
   font-family: sans-serif;
   font-size: 12pt;
   color: #222222;
-  text-align: center;
+  text-align: left;
 }
 
 a {
@@ -47,7 +47,7 @@ table {
   width: 65%;
 }
 
-.clearfix:after, main section:after {
+.clearfix:after, main section:after, .clearfix:before, main section:before {
   content: "";
   clear: both;
   display: block;
@@ -82,7 +82,6 @@ main section {
 #top-footer {
   font-size: 0;
   background-color: #333333;
-  text-align: left;
   color: #aaaaaa;
 }
 #top-footer > * {
@@ -164,7 +163,6 @@ main section {
 .flipboard-container {
   background-color: #333333;
   color: #eeeeee;
-  text-align: left;
   position: relative;
   padding: 1em;
 }
@@ -249,6 +247,10 @@ main section {
   background-image: url("/images/product-flag-vg.png");
 }
 
+#landing-page section {
+  text-align: center;
+}
+
 #section-delivered-today {
   background: url(/images/random-product-background.png) repeat #f2f4ea;
   padding: 0;
@@ -272,6 +274,7 @@ main section {
 }
 #section-delivered-today #todays-deliveries {
   margin: 2.25em auto 0;
+  text-align: left;
 }
 #section-delivered-today #todays-deliveries .todays-date {
   float: right;
@@ -294,6 +297,7 @@ main section {
   font-size: 1.1rem;
   max-width: 50%;
   margin: 0 auto 2em;
+  text-align: left;
 }
 #section-subscribe .subscribe-email-address {
   font-size: 1rem;
@@ -315,8 +319,8 @@ main section {
   width: 20em;
   display: inline-block;
   height: 18em;
-  text-align: left;
   vertical-align: top;
+  text-align: left;
 }
 #section-quick-order li#quick-link-where-to-start {
   background-image: url("/images/quick-order-1.png");
@@ -389,7 +393,7 @@ main section {
   transform: translate3d(-50%, -50%, 0);
 }
 
-#section-sourcing {
+#section-sourcing .content-area {
   text-align: left;
 }
 #section-sourcing img {
@@ -404,7 +408,7 @@ main section {
   font-size: 1.25em;
 }
 
-#section-philosophy {
+#section-philosophy .content-area {
   text-align: left;
 }
 #section-philosophy img {
@@ -423,7 +427,6 @@ main section {
   padding-top: 3em;
   max-width: 1000px;
   margin: 0 auto;
-  text-align: left;
 }
 
 #category-omakase .category-item-preface {
@@ -447,6 +450,144 @@ main section {
 .category-item-title {
   margin: 1em 0 0.5em;
   font-size: 1.5em;
+  font-weight: bold;
+}
+
+#catering-page main {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+#catering-page main p {
+  max-width: 50%;
+  margin: 0 0 0 auto;
+}
+#catering-page main h1 {
+  float: left;
+  margin-left: 0.5em;
+}
+#catering-page main .product-list-container {
+  margin: 3em 0 5em;
+}
+
+#account-page .content-area {
+  width: 100%;
+  max-width: initial;
+  padding-top: 1em;
+}
+#account-page .content-area h2, #account-page .content-area h3 {
+  margin: 1em 0;
+}
+#account-page main {
+  margin: 0 auto;
+  padding: 3em 2em;
+}
+#account-page main nav {
+  margin-top: 3em;
+}
+#account-page main nav ul {
+  border-bottom: 1px solid #dddddd;
+}
+#account-page main nav ul li {
+  display: inline-block;
+  font-size: 0.9rem;
+  color: #bbbbbb;
+  border-bottom: 1px solid #83a02b;
+  padding-bottom: 0.75em;
+  text-align: left;
+  margin: 0 2em 0 0;
+  position: relative;
+  top: 1px;
+}
+#account-page main nav ul li.active {
+  color: #222222;
+}
+
+#account-page-sidebar {
+  float: right;
+  background: #f8fafa;
+  padding: 2em;
+  min-height: 25em;
+  margin-left: 1em;
+}
+#account-page-sidebar #refer-friend-url {
+  margin-bottom: 3em;
+  background: #f2f4ea;
+  padding: 0.75em 2em 0.75em 0.5em;
+  font-size: 0.9rem;
+}
+
+#account-details label {
+  display: inline-block;
+  font-size: 0.8rem;
+  width: 45%;
+  margin-right: 1em;
+  vertical-align: top;
+}
+#account-details label[for=address-default] {
+  margin: 0.9em 0 0;
+  font-size: 1rem;
+}
+#account-details label[for=address-default] input[type=checkbox] {
+  display: inherit;
+  width: initial;
+  margin: 1em;
+  vertical-align: middle;
+}
+#account-details input {
+  background: #f2f4ea;
+  border: 0 none;
+  font-size: 1rem;
+  padding: 0.5em 1em;
+  display: block;
+  width: 100%;
+  margin: 0.5em 0 1.5em;
+}
+
+.account-address-item {
+  padding: 1em 0 2em 5%;
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+}
+
+.account-address-item-delete {
+  position: absolute;
+  left: 2%;
+  top: 2em;
+  height: 15px;
+  width: 15px;
+  background-image: url("/images/delete-icon.png");
+}
+
+#account-add-address {
+  margin-top: 2em;
+  text-align: right;
+}
+
+#order-history .order-history-item {
+  width: 95%;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  margin-bottom: 4em;
+}
+#order-history .order-history-reorder {
+  float: right;
+}
+#order-history .order-history-item-details-container {
+  margin-top: 1.5em;
+  border: 1px solid #dddddd;
+  padding: 1.5em;
+  line-height: 2em;
+}
+#order-history .order-item-qty {
+  margin-left: 1em;
+  color: #aaaaaa;
+}
+#order-history .order-history-item-price {
+  text-align: right;
+  color: #aaaaaa;
+}
+#order-history tfoot td {
+  color: #000000;
   font-weight: bold;
 }
 
