@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Account Page</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/js/jquery.transform-0.9.3.min.js"></script>
+  <script src="/js/jquery.flapper.js"></script>
+  <script src="/js/ZJQ.js"></script>
+  <script src="/js/main.js"></script>
+  <link type="text/css" href="/css/main.css" rel="stylesheet"/>
+  <link type="text/css" href="/css/flapper.css" rel="stylesheet"/>
+</head>
+<body id="account-page">
+<div id="top-container">
+  <header id="top-header" class="clearfix">
+    <div id="header-logo"><img src="/images/logo.png" alt="Zoku Logo"/></div>
+    <nav id="main-nav">
+      <ul>
+        <li class="main-nav-link" id="about-link"><a href="/about.html">About</a></li>
+        <li class="main-nav-link" id="catering-link"><a href="/catering.html">Catering</a></li>
+        <li class="main-nav-link" id="sign-in-link"><a href="/sign-in.html">Sign In</a></li>
+        <li class="main-nav-link order-now-button" id="order-now-link"><a class="boxed" href="/order-now.html">Order
+          Now</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>Account</h1>
+    <nav id="account-nav">
+      <ul>
+        <li class="active" data-target="account-details">Account Details</li>
+        <li data-target="order-history">Order History</li>
+        <li data-target="points">Points</li>
+      </ul>
+    </nav>
+    <div class="content-area clearfix">
+      <div id="account-page-sidebar">
+        <h3>Refer a Friend</h3>
+        <div id="refer-friend-url">http://zoku.com/234dma</div>
+        <h3>Need Support?</h3>
+      </div>
+      <div id="account-nav-pages">
+        <section id="account-details">
+          <form action="#" method="post" id="account-details-form">
+            <div id="account-profile-container">
+            <label>Full Name<input type="text" name="account-full-name" /></label>
+            <label>Email Address<input type="text" name="account-email" /></label>
+            <label>Password<input type="text" name="account-password" /></label>
+            <label>Confirm Password<input type="text" name="account-confirm" /></label>
+            </div>
+            <h2>Addresses</h2>
+            <div id="account-addresses-container">
+              <div class="account-address-item">
+                <div class="account-address-item-delete"></div>
+                <label>Name<input type="text" name="address-name" /></label>
+                <label>Street Address<input type="text" name="address-street" /></label>
+                <label>Apartment No.<input type="text" name="address-apt" /></label>
+                <label>Zip Code<input type="text" name="address-zip" /></label>
+                <label>Phone Number<input type="text" name="address-phone" /></label>
+                <label><input type="checkbox" name="address-default" />Use as Default Address</label>
+              </div>
+              <div class="account-address-item">
+                <div class="account-address-item-delete"></div>
+                <label>Name<input type="text" name="address-name" /></label>
+                <label>Street Address<input type="text" name="address-street" /></label>
+                <label>Apartment No.<input type="text" name="address-apt" /></label>
+                <label>Zip Code<input type="text" name="address-zip" /></label>
+                <label>Phone Number<input type="text" name="address-phone" /></label>
+                <label><input type="checkbox" name="address-default" />Use as Default Address</label>
+              </div>
+            </div>
+            <div id="account-add-address"><div class="boxed">Add New Address</div></div>
+          </form>
+        </section>
+        <section id="order-history">
+          <div id="order-history-container">
+            <div class="order-history-item">
+              <div class="order-history-reorder boxed">Reorder</div>
+              <div class="order-history-date">Friday, November 19, 2018</div>
+              <div class="order-history-delivered">Delivered, 10:39PM</div>
+              <div class="order-history-item-details-container">
+                <table class="order-history-item-details">
+                  <tbody>
+                  <tr class="order-history-item-entry">
+                    <td class="order-history-item-description">
+                      <span class="order-item-name">Shake Nigiri</span><span class="order-item-qty">x 1</span>
+                    </td>
+                    <td class="order-history-item-price">$23.23</td>
+                  </tr>
+                  <tr class="order-history-item-entry">
+                    <td class="order-history-item-description">
+                      <span class="order-item-name">Small Omakase Box</span><span class="order-item-qty">x 1</span>
+                    </td>
+                    <td class="order-history-item-price">$23.23</td>
+                  </tr>
+                  <tr class="order-history-item-fee">
+                    <td class="order-history-item-description">Taxes</td>
+                    <td class="order-history-item-price">$2.00</td>
+                  </tr>
+                  <tr class="order-history-item-fee">
+                    <td class="order-history-item-description">Delivery</td>
+                    <td class="order-history-item-price">$2.00</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <td>Total</td>
+                    <td class="order-history-item-price">$50.46</td>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+            <div class="order-history-item">
+              <div class="order-history-reorder boxed">Reorder</div>
+              <div class="order-history-date">Friday, November 19, 2018</div>
+              <div class="order-history-delivered">Delivered, 10:39PM</div>
+              <div class="order-history-item-details-container">
+                <table class="order-history-item-details">
+                  <tbody>
+                  <tr class="order-history-item-entry">
+                    <td class="order-history-item-description">
+                      <span class="order-item-name">Shake Nigiri</span><span class="order-item-qty">x 1</span>
+                    </td>
+                    <td class="order-history-item-price">$23.23</td>
+                  </tr>
+                  <tr class="order-history-item-entry">
+                    <td class="order-history-item-description">
+                      <span class="order-item-name">Small Omakase Box</span><span class="order-item-qty">x 1</span>
+                    </td>
+                    <td class="order-history-item-price">$23.23</td>
+                  </tr>
+                  <tr class="order-history-item-fee">
+                    <td class="order-history-item-description">Taxes</td>
+                    <td class="order-history-item-price">$2.00</td>
+                  </tr>
+                  <tr class="order-history-item-fee">
+                    <td class="order-history-item-description">Delivery</td>
+                    <td class="order-history-item-price">$2.00</td>
+                  </tr>
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <td>Total</td>
+                    <td class="order-history-item-price">$50.46</td>
+                  </tr>
+                  </tfoot>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="points">points</section>
+      </div>
+    </div>
+  </main>
+  <footer id="top-footer" class="clearfix">
+    <div id="footer-preface"><img src="/images/footer-logo.png" alt="Zoku Logo Footer?"/></div>
+    <div id="footer-content">
+      <div id="footer-support">
+        <h4>Support</h4>
+        <ul>
+          <li>Email</li>
+          <li>Phone</li>
+        </ul>
+      </div>
+      <div id="footer-follow">
+        <h4>Follow Us</h4>
+        <ul>
+          <li>Twitter</li>
+          <li>Instagram</li>
+          <li>Facebook</li>
+        </ul>
+      </div>
+    </div>
+    <div id="footer-subscribe">
+      <h4>Subscribe to Updates</h4>
+      <form id="footer-subscription-form" class="subscription-form">
+        <input type="text" class="subscribe-zip-code" placeholder="Zip Code"/>
+        <input type="submit" class="subscribe-submit boxed" value="Submit"/>
+      </form>
+    </div>
+    <div id="footer-copyright">&copy; 2018</div>
+  </footer>
+</div>
+</body>
+</html>

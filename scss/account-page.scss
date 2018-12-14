@@ -1,0 +1,129 @@
+#account-page {
+  .content-area {
+    width: 100%;
+    max-width: initial;
+    padding-top: 1em;
+    h2, h3 {
+      margin: 1em 0;
+    }
+  }
+  main {
+    margin: 0 auto;
+    padding: 3em 2em;
+    nav {
+      margin-top: 3em;
+      ul {
+        border-bottom: 1px solid #dddddd;
+        li {
+          display: inline-block;
+          font-size: .9rem;
+          color: #bbbbbb;
+          border-bottom: 1px solid #83a02b;
+          padding-bottom: .75em;
+          text-align: left;
+          margin: 0 2em 0 0;
+          position: relative;
+          top: 1px;
+          &.active {
+            color: #222222;
+          }
+        }
+      }
+    }
+  }
+}
+
+#account-page-sidebar {
+  float: right;
+  background: #f8fafa;
+  padding: 2em;
+  min-height: 25em;
+  margin-left: 1em;
+  #refer-friend-url {
+    margin-bottom: 3em;
+    background: $ZIP-dark-beige;
+    padding: .75em 2em .75em .5em;
+    font-size: .9rem;
+  }
+}
+
+#account-details {
+  label {
+    display: inline-block;
+    font-size: .8rem;
+    width: 45%;
+    margin-right: 1em;
+    vertical-align: top;
+    &[for="address-default"] {
+      margin: .9em 0 0;
+      font-size: 1rem;
+      input[type="checkbox"] {
+        display: inherit;
+        width: initial;
+        margin: 1em;
+        vertical-align: middle;
+      }
+    }
+  }
+  input {
+    background: #f2f4ea;
+    border: 0 none;
+    font-size: 1rem;
+    padding: .5em 1em;
+    display: block;
+    width: 100%;
+    margin: .5em 0 1.5em;
+  }
+}
+
+.account-address-item {
+  padding: 1em 0 2em 5%;
+  position: relative;
+  border-bottom: 1px solid #dddddd;
+}
+
+.account-address-item-delete {
+  position: absolute;
+  left: 2%;
+  top: 2em;
+  height: 15px;
+  width: 15px;
+  background-image: url('/images/delete-icon.png');
+}
+
+#account-add-address {
+  margin-top: 2em;
+  text-align: right;
+}
+
+#order-history {
+  .order-history-item {
+    width: 95%;
+    font-size: .9rem;
+    line-height: 1.3;
+    margin-bottom: 4em;
+  }
+  .order-history-reorder {
+    float: right;
+  }
+  .order-history-item-details-container {
+    margin-top: 1.5em;
+    border: 1px solid #dddddd;
+    padding: 1.5em;
+    line-height: 2em;
+  }
+  .order-item-qty {
+    margin-left: 1em;
+    color: #aaaaaa;
+  }
+  .order-history-item-price {
+    text-align: right;
+    color: #aaaaaa;
+  }
+  tfoot {
+    td {
+      color: #000000;
+      font-weight: bold;
+    }
+  }
+}
