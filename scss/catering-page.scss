@@ -1,0 +1,17 @@
+#catering-page {
+  main {
+    max-width:1000px;
+    margin:0 auto;
+    p {
+      max-width:50%;
+      margin: 0 0 0 auto;
+    }
+    h1 {
+      float:left;
+      margin-left: .5em;
+    }
+    .product-list-container {
+      margin: 3em 0 5em;
+    }
+  }
+}
