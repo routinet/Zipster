@@ -523,11 +523,11 @@ main section {
   margin-right: 1em;
   vertical-align: top;
 }
-#account-details label[for=address-default] {
+#account-details label.checkbox-container {
   margin: 0.9em 0 0;
   font-size: 1rem;
 }
-#account-details label[for=address-default] input[type=checkbox] {
+#account-details label.checkbox-container input[type=checkbox] {
   display: inherit;
   width: initial;
   margin: 1em;
@@ -586,7 +586,7 @@ main section {
   text-align: right;
   color: #aaaaaa;
 }
-#order-history tfoot td {
+#order-history tfoot td, #order-history tfoot td.order-history-item-price {
   color: #000000;
   font-weight: bold;
 }
