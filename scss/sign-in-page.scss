@@ -1,0 +1,91 @@
+#sign-in-page main {
+  background: url(/images/random-product-background.png) repeat $ZIP-dark-beige;
+  padding: 1px;
+}
+
+.sign-in-container {
+  max-width: 500px;
+  margin: 5em auto;
+  text-align: center;
+  background: #ffffff;
+}
+
+.sign-in-header {
+  text-align: left;
+  font-size: 1.5em;
+  background: $ZIP-dark-beige;
+  padding: 2em 1.5em 1.5em;
+  font-weight: bold;
+}
+
+.sign-in-controls {
+  padding: 2em 1em;
+  label {
+    display: block;
+    font-size: .8rem;
+    margin: 1em auto;
+    text-align: left;
+    width: 80%;
+    input[type="text"], input[type="password"] {
+      display: block;
+      width: 100%;
+      margin-top: .3em;
+      padding: .75em 1em;
+      background: #f2f4ee;
+      border: 1px solid $ZIP-dark-beige;
+      &:active, &:focus {
+        border: 1px solid $ZIP-green;
+        outline: none;
+      }
+    }
+  }
+  .sign-in-create {
+    display: inline-block;
+    width: 40%;
+    font-size: .8rem;
+    margin-top: 2rem;
+  }
+  .sign-in-submit {
+    display: inline-block;
+    width: 40%;
+    input[type="submit"] {
+      background: $ZIP-green;
+      color: #ffffff;
+      padding: 1em 2em;
+      text-transform: uppercase;
+      border: 0px none;
+    }
+  }
+}
+
+.sign-in-facebook {
+  background: #395692;
+  color: #ffffff;
+  padding: 1em;
+  width: 50%;
+  margin: 0 auto;
+  line-height: 28px;
+  &:before {
+    display: inline-block;
+    background: url(/images/facebook-icon.png) no-repeat;
+    content: '';
+    width: 28px;
+    height: 28px;
+    background-size: contain;
+    vertical-align: middle;
+    margin: -2px .75em 0 0;
+  }
+}
+
+.sign-in-separator {
+  margin: 3.25em;
+  border-top: 1px solid #aaaaaa;
+  &:before {
+    content: 'or';
+    text-transform: uppercase;
+    position: absolute;
+    transform: translate3d(-50%, -50%, 0);
+    background: #ffffff;
+    padding: 0 1.5em;
+  }
+}

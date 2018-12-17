@@ -591,4 +591,96 @@ main section {
   font-weight: bold;
 }
 
+#sign-in-page main {
+  background: url(/images/random-product-background.png) repeat #f2f4ea;
+  padding: 1px;
+}
+
+.sign-in-container {
+  max-width: 500px;
+  margin: 5em auto;
+  text-align: center;
+  background: #ffffff;
+}
+
+.sign-in-header {
+  text-align: left;
+  font-size: 1.5em;
+  background: #f2f4ea;
+  padding: 2em 1.5em 1.5em;
+  font-weight: bold;
+}
+
+.sign-in-controls {
+  padding: 2em 1em;
+}
+.sign-in-controls label {
+  display: block;
+  font-size: 0.8rem;
+  margin: 1em auto;
+  text-align: left;
+  width: 80%;
+}
+.sign-in-controls label input[type=text], .sign-in-controls label input[type=password] {
+  display: block;
+  width: 100%;
+  margin-top: 0.3em;
+  padding: 0.75em 1em;
+  background: #f2f4ee;
+  border: 1px solid #f2f4ea;
+}
+.sign-in-controls label input[type=text]:active, .sign-in-controls label input[type=text]:focus, .sign-in-controls label input[type=password]:active, .sign-in-controls label input[type=password]:focus {
+  border: 1px solid #83a02b;
+  outline: none;
+}
+.sign-in-controls .sign-in-create {
+  display: inline-block;
+  width: 40%;
+  font-size: 0.8rem;
+  margin-top: 2rem;
+}
+.sign-in-controls .sign-in-submit {
+  display: inline-block;
+  width: 40%;
+}
+.sign-in-controls .sign-in-submit input[type=submit] {
+  background: #83a02b;
+  color: #ffffff;
+  padding: 1em 2em;
+  text-transform: uppercase;
+  border: 0px none;
+}
+
+.sign-in-facebook {
+  background: #395692;
+  color: #ffffff;
+  padding: 1em;
+  width: 50%;
+  margin: 0 auto;
+  line-height: 28px;
+}
+.sign-in-facebook:before {
+  display: inline-block;
+  background: url(/images/facebook-icon.png) no-repeat;
+  content: "";
+  width: 28px;
+  height: 28px;
+  background-size: contain;
+  vertical-align: middle;
+  margin: -2px 0.75em 0 0;
+}
+
+.sign-in-separator {
+  margin: 3.25em;
+  border-top: 1px solid #aaaaaa;
+}
+.sign-in-separator:before {
+  content: "or";
+  text-transform: uppercase;
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  background: #ffffff;
+  padding: 0 1.5em;
+}
+
 /*# sourceMappingURL=main.css.map */
