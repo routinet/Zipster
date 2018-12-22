@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Archia';
+  src: url('/fonts/archia/archia-thin.eot');
+  src: url('/fonts/archia/archia-thin.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/archia/archia-thin.woff2') format('woff2'),
+  url('/fonts/archia/archia-thin.woff') format('woff');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Archia';
+  src: url('/fonts/archia/archia-light.eot');
+  src: url('/fonts/archia/archia-light.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/archia/archia-light.woff2') format('woff2'),
+  url('/fonts/archia/archia-light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Archia';
+  src: url('/fonts/archia/archia-regular.eot'); /* IE9 Compat Modes */
+  src: url('/fonts/archia/archia-regular.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/archia/archia-regular.woff2') format('woff2'),
+  url('/fonts/archia/archia-regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Archia';
+  src: url('/fonts/archia/archia-medium.eot');
+  src: url('/fonts/archia/archia-medium.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/archia/archia-medium.woff') format('woff'),
+  url('/fonts/archia/archia-medium.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Archia';
+  src: url('/fonts/archia/archia-semibold.eot');
+  src: url('/fonts/archia/archia-semibold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/archia/archia-semibold.woff') format('woff'),
+  url('/fonts/archia/archia-semibold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Archia';
+  src: url('/fonts/archia/archia-bold.eot');
+  src: url('/fonts/archia/archia-bold.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/archia/archia-bold.woff') format('woff'),
+  url('/fonts/archia/archia-bold.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
