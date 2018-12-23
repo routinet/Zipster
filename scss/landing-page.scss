@@ -8,7 +8,6 @@
     background-color: $ZIP-dark-beige;
   }
   h2 {
-    font-size: 2rem;
     display: inline-block;
     padding: 2em 5em 1em;
   }
@@ -43,13 +42,12 @@
 #section-subscribe {
   background: $ZIP-light-beige;
   p {
-    font-size: 1.1rem;
+    font-size: .8rem;
     max-width: 50%;
     margin: 0 auto 2em;
     text-align: left;
   }
   .subscribe-email-address {
-    font-size: 1rem;
     line-height: 1.2em;
     padding: .5em .75em;
     width: 50%;
@@ -57,6 +55,7 @@
     background: $ZIP-dark-beige;
     border: 0 none transparent;
     border-radius: 0.2em;
+    font-size: 1rem;
   }
 }
 
@@ -80,15 +79,16 @@
       background-image: url("/images/quick-order-3.png");
     }
     h3 {
-      font-size: 1.5em;
-      font-weight: normal;
+      font-size: 1.35em;
       max-width: 75%;
       height: 3.5em;
+      letter-spacing: 0.02em;
     }
     span.quick-order-anchor:after {
       content: '\02192';
       font-size: 1.5em;
       margin-left: .5em;
+      font-family: sans-serif;
     }
   }
 }
@@ -129,6 +129,7 @@
     padding: 0 3em;
     position: relative;
     vertical-align: top;
+    font-size: .9rem;
     &:before {
       content: counter(process-counter);
       counter-increment: process-counter;
@@ -148,17 +149,18 @@
 #section-sourcing {
   .content-area {
     text-align: left;
+    width:75%;
   }
   img {
     float:right;
-    margin:1em 3em 3em 3em;
+    margin: 1em 0em 3em 3.5em;
   }
   h2 {
     padding: 3em 0 1em;
     font-size:1.5em;
   }
   p {
-    font-size:1.25em;
+    line-height: 1.4em;
   }
 }
 
@@ -171,10 +173,9 @@
     margin:3em;
   }
   h2 {
-    padding: 20% 1em 1em;
-    font-size: 1.5em;
+    padding: 20% 1em .5em;
   }
   p {
-    font-size:1.25em;
+    font-size: 1.07rem;
   }
 }

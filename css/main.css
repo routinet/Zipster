@@ -47,10 +47,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Archia, sans-serif;
+  font-weight: 800;
 }
 
 body {
-  font-family: sans-serif;
+  font-family: Archia, sans-serif;
   font-size: 12pt;
   color: #222222;
   text-align: left;
@@ -65,12 +67,29 @@ a:hover {
 }
 
 p {
-  font-family: serif;
+  font-family: "Source Serif Pro", serif;
+  font-weight: normal;
   font-size: 0.9rem;
 }
 
 table {
   width: 100%;
+}
+
+input {
+  font-family: Archia, sans-serif;
+}
+input::placeholder {
+  color: #cccccc;
+}
+
+h2 {
+  font-weight: 900;
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1rem;
 }
 
 .boxed {
@@ -79,6 +98,7 @@ table {
   border: 2px solid #000000;
   display: inline-block;
   text-transform: uppercase;
+  font-weight: 900;
   font-size: 0.9rem;
   background: transparent;
 }
@@ -116,7 +136,8 @@ table {
 #main-nav li a {
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 900;
 }
 
 main section {
@@ -202,6 +223,7 @@ main section {
   position: relative;
   left: 2rem;
   font-size: 0.5rem;
+  width: 50%;
 }
 
 .flipboard-container {
@@ -303,7 +325,6 @@ main section {
   background-color: #f2f4ea;
 }
 #section-delivered-today h2 {
-  font-size: 2rem;
   display: inline-block;
   padding: 2em 5em 1em;
 }
@@ -338,13 +359,12 @@ main section {
   background: #fefff8;
 }
 #section-subscribe p {
-  font-size: 1.1rem;
+  font-size: 0.8rem;
   max-width: 50%;
   margin: 0 auto 2em;
   text-align: left;
 }
 #section-subscribe .subscribe-email-address {
-  font-size: 1rem;
   line-height: 1.2em;
   padding: 0.5em 0.75em;
   width: 50%;
@@ -352,6 +372,7 @@ main section {
   background: #f2f4ea;
   border: 0 none transparent;
   border-radius: 0.2em;
+  font-size: 1rem;
 }
 
 #section-quick-order {
@@ -376,15 +397,16 @@ main section {
   background-image: url("/images/quick-order-3.png");
 }
 #section-quick-order li h3 {
-  font-size: 1.5em;
-  font-weight: normal;
+  font-size: 1.35em;
   max-width: 75%;
   height: 3.5em;
+  letter-spacing: 0.02em;
 }
 #section-quick-order li span.quick-order-anchor:after {
   content: "→";
   font-size: 1.5em;
   margin-left: 0.5em;
+  font-family: sans-serif;
 }
 
 #section-favorites h2 {
@@ -422,6 +444,7 @@ main section {
   padding: 0 3em;
   position: relative;
   vertical-align: top;
+  font-size: 0.9rem;
 }
 #section-process dd:before {
   content: counter(process-counter);
@@ -439,17 +462,18 @@ main section {
 
 #section-sourcing .content-area {
   text-align: left;
+  width: 75%;
 }
 #section-sourcing img {
   float: right;
-  margin: 1em 3em 3em 3em;
+  margin: 1em 0em 3em 3.5em;
 }
 #section-sourcing h2 {
   padding: 3em 0 1em;
   font-size: 1.5em;
 }
 #section-sourcing p {
-  font-size: 1.25em;
+  line-height: 1.4em;
 }
 
 #section-philosophy .content-area {
@@ -460,11 +484,10 @@ main section {
   margin: 3em;
 }
 #section-philosophy h2 {
-  padding: 20% 1em 1em;
-  font-size: 1.5em;
+  padding: 20% 1em 0.5em;
 }
 #section-philosophy p {
-  font-size: 1.25em;
+  font-size: 1.07rem;
 }
 
 #menu-page main {
@@ -516,7 +539,7 @@ main section {
 #account-page .content-area {
   width: 100%;
   max-width: initial;
-  padding-top: 1em;
+  padding-top: 3em;
 }
 #account-page .content-area h2, #account-page .content-area h3 {
   margin: 1em 0;
@@ -552,12 +575,21 @@ main section {
   padding: 2em;
   min-height: 25em;
   margin-left: 1em;
+  width: 24%;
 }
 #account-page-sidebar #refer-friend-url {
   margin-bottom: 3em;
   background: #f2f4ea;
   padding: 0.75em 2em 0.75em 0.5em;
   font-size: 0.9rem;
+}
+
+#account-nav-pages {
+  float: left;
+  width: 72%;
+}
+#account-nav-pages section {
+  padding: 1em 0;
 }
 
 #account-details label {
