@@ -7,7 +7,7 @@
         });
 
         // Handle account page navigation
-        $('#account-nav').on('click', 'li', function(){
+        $('#account-nav').on('click', 'li', function () {
             var $this = $(this),
                 target = $this.data('target')
             ;
