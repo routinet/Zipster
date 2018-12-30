@@ -2,13 +2,14 @@
   text-align:center;
 }
 .product-item-container {
-  width: 24%;
   height: 350px;
-  padding:3em 1em 1em;
+  padding: 3em 0em 1em;
   display: inline-block;
   vertical-align: top;
-  text-align:left;
-  position:relative;
+  text-align: left;
+  position: relative;
+  max-width: min-content;
+  min-width: min-content;
 }
 .product-item-image {
   display: block;
@@ -21,6 +22,7 @@
   display: block;
   vertical-align: bottom;
   margin-bottom: 1em;
+  padding: 0 1em;
   font-size: 0.8em;
   color: #aaaaaa;
   left: 1em;

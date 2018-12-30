@@ -1,150 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Account Page</title>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="/js/jquery.transform-0.9.3.min.js"></script>
-  <script src="/js/jquery.flapper.js"></script>
-  <script src="/js/ZJQ.js"></script>
-  <script src="/js/main.js"></script>
-  <link type="text/css" href="/css/main.css" rel="stylesheet"/>
-  <link type="text/css" href="/css/flapper.css" rel="stylesheet"/>
-</head>
-<body id="account-page">
-<div id="top-container">
-  <header id="top-header" class="clearfix" data-load="header.part.html"></header>
-  <main>
-    <h1>Account</h1>
-    <nav id="account-nav">
-      <ul>
-        <li class="active" data-target="account-details">Account Details</li>
-        <li data-target="order-history">Order History</li>
-        <li data-target="points">Points</li>
-      </ul>
-    </nav>
-    <div class="content-area clearfix">
-      <div id="account-page-sidebar">
-        <h3>Refer a Friend</h3>
-        <div id="refer-friend-url">http://zoku.com/234dma</div>
-        <h3>Need Support?</h3>
-      </div>
-      <div id="account-nav-pages">
-        <section id="account-details">
-          <form action="#" method="post" id="account-details-form">
-            <div id="account-profile-container">
-            <label>Full Name<input type="text" name="account-full-name" /></label>
-            <label>Email Address<input type="text" name="account-email" /></label>
-            <label>Password<input type="text" name="account-password" /></label>
-            <label>Confirm Password<input type="text" name="account-confirm" /></label>
-            </div>
-            <h2>Addresses</h2>
-            <div id="account-addresses-container">
-              <div class="account-address-item">
-                <div class="account-address-item-delete"></div>
-                <label>Name<input type="text" name="address-name" /></label>
-                <label>Street Address<input type="text" name="address-street" /></label>
-                <label>Apartment No.<input type="text" name="address-apt" /></label>
-                <label>Zip Code<input type="text" name="address-zip" /></label>
-                <label>Phone Number<input type="text" name="address-phone" /></label>
-                <label class="checkbox-container"><input type="checkbox" name="address-default" />Use as Default Address</label>
-              </div>
-              <div class="account-address-item">
-                <div class="account-address-item-delete"></div>
-                <label>Name<input type="text" name="address-name" /></label>
-                <label>Street Address<input type="text" name="address-street" /></label>
-                <label>Apartment No.<input type="text" name="address-apt" /></label>
-                <label>Zip Code<input type="text" name="address-zip" /></label>
-                <label>Phone Number<input type="text" name="address-phone" /></label>
-                <label class="checkbox-container"><input type="checkbox" name="address-default" />Use as Default Address</label>
-              </div>
-            </div>
-            <div id="account-add-address"><div class="boxed">Add New Address</div></div>
-          </form>
-        </section>
-        <section id="order-history">
-          <div id="order-history-container">
-            <div class="order-history-item">
-              <div class="order-history-reorder boxed">Reorder</div>
-              <div class="order-history-date">Friday, November 19, 2018</div>
-              <div class="order-history-delivered">Delivered, 10:39PM</div>
-              <div class="order-history-item-details-container">
-                <table class="order-history-item-details">
-                  <tbody>
-                  <tr class="order-history-item-entry">
-                    <td class="order-history-item-description">
-                      <span class="order-item-name">Shake Nigiri</span><span class="order-item-qty">x 1</span>
-                    </td>
-                    <td class="order-history-item-price">$23.23</td>
-                  </tr>
-                  <tr class="order-history-item-entry">
-                    <td class="order-history-item-description">
-                      <span class="order-item-name">Small Omakase Box</span><span class="order-item-qty">x 1</span>
-                    </td>
-                    <td class="order-history-item-price">$23.23</td>
-                  </tr>
-                  <tr class="order-history-item-fee">
-                    <td class="order-history-item-description">Taxes</td>
-                    <td class="order-history-item-price">$2.00</td>
-                  </tr>
-                  <tr class="order-history-item-fee">
-                    <td class="order-history-item-description">Delivery</td>
-                    <td class="order-history-item-price">$2.00</td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <td>Total</td>
-                    <td class="order-history-item-price">$50.46</td>
-                  </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
-            <div class="order-history-item">
-              <div class="order-history-reorder boxed">Reorder</div>
-              <div class="order-history-date">Friday, November 19, 2018</div>
-              <div class="order-history-delivered">Delivered, 10:39PM</div>
-              <div class="order-history-item-details-container">
-                <table class="order-history-item-details">
-                  <tbody>
-                  <tr class="order-history-item-entry">
-                    <td class="order-history-item-description">
-                      <span class="order-item-name">Shake Nigiri</span><span class="order-item-qty">x 1</span>
-                    </td>
-                    <td class="order-history-item-price">$23.23</td>
-                  </tr>
-                  <tr class="order-history-item-entry">
-                    <td class="order-history-item-description">
-                      <span class="order-item-name">Small Omakase Box</span><span class="order-item-qty">x 1</span>
-                    </td>
-                    <td class="order-history-item-price">$23.23</td>
-                  </tr>
-                  <tr class="order-history-item-fee">
-                    <td class="order-history-item-description">Taxes</td>
-                    <td class="order-history-item-price">$2.00</td>
-                  </tr>
-                  <tr class="order-history-item-fee">
-                    <td class="order-history-item-description">Delivery</td>
-                    <td class="order-history-item-price">$2.00</td>
-                  </tr>
-                  </tbody>
-                  <tfoot>
-                  <tr>
-                    <td>Total</td>
-                    <td class="order-history-item-price">$50.46</td>
-                  </tr>
-                  </tfoot>
-                </table>
-              </div>
-            </div>
+<h1>Account</h1>
+<nav id="account-nav">
+  <ul>
+    <li class="active" data-target="account-details">Account Details</li>
+    <li data-target="order-history">Order History</li>
+    <li data-target="points">Points</li>
+  </ul>
+</nav>
+<div class="content-area clearfix">
+  <div id="account-page-sidebar">
+    <h3>Refer a Friend</h3>
+    <div id="refer-friend-url">http://zoku.com/234dma</div>
+    <h3>Need Support?</h3>
+  </div>
+  <div id="account-nav-pages">
+    <section id="account-details">
+      <form action="#" method="post" id="account-details-form">
+        <div id="account-profile-container">
+          <label>Full Name<input type="text" name="account-full-name"/></label>
+          <label>Email Address<input type="text" name="account-email"/></label>
+          <label>Password<input type="text" name="account-password"/></label>
+          <label>Confirm Password<input type="text" name="account-confirm"/></label>
+        </div>
+        <h2>Addresses</h2>
+        <div id="account-addresses-container">
+          <div class="account-address-item">
+            <div class="account-address-item-delete"></div>
+            <label>Name<input type="text" name="address-name"/></label>
+            <label>Street Address<input type="text" name="address-street"/></label>
+            <label>Apartment No.<input type="text" name="address-apt"/></label>
+            <label>Zip Code<input type="text" name="address-zip"/></label>
+            <label>Phone Number<input type="text" name="address-phone"/></label>
+            <label class="checkbox-container"><input type="checkbox" name="address-default"/>Use as Default
+              Address</label>
           </div>
-        </section>
-        <section id="points">This page intentionally left blank.</section>
+          <div class="account-address-item">
+            <div class="account-address-item-delete"></div>
+            <label>Name<input type="text" name="address-name"/></label>
+            <label>Street Address<input type="text" name="address-street"/></label>
+            <label>Apartment No.<input type="text" name="address-apt"/></label>
+            <label>Zip Code<input type="text" name="address-zip"/></label>
+            <label>Phone Number<input type="text" name="address-phone"/></label>
+            <label class="checkbox-container"><input type="checkbox" name="address-default"/>Use as Default
+              Address</label>
+          </div>
+        </div>
+        <div id="account-add-address">
+          <div class="boxed">Add New Address</div>
+        </div>
+      </form>
+    </section>
+    <section id="order-history">
+      <div id="order-history-container">
+        <div class="order-history-item">
+          <div class="order-history-reorder boxed">Reorder</div>
+          <div class="order-history-date">Friday, November 19, 2018</div>
+          <div class="order-history-delivered">Delivered, 10:39PM</div>
+          <div class="order-history-item-details-container">
+            <table class="order-history-item-details">
+              <tbody>
+              <tr class="order-history-item-entry">
+                <td class="order-history-item-description">
+                  <span class="order-item-name">Shake Nigiri</span><span class="order-item-qty">x 1</span>
+                </td>
+                <td class="order-history-item-price">$23.23</td>
+              </tr>
+              <tr class="order-history-item-entry">
+                <td class="order-history-item-description">
+                  <span class="order-item-name">Small Omakase Box</span><span class="order-item-qty">x 1</span>
+                </td>
+                <td class="order-history-item-price">$23.23</td>
+              </tr>
+              <tr class="order-history-item-fee">
+                <td class="order-history-item-description">Taxes</td>
+                <td class="order-history-item-price">$2.00</td>
+              </tr>
+              <tr class="order-history-item-fee">
+                <td class="order-history-item-description">Delivery</td>
+                <td class="order-history-item-price">$2.00</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td>Total</td>
+                <td class="order-history-item-price">$50.46</td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+        <div class="order-history-item">
+          <div class="order-history-reorder boxed">Reorder</div>
+          <div class="order-history-date">Friday, November 19, 2018</div>
+          <div class="order-history-delivered">Delivered, 10:39PM</div>
+          <div class="order-history-item-details-container">
+            <table class="order-history-item-details">
+              <tbody>
+              <tr class="order-history-item-entry">
+                <td class="order-history-item-description">
+                  <span class="order-item-name">Shake Nigiri</span><span class="order-item-qty">x 1</span>
+                </td>
+                <td class="order-history-item-price">$23.23</td>
+              </tr>
+              <tr class="order-history-item-entry">
+                <td class="order-history-item-description">
+                  <span class="order-item-name">Small Omakase Box</span><span class="order-item-qty">x 1</span>
+                </td>
+                <td class="order-history-item-price">$23.23</td>
+              </tr>
+              <tr class="order-history-item-fee">
+                <td class="order-history-item-description">Taxes</td>
+                <td class="order-history-item-price">$2.00</td>
+              </tr>
+              <tr class="order-history-item-fee">
+                <td class="order-history-item-description">Delivery</td>
+                <td class="order-history-item-price">$2.00</td>
+              </tr>
+              </tbody>
+              <tfoot>
+              <tr>
+                <td>Total</td>
+                <td class="order-history-item-price">$50.46</td>
+              </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
       </div>
-    </div>
-  </main>
-  <footer id="top-footer" class="clearfix" data-load="footer.part.html"></footer>
+    </section>
+    <section id="points">This page intentionally left blank.</section>
+  </div>
 </div>
-</body>
-</html>

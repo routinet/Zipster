@@ -19,9 +19,8 @@
         $('#account-nav li.active').trigger('click');
 
         // Light up the flipboards
-        // **** LIMITED TO THE DATE FIELD FOR PERFORMANCE ****
-        // $('.flipboard').each(function () {
-        $('.todays-date .flipboard').each(function () {
+        //$('tr:first-child .flipboard').each(function () {
+        $('tr .flipboard').each(function () {
             var $this = $(this),
                 this_opts = $this.data('flip-option'),
                 opts = JSON.parse(JSON.stringify(ZJQ.flipboard_default_options))

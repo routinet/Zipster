@@ -2,18 +2,122 @@
   background-color: #333333;
   color: #eeeeee;
   position: relative;
-  padding:1em;
+  padding: 1em;
+  font-size: .7em;
+  margin: 0 auto;
+  @media #{$ZIP-mid-screen} {
+    max-width: 550px;
+  }
+  .flapper {
+    display:inline-block;
+  }
+  table {
+    border-spacing: 1em;
+    white-space: nowrap;
+    td {
+      vertical-align: top;
+      height:3em;
+    }
+    th.entry-description {
+      background-color: initial;
+    }
+  }
+  .entry-description {
+    background-color: #222222;
+    padding: .5em .75em;
+    width:70%;
+  }
+  .entry-from {
+    .origin-flag {
+      display: inline-block;
+      height:42px;
+      width:68px;
+      background: #222222;
+      position: relative;
+      margin-right: 5px;
+      &:before {
+        background-size: contain;
+        background: #222222 no-repeat center center;
+        display:block;
+        content:'';
+        position: relative;
+        top:10%;
+        left:8px;
+        height:80%;
+        width:52px;
+      }
+    }
+    .origin-flag-ar:before {
+      background-image:url('/images/country-flag-ar.png');
+    }
+    .origin-flag-ic:before {
+      background-image:url('/images/country-flag-ic.png');
+    }
+    .origin-flag-jp:before {
+      background-image:url('/images/country-flag-jp.png');
+    }
+    .origin-flag-us:before {
+      background-image:url('/images/country-flag-us.png');
+    }
+    @media #{$ZIP-mid-screen} {
+      .flipboard, .flapper {
+        display:none;
+      }
+    }
+  }
   .entry-icon {
     float: left;
-    padding: .2em .3em .2em 0;
-    font-size: 1.5em;
+    font-size: 1.4em;
+    padding: .35em .5em 0 0;
   }
   .entry-locale {
     display:block;
   }
-  .entry-fish-type {
+  .entry-type {
     display: block;
-    color: #c3c3c3;
-    font-size: .7em;
+    @media #{$ZIP-mid-screen} {
+        display:none;
+    }
   }
 }
+
+
+/* Add XXS to flapper*/
+/* XXS 18x24 */
+
+.flapper.XXS {
+  font-size: 0px;
+  line-height: 40px;
+  height: 40px;
+}
+
+.flapper.XXS .digit {
+  border-radius: 3px;
+  margin: 0 0 0 1px;
+}
+
+.flapper.XXS .digit:first-child {
+  margin: 0;
+}
+
+.flapper.XXS .digit div {
+  border-radius: 1px;
+  background-color: #222222;
+}
+
+.flapper.XXS .digit,
+.flapper.XXS .digit div {
+  height: 40px;
+  width: 18px;
+  font-size: 18px;
+  line-height: inherit;
+}
+
+.flapper.XXS .digit .top {
+  clip: rect(0px, 18px, 20px, 0px);
+}
+
+.flapper.XXS .digit .bottom {
+  clip: rect(21px, 18px, 40px, 0px);
+}
+
