@@ -3,22 +3,41 @@
   max-width: 1280px;
   margin: 0 auto;
 }
-#category-omakase .category-item-preface {
-  background-image: url('/images/category-image-1.png');
-}
-#category-nigiri .category-item-preface {
-  background-image: url('/images/category-image-2.png');
-}
+
 .category-item-container {
   margin-bottom: 5em;
 }
+
 .category-item-preface {
-  height:160px;
+  height: 160px;
   background: center right 20% no-repeat;
   padding: 1rem 0 0 1.5rem;
 }
+
 .category-item-title {
   margin: 1em 0 .5em;
   font-size: 1.5em;
   font-weight: bold;
+}
+
+nav.menu-nav-container {
+  position: absolute;
+  top: 0;
+  left: 20%;
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li.menu-nav-link {
+      display: inline-block;
+      margin: 1em .5em;
+      a {
+        padding-bottom: 1em;
+      }
+      &:hover a {
+        font-weight: 900;
+        border-bottom: 2px solid black;
+      }
+    }
+  }
 }

@@ -4,7 +4,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Archia, sans-serif;
-  font-weight:700;
+  font-weight: 700;
 }
 
 body {
@@ -12,6 +12,10 @@ body {
   font-size: 12pt;
   color: #222222;
   text-align: left;
+}
+
+main {
+  position: relative;
 }
 
 a {
@@ -38,10 +42,12 @@ input {
     color: #cccccc;
   }
 }
+
 h2 {
-  font-weight:900;
-  font-size:3.2rem;
+  font-weight: 900;
+  font-size: 3.2rem;
 }
+
 h3 {
   font-size: 1rem;
 }
@@ -69,4 +75,26 @@ h3 {
   content: '';
   clear: both;
   display: block;
+}
+
+.minus-icon {
+  background: url(/images/add-to-cart-minus.png);
+}
+
+.plus-icon {
+  background: url(/images/add-to-cart-plus.png);
+}
+
+.add-to-cart-icon {
+  -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+  -moz-user-select: none; /* mozilla browsers */
+  -khtml-user-select: none; /* webkit (konqueror) browsers */
+  -ms-user-select: none; /* IE10+ */
+}
+
+#item-templates {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  width: 0;
 }

@@ -58,6 +58,10 @@ body {
   text-align: left;
 }
 
+main {
+  position: relative;
+}
+
 a {
   color: #222222;
   text-decoration: none;
@@ -115,6 +119,36 @@ h3 {
   content: "";
   clear: both;
   display: block;
+}
+
+.minus-icon {
+  background: url(/images/add-to-cart-minus.png);
+}
+
+.plus-icon {
+  background: url(/images/add-to-cart-plus.png);
+}
+
+.add-to-cart-icon {
+  -webkit-user-select: none;
+  /* webkit (safari, chrome) browsers */
+  -moz-user-select: none;
+  /* mozilla browsers */
+  -khtml-user-select: none;
+  /* webkit (konqueror) browsers */
+  -ms-user-select: none;
+  /* IE10+ */
+}
+
+#item-templates {
+  display: none;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+}
+
+header#top-header {
+  position: relative;
 }
 
 #header-logo {
@@ -354,40 +388,6 @@ main section {
   clip: rect(21px, 18px, 40px, 0px);
 }
 
-.product-list-container {
-  text-align: center;
-}
-
-.product-item-container {
-  height: 350px;
-  padding: 3em 0em 1em;
-  display: inline-block;
-  vertical-align: top;
-  text-align: left;
-  position: relative;
-  max-width: min-content;
-  min-width: min-content;
-}
-
-.product-item-image {
-  display: block;
-  margin: 0 auto;
-  max-width: max-content;
-}
-
-.product-item-description-container {
-  position: absolute;
-  bottom: 0;
-  display: block;
-  vertical-align: bottom;
-  margin-bottom: 1em;
-  padding: 0 1em;
-  font-size: 0.8em;
-  color: #aaaaaa;
-  left: 1em;
-  right: 1em;
-}
-
 .product-item-title {
   font-size: 1.25rem;
   margin-bottom: 0.5em;
@@ -421,6 +421,130 @@ main section {
 
 .product-item-flag-vg {
   background-image: url("/images/product-flag-vg.png");
+}
+
+.product-list-container .product-item-container {
+  height: 350px;
+  padding: 3em 0em 1em;
+  margin: 2px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  max-width: min-content;
+  min-width: 240px;
+}
+.product-list-container .product-item-container .product-item-image {
+  display: block;
+  margin: 0 auto;
+  max-width: max-content;
+}
+.product-list-container .product-item-container .product-item-description-container {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  vertical-align: bottom;
+  margin-bottom: 1em;
+  padding: 0 1em;
+  font-size: 0.8em;
+  color: #aaaaaa;
+  left: 1em;
+  right: 1em;
+}
+
+.product-overlay-container {
+  position: fixed;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.product-overlay-container .product-overlay-close {
+  width: 16px;
+  height: 16px;
+  background: url("/images/close-icon.png");
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+.product-overlay-container .product-overlay-contents {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  height: 80%;
+  margin: 0 auto;
+  overflow-y: scroll;
+}
+.product-overlay-container .product-overlay-left {
+  width: 60%;
+  float: left;
+  padding: 1.5em;
+}
+.product-overlay-container .product-overlay-right {
+  float: right;
+  width: 39%;
+  background-color: #ffffff;
+  padding: 1.5em;
+  height: 100%;
+}
+.product-overlay-container .product-item-image {
+  margin: 0 auto 3em;
+  padding: 3em 0;
+  height: 20em;
+  display: block;
+  vertical-align: middle;
+  text-align: center;
+}
+.product-overlay-container .product-item-image:before {
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  content: "";
+}
+.product-overlay-container .product-item-image img {
+  display: inline-block;
+  vertical-align: middle;
+}
+.product-overlay-container .product-item-description-container {
+  margin: 2em 0;
+  position: relative;
+}
+.product-overlay-container .product-item-desc {
+  color: #aaaaaa;
+  margin: 1em 0 0.5em;
+}
+.product-overlay-container form.product-overlay-form {
+  margin-top: 2em;
+  text-align: center;
+}
+.product-overlay-container form.product-overlay-form .add-to-cart-quantity {
+  line-height: 1.4em;
+  font-size: 1rem;
+  vertical-align: middle;
+  border: 0 none;
+  background: #f2f4ea;
+  padding: 0.5em 2em;
+  text-align: center;
+  max-width: min-content;
+}
+.product-overlay-container form.product-overlay-form .add-to-cart-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 1em;
+}
+.product-overlay-container form.product-overlay-form .add-to-cart-submit {
+  background: #83a02b;
+  max-width: 80%;
+  margin: 2em auto;
+  padding: 1em;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.05em;
 }
 
 #landing-page section {
@@ -704,14 +828,6 @@ main section {
   margin: 0 auto;
 }
 
-#category-omakase .category-item-preface {
-  background-image: url("/images/category-image-1.png");
-}
-
-#category-nigiri .category-item-preface {
-  background-image: url("/images/category-image-2.png");
-}
-
 .category-item-container {
   margin-bottom: 5em;
 }
@@ -726,6 +842,28 @@ main section {
   margin: 1em 0 0.5em;
   font-size: 1.5em;
   font-weight: bold;
+}
+
+nav.menu-nav-container {
+  position: absolute;
+  top: 0;
+  left: 20%;
+}
+nav.menu-nav-container ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+nav.menu-nav-container ul li.menu-nav-link {
+  display: inline-block;
+  margin: 1em 0.5em;
+}
+nav.menu-nav-container ul li.menu-nav-link a {
+  padding-bottom: 1em;
+}
+nav.menu-nav-container ul li.menu-nav-link:hover a {
+  font-weight: 900;
+  border-bottom: 2px solid black;
 }
 
 #catering-page main {
