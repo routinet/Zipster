@@ -13,6 +13,7 @@ $content = file_get_contents('template.html');
 $matches=[];
 $done = [];
 $content=preg_replace('/{pagetype}/', $url, $content);
+$content=preg_replace('/>Template</', ">" . ucwords($url) . " Page<", $content);
 if (preg_match_all('/{load([^}]+)}/',$content,$matches)) {
 	foreach ($matches[0] as $k=>$v) {
 		$block = '';

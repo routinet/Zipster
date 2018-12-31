@@ -1,6 +1,6 @@
 ;
 var ZJQ = ZJQ || {};
-(function ($, document, window, undefined) {
+(function ($, document, window, Math, undefined) {
     ZJQ.flipboard_default_options = {
         width: 5,             // number of digits
         align: 'left',       // aligns values to the left or right of display
@@ -46,4 +46,4 @@ var ZJQ = ZJQ || {};
         ;
         return '#'+r+g+b;
     };
-})(jQuery, document, window);
+})(jQuery, document, window, Math);
