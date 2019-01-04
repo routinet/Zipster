@@ -61,11 +61,12 @@ var ZJQ = ZJQ || {};
 
   // Helper function to generate random colors from a palette or scheme.
   Z.randomColor = function () {
-    let minBright = 230,
+    let minBright = 240,
         mult = 255 - minBright,
-        r = (Math.floor(Math.random() * mult) + minBright).toString(16),
-        g = (Math.floor(Math.random() * mult) + minBright).toString(16),
-        b = (Math.floor(Math.random() * mult) + minBright).toString(16)
+        mods = {r:0, g:0, b:3},
+        r = (Math.floor(Math.random() * mult) + minBright - mods.r).toString(16),
+        g = (Math.floor(Math.random() * mult) + minBright - mods.g).toString(16),
+        b = (Math.floor(Math.random() * mult) + minBright - mods.b).toString(16)
     ;
     return '#' + r + g + b;
   };
