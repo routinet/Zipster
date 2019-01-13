@@ -1,13 +1,13 @@
 #catering-page {
   main {
-    max-width:1100px;
-    margin:4em auto;
+    max-width: $ZIP-max-desktop-width;
+    margin: 4em auto;
     p {
-      max-width:50%;
+      max-width: 50%;
       margin: 0 0 0 auto;
     }
     h1 {
-      float:left;
+      float: left;
       margin-left: .5em;
     }
     .product-list-container {

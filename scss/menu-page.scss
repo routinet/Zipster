@@ -1,6 +1,6 @@
 #menu-page main {
   padding-top: 3em;
-  max-width: 1100px;
+  max-width: $ZIP-max-desktop-width;
   margin: 0 auto;
 }
 
@@ -8,9 +8,14 @@
   margin-bottom: 5em;
 }
 
+.category-item-description {
+  max-width: 30%;
+  color: #8d8d8d;
+}
+
 .category-item-preface {
   height: 160px;
-  background: center right 20% no-repeat;
+  background: #fcfcfc center right 30% no-repeat;
   padding: 1rem 0 0 1.5rem;
 }
 
@@ -22,7 +27,7 @@
 
 nav.menu-nav-container {
   position: absolute;
-  top: 0;
+  top: .7em;
   left: 20%;
   ul {
     list-style-type: none;
@@ -32,11 +37,13 @@ nav.menu-nav-container {
       display: inline-block;
       margin: 1em .5em;
       a {
-        padding-bottom: 1em;
+        padding-bottom: 1.3em;
+        color:#cbcbcb;
       }
       &:hover a {
         font-weight: 900;
         border-bottom: 2px solid black;
+        color:#000000;
       }
     }
   }

@@ -12,10 +12,12 @@ body {
   font-size: 12pt;
   color: #222222;
   text-align: left;
+  letter-spacing: .08em;
 }
 
 main {
   position: relative;
+  max-width: $ZIP-max-desktop-width;
 }
 
 a {
@@ -29,7 +31,8 @@ a {
 p {
   font-family: "Source Serif Pro", serif;
   font-weight: normal;
-  font-size: .9rem;
+  font-size: 1.3rem;
+  letter-spacing: initial;
 }
 
 table {
@@ -59,13 +62,13 @@ h3 {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: .9rem;
+  font-size: 1.1em;
   background: transparent;
 }
 
 .content-area {
   min-width: 470px;
-  max-width: 1000px;
+  max-width: $ZIP-max-desktop-width;
   margin: 0 auto;
   overflow: visible;
   width: 65%;

@@ -56,10 +56,12 @@ body {
   font-size: 12pt;
   color: #222222;
   text-align: left;
+  letter-spacing: 0.08em;
 }
 
 main {
   position: relative;
+  max-width: 976px;
 }
 
 a {
@@ -73,7 +75,8 @@ a:hover {
 p {
   font-family: "Source Serif Pro", serif;
   font-weight: normal;
-  font-size: 0.9rem;
+  font-size: 1.3rem;
+  letter-spacing: initial;
 }
 
 table {
@@ -103,13 +106,13 @@ h3 {
   display: inline-block;
   text-transform: uppercase;
   font-weight: 900;
-  font-size: 0.9rem;
+  font-size: 1.1em;
   background: transparent;
 }
 
 .content-area {
   min-width: 470px;
-  max-width: 1000px;
+  max-width: 976px;
   margin: 0 auto;
   overflow: visible;
   width: 65%;
@@ -149,6 +152,9 @@ h3 {
 
 header#top-header {
   position: relative;
+  border-bottom: 1px solid #ebebeb;
+  padding: 1em 0 0.6em;
+  height: 70px;
 }
 
 #header-logo {
@@ -273,7 +279,7 @@ main section {
   font-size: 0.7em;
   margin: 0 auto;
 }
-@media (max-width: 1280px) {
+@media (max-width: 976px) {
   .flipboard-container {
     max-width: 550px;
   }
@@ -400,7 +406,7 @@ main section {
 
 .product-item-flags-container {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   text-align: right;
 }
@@ -425,13 +431,12 @@ main section {
 
 .product-list-container .product-item-container {
   height: 350px;
+  width: 240px;
   padding: 3em 0em 1em;
   margin: 2px;
   display: inline-block;
   vertical-align: top;
   position: relative;
-  max-width: min-content;
-  min-width: 240px;
 }
 .product-list-container .product-item-container .product-item-image {
   display: block;
@@ -454,8 +459,8 @@ main section {
 .product-overlay-container {
   position: fixed;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.3);
-  top: 10%;
+  background-color: #7b8168;
+  top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -472,7 +477,7 @@ main section {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
-  width: 80%;
+  width: 700px;
   height: 80%;
   margin: 0 auto;
   overflow-y: scroll;
@@ -510,10 +515,24 @@ main section {
 .product-overlay-container .product-item-description-container {
   margin: 2em 0;
   position: relative;
+  padding-bottom: 40px;
+}
+.product-overlay-container .product-item-title {
+  font-size: 2.25rem;
 }
 .product-overlay-container .product-item-desc {
   color: #aaaaaa;
   margin: 1em 0 0.5em;
+  display: inline;
+}
+.product-overlay-container .product-item-price {
+  display: inline;
+  color: #aaaaaa;
+}
+.product-overlay-container .product-item-price:before {
+  content: " ⋅";
+  display: inline;
+  padding: 0 0.4em 0 0;
 }
 .product-overlay-container form.product-overlay-form {
   margin-top: 2em;
@@ -547,29 +566,39 @@ main section {
   letter-spacing: 0.05em;
 }
 
+#landing-page main {
+  max-width: 100vw;
+}
 #landing-page section {
   text-align: center;
 }
 
 #section-delivered-today {
-  background: url(/images/random-product-background.png) repeat #f2f4ea;
+  background: url(/images/landing-background.png) repeat #f2f4ea;
   padding: 0;
 }
 #section-delivered-today .content-area {
-  background-color: #f2f4ea;
+  /* background-color: $ZIP-dark-beige; */
 }
 #section-delivered-today h2 {
   display: inline-block;
-  padding: 2em 1em 1em;
+  padding: 0em 0.5em 0em;
+  background: transparent;
+  margin: 2em 0 1em;
+  text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, -1px -1px 0 #ffffff;
+  color: #515150;
 }
 #section-delivered-today p {
   margin: 0 auto;
   padding: 0em 1em 1em;
   font-size: 1.4rem;
+  background: #f2f4ea;
+  font-family: Archia, sans-serif;
 }
 #section-delivered-today #delivered-today-order-now {
   margin-top: 1em;
-  padding: 0.6em 2em;
+  background: #f2f4ea;
+  padding: 0.9em 2em;
 }
 #section-delivered-today #todays-deliveries {
   margin: 2.25em auto 0;
@@ -594,10 +623,11 @@ main section {
   background: #fefff8;
 }
 #section-subscribe p {
-  font-size: 0.8rem;
-  max-width: 50%;
+  font-size: 1.35em;
+  max-width: 75%;
   margin: 0 auto 2em;
-  text-align: left;
+  text-align: center;
+  min-width: 615px;
 }
 #section-subscribe .subscribe-email-address {
   line-height: 1.2em;
@@ -607,7 +637,7 @@ main section {
   background: #f2f4ea;
   border: 0 none transparent;
   border-radius: 0.2em;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 @media (max-width: 800px) {
   #section-subscribe #main-subscription-form input {
@@ -658,6 +688,9 @@ main section {
   font-family: sans-serif;
 }
 
+#section-favorites {
+  padding: 4em 0;
+}
 #section-favorites h2 {
   margin-bottom: 0.75em;
 }
@@ -665,7 +698,7 @@ main section {
   margin: 2em auto;
 }
 #section-favorites #favorites-order-now {
-  padding: 1em 3em;
+  padding: 0.9em 2em;
 }
 
 #section-process {
@@ -681,11 +714,12 @@ main section {
 #section-process dd {
   display: inline-block;
   width: 30%;
-  margin: 2em 1.5% 0;
+  margin: 2em 0 0;
   padding: 0 2em;
   position: relative;
   vertical-align: top;
   font-size: 0.9rem;
+  max-width: 315px;
 }
 #section-process dd img {
   display: block;
@@ -698,6 +732,10 @@ main section {
   }
 }
 
+#section-sourcing {
+  padding: 11em 0 11.5em;
+  border-bottom: 1px solid #e5e5e5;
+}
 #section-sourcing .content-area {
   text-align: left;
   width: 75%;
@@ -724,7 +762,7 @@ main section {
 }
 #section-sourcing img {
   float: right;
-  margin: 0;
+  margin: 1em 0 0 0;
   width: 50%;
   vertical-align: top;
 }
@@ -819,12 +857,11 @@ main section {
 #section-philosophy h2 {
   padding: 3em 0 1em;
   font-size: 2em;
-  text-align: center;
 }
 
 #menu-page main {
   padding-top: 3em;
-  max-width: 1100px;
+  max-width: 976px;
   margin: 0 auto;
 }
 
@@ -832,9 +869,14 @@ main section {
   margin-bottom: 5em;
 }
 
+.category-item-description {
+  max-width: 30%;
+  color: #8d8d8d;
+}
+
 .category-item-preface {
   height: 160px;
-  background: center right 20% no-repeat;
+  background: #fcfcfc center right 30% no-repeat;
   padding: 1rem 0 0 1.5rem;
 }
 
@@ -846,7 +888,7 @@ main section {
 
 nav.menu-nav-container {
   position: absolute;
-  top: 0;
+  top: 0.7em;
   left: 20%;
 }
 nav.menu-nav-container ul {
@@ -859,15 +901,17 @@ nav.menu-nav-container ul li.menu-nav-link {
   margin: 1em 0.5em;
 }
 nav.menu-nav-container ul li.menu-nav-link a {
-  padding-bottom: 1em;
+  padding-bottom: 1.3em;
+  color: #cbcbcb;
 }
 nav.menu-nav-container ul li.menu-nav-link:hover a {
   font-weight: 900;
   border-bottom: 2px solid black;
+  color: #000000;
 }
 
 #catering-page main {
-  max-width: 1100px;
+  max-width: 976px;
   margin: 4em auto;
 }
 #catering-page main p {
@@ -893,6 +937,7 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
 #account-page main {
   margin: 0 auto;
   padding: 3em 2em;
+  max-width: 100vw;
 }
 #account-page main nav {
   margin-top: 3em;
@@ -1014,8 +1059,9 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
 }
 
 #sign-in-page main {
-  background: url(/images/random-product-background.png) repeat #f2f4ea;
+  background: url(/images/landing-background.png) repeat #f2f4ea;
   padding: 1px;
+  max-width: 100vw;
 }
 
 .sign-in-container {

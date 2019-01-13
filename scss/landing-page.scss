@@ -1,25 +1,37 @@
-#landing-page section {
-  text-align: center;
+#landing-page {
+  main {
+    max-width: 100vw;
+  }
+  section {
+    text-align: center;
+  }
 }
 
 #section-delivered-today {
-  background: url(/images/random-product-background.png) repeat $ZIP-dark-beige;
+  background: url(/images/landing-background.png) repeat $ZIP-dark-beige;
   padding: 0;
   .content-area {
-    background-color: $ZIP-dark-beige;
+    /* background-color: $ZIP-dark-beige; */
   }
   h2 {
     display: inline-block;
-    padding: 2em 1em 1em;
+    padding: 0em 0.5em 0em;
+    background: transparent;
+    margin: 2em 0 1em;
+    text-shadow: 1px 1px 0 #ffffff, -1px 1px 0 #ffffff, 1px -1px 0 #ffffff, -1px -1px 0 #ffffff;
+    color: #515150;
   }
   p {
     margin: 0 auto;
     padding: 0em 1em 1em;
     font-size: 1.4rem;
+    background: $ZIP-dark-beige;
+    font-family: Archia, sans-serif;
   }
   #delivered-today-order-now {
     margin-top: 1em;
-    padding: .6em 2em;
+    background: $ZIP-dark-beige;
+    padding: 0.9em 2em;
   }
   #todays-deliveries {
     margin: 2.25em auto 0;
@@ -44,20 +56,21 @@
 #section-subscribe {
   background: $ZIP-light-beige;
   p {
-    font-size: .8rem;
-    max-width: 50%;
+    font-size: 1.35em;
+    max-width: 75%;
     margin: 0 auto 2em;
-    text-align: left;
+    text-align: center;
+    min-width: 615px;
   }
   .subscribe-email-address {
     line-height: 1.2em;
-    padding: .5em .75em;
+    padding: 0.5em 0.75em;
     width: 50%;
-    margin-right: .5em;
+    margin-right: 0.5em;
     background: $ZIP-dark-beige;
     border: 0 none transparent;
     border-radius: 0.2em;
-    font-size: 1rem;
+    font-size: 1.3rem;
   }
   #main-subscription-form input {
     @media #{$ZIP-small-screen} {
@@ -108,6 +121,7 @@
 }
 
 #section-favorites {
+  padding: 4em 0;
   h2 {
     margin-bottom: .75em;
   }
@@ -115,7 +129,7 @@
     margin: 2em auto;
   }
   #favorites-order-now {
-    padding: 1em 3em;
+    padding: 0.9em 2em;
   }
 }
 
@@ -131,11 +145,12 @@
   dd {
     display: inline-block;
     width: 30%;
-    margin: 2em 1.5% 0;
+    margin: 2em 0 0;
     padding: 0 2em;
     position: relative;
     vertical-align: top;
     font-size: 0.9rem;
+    max-width: 315px;
     img {
       display: block;
       max-width: 124px;
@@ -148,6 +163,8 @@
 }
 
 #section-sourcing {
+  padding: 11em 0 11.5em;
+  border-bottom: 1px solid #e5e5e5;
   .content-area {
     text-align: left;
     width: 75%;
@@ -170,7 +187,7 @@
   }
   img {
     float: right;
-    margin: 0;
+    margin: 1em 0 0 0;
     width: 50%;
     vertical-align: top;
     @media #{$ZIP-midsmall-screen} {
@@ -256,6 +273,5 @@
   h2 {
     padding: 3em 0 1em;
     font-size: 2em;
-    text-align: center;
   }
 }

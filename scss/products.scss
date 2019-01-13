@@ -10,7 +10,7 @@
 
 .product-item-flags-container {
   position: absolute;
-  right: 0;
+  left: 0;
   bottom: 0;
   text-align: right;
 }
@@ -36,13 +36,12 @@
 .product-list-container {
   .product-item-container {
     height: 350px;
+    width: 240px;
     padding: 3em 0em 1em;
     margin: 2px;
     display: inline-block;
     vertical-align: top;
     position: relative;
-    max-width: min-content;
-    min-width: 240px;
     .product-item-image {
       display: block;
       margin: 0 auto;
@@ -66,8 +65,8 @@
 .product-overlay-container {
   position: fixed;
   z-index: 10;
-  background-color: rgba(0, 0, 0, 0.3);
-  top: 10%;
+  background-color: #7b8168;
+  top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -83,7 +82,7 @@
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-    width: 80%;
+    width: 700px;
     height: 80%;
     margin: 0 auto;
     overflow-y: scroll;
@@ -121,10 +120,24 @@
   .product-item-description-container {
     margin: 2em 0;
     position: relative;
+    padding-bottom: 40px;
+  }
+  .product-item-title {
+    font-size: 2.25rem;
   }
   .product-item-desc {
     color: #aaaaaa;
     margin: 1em 0 .5em;
+    display: inline;
+  }
+  .product-item-price {
+    display: inline;
+    color: #aaaaaa;
+    &:before {
+      content: " \022c5 ";
+      display: inline;
+      padding: 0 .4em 0 0;
+    }
   }
   form.product-overlay-form {
     margin-top: 2em;
@@ -134,7 +147,7 @@
       font-size: 1rem;
       vertical-align: middle;
       border: 0 none;
-      background: #f2f4ea;
+      background: $ZIP-dark-beige;
       padding: .5em 2em;
       text-align: center;
       max-width: min-content;
@@ -147,7 +160,7 @@
       margin: 1em;
     }
     .add-to-cart-submit {
-      background: #83a02b;
+      background: $ZIP-green;
       max-width: 80%;
       margin: 2em auto;
       padding: 1em;

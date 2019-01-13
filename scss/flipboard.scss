@@ -59,7 +59,7 @@
     .origin-flag-us:before {
       background-image:url('/images/country-flag-us.png');
     }
-    @media #{$ZIP-mid-screen} {
+    @media (max-width: 1280px) {
       .flipboard, .flapper {
         display:none;
       }
@@ -75,7 +75,7 @@
   }
   .entry-type {
     display: block;
-    @media #{$ZIP-mid-screen} {
+    @media (max-width: 1280px) {
         display:none;
     }
   }
