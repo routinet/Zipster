@@ -11,7 +11,7 @@
   background: url(/images/landing-background.png) repeat $ZIP-dark-beige;
   padding: 0;
   .content-area {
-    /* background-color: $ZIP-dark-beige; */
+    background-color: $ZIP-dark-beige;
   }
   h2 {
     display: inline-block;
@@ -42,7 +42,7 @@
       padding-bottom: 0.1em;
       text-transform: uppercase;
       line-height: 1.5em;
-      color: #707070;
+      color: $ZIP-black-text;
       font-weight: 700;
       letter-spacing: .07em;
       &:before {
@@ -85,7 +85,7 @@
 #section-quick-order {
   background: url('/images/clamshell.png') repeat;
   li {
-    background: none center bottom no-repeat white;
+    background: none center bottom no-repeat #ffffff;
     padding: 2em 3em 0;
     width: 20em;
     display: inline-block;
@@ -135,8 +135,8 @@
 
 #section-process {
   text-align: center;
-  border-top: 1px solid #e5e5e5;
-  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid $ZIP-grey-rule;
+  border-bottom: 1px solid $ZIP-grey-rule;
   dl {
     margin: 0 auto;
     position: relative;
@@ -153,7 +153,7 @@
     max-width: 315px;
     img {
       display: block;
-      max-width: 124px;
+      max-width: 150px;
       margin: 0 auto 1.5em;
     }
   }
@@ -164,7 +164,7 @@
 
 #section-sourcing {
   padding: 11em 0 11.5em;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid $ZIP-grey-rule;
   .content-area {
     text-align: left;
     width: 75%;
@@ -201,7 +201,6 @@
   h2 {
     padding: 3em 0 1em;
     font-size: 2em;
-    text-align: center;
   }
   p {
     line-height: 1.4em;
@@ -211,8 +210,8 @@
     right: 25%;
     width: 40%;
     height: 100px;
-    background: white;
-    border: 3px dotted red;
+    background: #ffffff;
+    border: 3px dotted #ff0000;
     padding: 1em;
     bottom: -5%;
     max-width: 200px;
@@ -237,7 +236,7 @@
   }
   .section-philosophy-content {
     display: inline-block;
-    text-align: left;
+    text-align: right;
     width: 35%;
     @media #{$ZIP-midsmall-screen} {
       display: block;

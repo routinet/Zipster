@@ -47,6 +47,7 @@ var ZJQ = ZJQ || {};
           $li = $('<li/>').html($link).addClass('menu-nav-link');
       $ul.append($li);
     });
+    $('.menu-nav-link', $ul).first().addClass('active')
     $('header#top-header').append($menu);
 
     $('.category-item-container').show(750);
@@ -78,6 +79,7 @@ var ZJQ = ZJQ || {};
     Z.renderProductData($ele, data);
     $ele.attr('id', 'product-overlay-' + data.id);
     $('<div/>').addClass('product-overlay-container')
+        .append('<div class="product-overlay-background"/>')
         .append($ele)
         .appendTo($('body'));
   };

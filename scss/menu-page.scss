@@ -10,7 +10,7 @@
 
 .category-item-description {
   max-width: 30%;
-  color: #8d8d8d;
+  color: $ZIP-light-black-text;
 }
 
 .category-item-preface {
@@ -40,9 +40,9 @@ nav.menu-nav-container {
         padding-bottom: 1.3em;
         color:#cbcbcb;
       }
-      &:hover a {
+      &.active a, &:hover a {
         font-weight: 900;
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid #000000;
         color:#000000;
       }
     }

@@ -10,7 +10,7 @@
 body {
   font-family: Archia, sans-serif;
   font-size: 12pt;
-  color: #222222;
+  color: $ZIP-black-text;
   text-align: left;
   letter-spacing: .08em;
 }
@@ -21,7 +21,7 @@ main {
 }
 
 a {
-  color: #222222;
+  color: $ZIP-black-text;
   text-decoration: none;
   &:hover {
     color: #000000;
@@ -41,8 +41,9 @@ table {
 
 input {
   font-family: Archia, sans-serif;
+  letter-spacing: .08em;
   &::placeholder {
-    color: #cccccc;
+    color: $ZIP-grey-rule;
   }
 }
 

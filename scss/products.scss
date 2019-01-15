@@ -1,7 +1,7 @@
 .product-item-title {
   font-size: 1.25rem;
   margin-bottom: .5em;
-  color: #333333;
+  color: $ZIP-black-text;
 }
 
 .product-item-description {
@@ -10,7 +10,7 @@
 
 .product-item-flags-container {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   text-align: right;
 }
@@ -37,7 +37,7 @@
   .product-item-container {
     height: 350px;
     width: 240px;
-    padding: 3em 0em 1em;
+    padding: 3em 0 1em;
     margin: 2px;
     display: inline-block;
     vertical-align: top;
@@ -55,9 +55,10 @@
       margin-bottom: 1em;
       padding: 0 1em;
       font-size: 0.8em;
-      color: #aaaaaa;
+      color: $ZIP-light-black-text;
       left: 1em;
       right: 1em;
+      text-align: left;
     }
   }
 }
@@ -65,11 +66,19 @@
 .product-overlay-container {
   position: fixed;
   z-index: 10;
-  background-color: #7b8168;
   top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
+  .product-overlay-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #30380d;
+    opacity: .75;
+  }
   .product-overlay-close {
     width: 16px;
     height: 16px;
@@ -86,6 +95,10 @@
     height: 80%;
     margin: 0 auto;
     overflow-y: scroll;
+    .product-item-flags-container {
+      left: 0;
+      right: initial;
+    }
   }
   .product-overlay-left {
     width: 60%;
@@ -126,13 +139,13 @@
     font-size: 2.25rem;
   }
   .product-item-desc {
-    color: #aaaaaa;
+    color: $ZIP-light-black-text;
     margin: 1em 0 .5em;
     display: inline;
   }
   .product-item-price {
     display: inline;
-    color: #aaaaaa;
+    color: $ZIP-light-black-text;
     &:before {
       content: " \022c5 ";
       display: inline;
@@ -148,7 +161,7 @@
       vertical-align: middle;
       border: 0 none;
       background: $ZIP-dark-beige;
-      padding: .5em 2em;
+      padding: .5em;
       text-align: center;
       max-width: min-content;
     }

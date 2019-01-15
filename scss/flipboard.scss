@@ -1,6 +1,6 @@
 .flipboard-container {
-  background-color: #333333;
-  color: #eeeeee;
+  background-color: $ZIP-black-text;
+  color: $ZIP-grey-rule;
   position: relative;
   padding: 1em;
   font-size: .7em;
@@ -23,7 +23,7 @@
     }
   }
   .entry-description {
-    background-color: #222222;
+    background-color: $ZIP-black-text;
     padding: .5em .75em;
     width:70%;
   }
@@ -32,12 +32,12 @@
       display: inline-block;
       height:42px;
       width:68px;
-      background: #222222;
+      background: $ZIP-black-text;
       position: relative;
       margin-right: 5px;
       &:before {
         background-size: contain;
-        background: #222222 no-repeat center center;
+        background: $ZIP-black-text no-repeat center center;
         display:block;
         content:'';
         position: relative;
@@ -102,7 +102,7 @@
 
 .flapper.XXS .digit div {
   border-radius: 1px;
-  background-color: #222222;
+  background-color: $ZIP-black-text;
 }
 
 .flapper.XXS .digit,

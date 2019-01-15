@@ -14,19 +14,19 @@
     nav {
       margin-top: 3em;
       ul {
-        border-bottom: 1px solid #dddddd;
+        border-bottom: 1px solid $ZIP-grey-rule;
         li {
           display: inline-block;
           font-size: .9rem;
-          color: #bbbbbb;
-          border-bottom: 1px solid #83a02b;
+          color: $ZIP-light-black-text;
+          border-bottom: 1px solid $ZIP-green;
           padding-bottom: .75em;
           text-align: left;
           margin: 0 2em 0 0;
           position: relative;
           top: 1px;
           &.active {
-            color: #222222;
+            color: $ZIP-black-text;
           }
         }
       }
@@ -76,7 +76,7 @@
     }
   }
   input {
-    background: #f2f4ea;
+    background: $ZIP-dark-beige;
     border: 0 none;
     font-size: 1rem;
     padding: .5em 1em;
@@ -89,7 +89,7 @@
 .account-address-item {
   padding: 1em 0 2em 5%;
   position: relative;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid $ZIP-grey-rule;
 }
 
 .account-address-item-delete {
@@ -118,17 +118,17 @@
   }
   .order-history-item-details-container {
     margin-top: 1.5em;
-    border: 1px solid #dddddd;
+    border: 1px solid $ZIP-grey-rule;
     padding: 1.5em;
     line-height: 2em;
   }
   .order-item-qty {
     margin-left: 1em;
-    color: #aaaaaa;
+    color: $ZIP-light-black-text;
   }
   .order-history-item-price {
     text-align: right;
-    color: #aaaaaa;
+    color: $ZIP-light-black-text;
   }
   tfoot {
     td, td.order-history-item-price {

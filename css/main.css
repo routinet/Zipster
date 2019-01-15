@@ -85,9 +85,10 @@ table {
 
 input {
   font-family: Archia, sans-serif;
+  letter-spacing: 0.08em;
 }
 input::placeholder {
-  color: #cccccc;
+  color: #e5e5e5;
 }
 
 h2 {
@@ -152,7 +153,7 @@ h3 {
 
 header#top-header {
   position: relative;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #e5e5e5;
   padding: 1em 0 0.6em;
   height: 70px;
 }
@@ -186,8 +187,8 @@ main section {
 
 #top-footer {
   font-size: 0;
-  background-color: #333333;
-  color: #aaaaaa;
+  background-color: #222222;
+  color: #8d8d8d;
 }
 @media (max-width: 1000px) {
   #top-footer {
@@ -227,7 +228,7 @@ main section {
 #top-footer #footer-content > div:before {
   content: "";
   width: 1.5em;
-  border-top: 1px solid white;
+  border-top: 1px solid #ffffff;
   display: block;
   margin-bottom: 2em;
 }
@@ -261,7 +262,7 @@ main section {
   width: 60%;
   line-height: 2em;
   padding: 0.25em 0.75em;
-  border-color: white;
+  border-color: #ffffff;
   color: #ffffff;
 }
 #top-footer #footer-copyright {
@@ -272,8 +273,8 @@ main section {
 }
 
 .flipboard-container {
-  background-color: #333333;
-  color: #eeeeee;
+  background-color: #222222;
+  color: #e5e5e5;
   position: relative;
   padding: 1em;
   font-size: 0.7em;
@@ -397,7 +398,7 @@ main section {
 .product-item-title {
   font-size: 1.25rem;
   margin-bottom: 0.5em;
-  color: #333333;
+  color: #222222;
 }
 
 .product-item-description {
@@ -406,7 +407,7 @@ main section {
 
 .product-item-flags-container {
   position: absolute;
-  left: 0;
+  right: 0;
   bottom: 0;
   text-align: right;
 }
@@ -432,7 +433,7 @@ main section {
 .product-list-container .product-item-container {
   height: 350px;
   width: 240px;
-  padding: 3em 0em 1em;
+  padding: 3em 0 1em;
   margin: 2px;
   display: inline-block;
   vertical-align: top;
@@ -451,19 +452,28 @@ main section {
   margin-bottom: 1em;
   padding: 0 1em;
   font-size: 0.8em;
-  color: #aaaaaa;
+  color: #8d8d8d;
   left: 1em;
   right: 1em;
+  text-align: left;
 }
 
 .product-overlay-container {
   position: fixed;
   z-index: 10;
-  background-color: #7b8168;
   top: 70px;
   left: 0;
   right: 0;
   bottom: 0;
+}
+.product-overlay-container .product-overlay-background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #30380d;
+  opacity: 0.75;
 }
 .product-overlay-container .product-overlay-close {
   width: 16px;
@@ -481,6 +491,10 @@ main section {
   height: 80%;
   margin: 0 auto;
   overflow-y: scroll;
+}
+.product-overlay-container .product-overlay-contents .product-item-flags-container {
+  left: 0;
+  right: initial;
 }
 .product-overlay-container .product-overlay-left {
   width: 60%;
@@ -521,13 +535,13 @@ main section {
   font-size: 2.25rem;
 }
 .product-overlay-container .product-item-desc {
-  color: #aaaaaa;
+  color: #8d8d8d;
   margin: 1em 0 0.5em;
   display: inline;
 }
 .product-overlay-container .product-item-price {
   display: inline;
-  color: #aaaaaa;
+  color: #8d8d8d;
 }
 .product-overlay-container .product-item-price:before {
   content: " ⋅";
@@ -544,7 +558,7 @@ main section {
   vertical-align: middle;
   border: 0 none;
   background: #f2f4ea;
-  padding: 0.5em 2em;
+  padding: 0.5em;
   text-align: center;
   max-width: min-content;
 }
@@ -578,7 +592,7 @@ main section {
   padding: 0;
 }
 #section-delivered-today .content-area {
-  /* background-color: $ZIP-dark-beige; */
+  background-color: #f2f4ea;
 }
 #section-delivered-today h2 {
   display: inline-block;
@@ -610,7 +624,7 @@ main section {
   padding-bottom: 0.1em;
   text-transform: uppercase;
   line-height: 1.5em;
-  color: #707070;
+  color: #222222;
   font-weight: 700;
   letter-spacing: 0.07em;
 }
@@ -652,7 +666,7 @@ main section {
   background: url("/images/clamshell.png") repeat;
 }
 #section-quick-order li {
-  background: none center bottom no-repeat white;
+  background: none center bottom no-repeat #ffffff;
   padding: 2em 3em 0;
   width: 20em;
   display: inline-block;
@@ -723,7 +737,7 @@ main section {
 }
 #section-process dd img {
   display: block;
-  max-width: 124px;
+  max-width: 150px;
   margin: 0 auto 1.5em;
 }
 @media (max-width: 1000px) {
@@ -778,7 +792,6 @@ main section {
 #section-sourcing h2 {
   padding: 3em 0 1em;
   font-size: 2em;
-  text-align: center;
 }
 #section-sourcing p {
   line-height: 1.4em;
@@ -788,8 +801,8 @@ main section {
   right: 25%;
   width: 40%;
   height: 100px;
-  background: white;
-  border: 3px dotted red;
+  background: #ffffff;
+  border: 3px dotted #ff0000;
   padding: 1em;
   bottom: -5%;
   max-width: 200px;
@@ -815,7 +828,7 @@ main section {
 }
 #section-philosophy .section-philosophy-content {
   display: inline-block;
-  text-align: left;
+  text-align: right;
   width: 35%;
 }
 @media (max-width: 1000px) {
@@ -904,9 +917,9 @@ nav.menu-nav-container ul li.menu-nav-link a {
   padding-bottom: 1.3em;
   color: #cbcbcb;
 }
-nav.menu-nav-container ul li.menu-nav-link:hover a {
+nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul li.menu-nav-link:hover a {
   font-weight: 900;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #000000;
   color: #000000;
 }
 
@@ -915,15 +928,27 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
   margin: 4em auto;
 }
 #catering-page main p {
-  max-width: 50%;
-  margin: 0 0 0 auto;
+  color: #8d8d8d;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 25% 1.5em 25%;
+  border-bottom: 1px solid #e5e5e5;
 }
 #catering-page main h1 {
-  float: left;
-  margin-left: 0.5em;
+  text-align: center;
 }
 #catering-page main .product-list-container {
   margin: 3em 0 5em;
+}
+#catering-page main .category-list-container {
+  margin-top: 2em;
+}
+#catering-page .product-overlay-container .product-overlay-right {
+  display: none;
+}
+#catering-page .product-overlay-container .product-overlay-left {
+  width: 100%;
+  float: none;
 }
 
 #account-page .content-area {
@@ -943,12 +968,12 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
   margin-top: 3em;
 }
 #account-page main nav ul {
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #e5e5e5;
 }
 #account-page main nav ul li {
   display: inline-block;
   font-size: 0.9rem;
-  color: #bbbbbb;
+  color: #8d8d8d;
   border-bottom: 1px solid #83a02b;
   padding-bottom: 0.75em;
   text-align: left;
@@ -1013,7 +1038,7 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
 .account-address-item {
   padding: 1em 0 2em 5%;
   position: relative;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid #e5e5e5;
 }
 
 .account-address-item-delete {
@@ -1041,17 +1066,17 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
 }
 #order-history .order-history-item-details-container {
   margin-top: 1.5em;
-  border: 1px solid #dddddd;
+  border: 1px solid #e5e5e5;
   padding: 1.5em;
   line-height: 2em;
 }
 #order-history .order-item-qty {
   margin-left: 1em;
-  color: #aaaaaa;
+  color: #8d8d8d;
 }
 #order-history .order-history-item-price {
   text-align: right;
-  color: #aaaaaa;
+  color: #8d8d8d;
 }
 #order-history tfoot td, #order-history tfoot td.order-history-item-price {
   color: #000000;
@@ -1094,7 +1119,7 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
   width: 100%;
   margin-top: 0.3em;
   padding: 0.75em 1em;
-  background: #f2f4ee;
+  background: #f2f4ea;
   border: 1px solid #f2f4ea;
 }
 .sign-in-controls label input[type=text]:active, .sign-in-controls label input[type=text]:focus, .sign-in-controls label input[type=password]:active, .sign-in-controls label input[type=password]:focus {
@@ -1140,7 +1165,7 @@ nav.menu-nav-container ul li.menu-nav-link:hover a {
 
 .sign-in-separator {
   margin: 3.25em;
-  border-top: 1px solid #aaaaaa;
+  border-top: 1px solid #e5e5e5;
 }
 .sign-in-separator:before {
   content: "or";

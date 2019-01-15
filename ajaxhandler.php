@@ -65,11 +65,10 @@ if (!$db) {
 // route the request
 $method = array_ifexists('requestType',$_POST);
 $result = array('requestType'=>$method);
-//error_log("running method=$method");
 switch($method) {
 	case 'product-catalog':
 		$ret = [];
-		$q = "SELECT * FROM categories";
+		$q = "SELECT * FROM categories order by weight";
 		if ($r = $db->query($q)) {
 			while ($rr = $r->fetch_assoc()) {
 				$ret[$rr['id']] = $rr;
@@ -83,6 +82,11 @@ switch($method) {
 			}
 			$r->free();
 		}
+		usort($ret, function($a, $b) {
+			return $a['weight'] == $b['weight'] ?
+				($a['id'] < $b['id'] ? -1 : 1) :
+				($a['weight'] < $b['weight'] ? -1 : 1);
+		});
 		$result['data'] = $ret;
 		break;
 	case 'product':

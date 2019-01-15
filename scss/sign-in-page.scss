@@ -32,7 +32,7 @@
       width: 100%;
       margin-top: .3em;
       padding: .75em 1em;
-      background: #f2f4ee;
+      background: $ZIP-dark-beige;
       border: 1px solid $ZIP-dark-beige;
       &:active, &:focus {
         border: 1px solid $ZIP-green;
@@ -80,7 +80,7 @@
 
 .sign-in-separator {
   margin: 3.25em;
-  border-top: 1px solid #aaaaaa;
+  border-top: 1px solid $ZIP-grey-rule;
   &:before {
     content: 'or';
     text-transform: uppercase;

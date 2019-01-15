@@ -1,6 +1,6 @@
 header#top-header {
   position: relative;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid $ZIP-grey-rule;
   padding: 1em 0 0.6em;
   height: 70px;
 }
@@ -40,8 +40,8 @@ main {
     display:none;
   }
     font-size: 0;
-  background-color: #333333;
-  color: #aaaaaa;
+  background-color: $ZIP-black-text;
+  color: $ZIP-light-black-text;
   & > * {
     font-size: 1rem;
   }
@@ -72,7 +72,7 @@ main {
       &:before {
         content: '';
         width: 1.5em;
-        border-top: 1px solid white;
+        border-top: 1px solid #ffffff;
         display: block;
         margin-bottom: 2em;
       }
@@ -107,7 +107,7 @@ main {
       width: 60%;
       line-height: 2em;
       padding: 0.25em 0.75em;
-      border-color: white;
+      border-color: #ffffff;
       color: #ffffff;
     }
   }
