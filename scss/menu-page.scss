@@ -1,5 +1,5 @@
 #menu-page main {
-  padding-top: 3em;
+  padding-top: 4em;
   max-width: $ZIP-max-desktop-width;
   margin: 0 auto;
 }
@@ -9,7 +9,7 @@
 }
 
 .category-item-description {
-  max-width: 30%;
+  max-width: 45%;
   color: $ZIP-light-black-text;
 }
 
@@ -43,7 +43,7 @@ nav.menu-nav-container {
       &.active a, &:hover a {
         font-weight: 900;
         border-bottom: 2px solid #000000;
-        color:#000000;
+        color:#515150;
       }
     }
   }

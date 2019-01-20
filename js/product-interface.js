@@ -43,7 +43,8 @@ var ZJQ = ZJQ || {};
     // Add the menu item for the categories.
     $toptarget.find('.category-item-container').each(function () {
       let $name = $(this).find('.category-item-title').text(),
-          $link = $('<a/>').attr('href', '#' + this.id).html($name),
+          $short = $(this).data('shortname'),
+          $link = $('<a/>').attr('href', '#' + this.id).html($short),
           $li = $('<li/>').html($link).addClass('menu-nav-link');
       $ul.append($li);
     });
@@ -56,7 +57,7 @@ var ZJQ = ZJQ || {};
   Z.renderCategory = function (r) {
     let id = r.id,
         $ele = Z.getTemplate('category-item-container');
-    $ele.attr('id', 'category-container-' + r.id).data('id', r.id);
+    $ele.attr('id', 'category-container-' + r.id).data('id', r.id).data('shortname', r.shortname);
     $ele.find('.category-item-title').html(r.name);
     $ele.find('.category-item-description').html(r.descript);
     if (r.imgpath) {

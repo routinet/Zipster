@@ -1,7 +1,12 @@
 .product-item-title {
   font-size: 1.25rem;
-  margin-bottom: .5em;
-  color: $ZIP-black-text;
+  margin-bottom: 0.25em;
+  color: #222222;
+  line-height: 1em;
+}
+
+.product-item-desc {
+  margin-bottom: .2em;
 }
 
 .product-item-description {
@@ -76,8 +81,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #30380d;
-    opacity: .75;
+    background-color: #383838; /*#30380d;*/
+    opacity: .8;
   }
   .product-overlay-close {
     width: 16px;
