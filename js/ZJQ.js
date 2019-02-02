@@ -5,6 +5,7 @@ var ZJQ = ZJQ || {};
 
   /* For debugging only.  Remove, or set to false for production */
   Z.debug_logger = true;
+  Z.last_random_color = false;
 
   /* a console logger */
   Z.log = function () {
@@ -61,14 +62,12 @@ var ZJQ = ZJQ || {};
 
   // Helper function to generate random colors from a palette or scheme.
   Z.randomColor = function () {
-    let minBright = 240,
-        mult = 255 - minBright,
-        mods = {r:0, g:0, b:3},
-        r = (Math.floor(Math.random() * mult) + minBright - mods.r).toString(16),
-        g = (Math.floor(Math.random() * mult) + minBright - mods.g).toString(16),
-        b = (Math.floor(Math.random() * mult) + minBright - mods.b).toString(16)
-    ;
-    return '#' + r + g + b;
+    let num_colors = 9;
+    do {
+      new_color = Math.floor(Math.random() * num_colors) + 1;
+    } while (new_color == Z.last_random_color);
+    Z.last_random_color = new_color;
+    return new_color;
   };
 
   /* Simple management of AJAX calls
@@ -138,7 +137,7 @@ var ZJQ = ZJQ || {};
     }
   }
 
-  Z.prepareCallback = function(ref, cb) {
+  Z.prepareCallback = function (ref, cb) {
     let o = ($.isArray(ref)) ? ref : [ref];
     (($.isArray(cb)) ? cb : [cb]).forEach(function (v, k) {
       if (v) {

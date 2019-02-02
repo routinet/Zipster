@@ -2,9 +2,10 @@
 (function ($, document, window, undefined) {
   $(document).ready(function () {
     // Set the background colors for any product containers.
-    $('.product-item-container').each(function () {
-      $(this).css('background-color', ZJQ.randomColor());
-    });
+    //$('.product-item-container').each(function () {
+      /* $(this).css('background-color', ZJQ.randomColor());*/
+    //  $(this).addClass('product-color-' + ZJQ.randomColor());
+    //});
 
     // Handle account page navigation
     $('#account-nav').on('click', 'li', function () {
@@ -62,6 +63,17 @@
         val++;
       }
       $target.val(val);
+    });
+
+    // Prevent the cart from showing on the landing page.
+    $('body#landing-page').addClass('no-cart');
+
+    // Hook to show/hide the cart.
+    $('body').on('click', '#order-now-link', function(e) {
+      if (!$('body').hasClass('no-cart')) {
+        e.preventDefault();
+        $('body').toggleClass('show-cart');
+      }
     })
   });
 })

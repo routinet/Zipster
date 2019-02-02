@@ -1,10 +1,11 @@
 .flipboard-container {
-  background-color: $ZIP-black-text;
+  background-color: $ZIP-black-background;
   color: $ZIP-grey-rule;
   position: relative;
-  padding: 1em;
+  padding: 3em 1em 1em;
   font-size: .7em;
   margin: 0 auto;
+  border-radius: .3em;
   @media #{$ZIP-mid-screen} {
     max-width: 550px;
   }
@@ -14,6 +15,12 @@
   table {
     border-spacing: 1em;
     white-space: nowrap;
+    th {
+      text-transform: uppercase;
+      vertical-align: top;
+      padding: 0 0 0 .5em;
+      letter-spacing: 0.27em;
+    }
     td {
       vertical-align: top;
       height:3em;
@@ -22,22 +29,25 @@
       background-color: initial;
     }
   }
-  .entry-description {
+  td.entry-description {
     background-color: #222222;
     padding: .5em .75em;
     width:70%;
   }
-  .entry-from {
+  td.entry-from {
     .origin-flag {
       display: inline-block;
       height:42px;
       width:68px;
-      background: $ZIP-black-text;
+      background: #222222;
       position: relative;
       margin-right: 5px;
+      /* @media (min-width: 1360px) {
+        display: none;
+      } */
       &:before {
         background-size: contain;
-        background: $ZIP-black-text no-repeat center center;
+        background: #222222 no-repeat center center;
         display:block;
         content:'';
         position: relative;
@@ -59,7 +69,7 @@
     .origin-flag-us:before {
       background-image:url('/images/country-flag-us.png');
     }
-    @media (max-width: 1280px) {
+    @media (max-width: 1360px) {
       .flipboard, .flapper {
         display:none;
       }
@@ -72,12 +82,15 @@
   }
   .entry-locale {
     display:block;
+    color: $ZIP-light-black-text;
   }
   .entry-type {
-    display: block;
-    @media (max-width: 1280px) {
+    @media (max-width: 1360px) {
         display:none;
     }
+  }
+  .entry-fish-type {
+    font-size: 1.4em;
   }
 }
 
@@ -102,7 +115,7 @@
 
 .flapper.XXS .digit div {
   border-radius: 1px;
-  background-color: $ZIP-black-text;
+  background-color: #222222;
 }
 
 .flapper.XXS .digit,

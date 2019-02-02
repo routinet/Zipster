@@ -6,17 +6,19 @@
       color: $ZIP-light-black-text;
       margin: 0 auto;
       text-align: center;
-      padding: 0 25% 1.5em 25%;
+      padding: 2.5em 10%;
       border-bottom: 1px solid $ZIP-grey-rule;
+      font-family: Archia, sans-serif;
     }
     h1 {
       text-align: center;
+      display: none;
     }
     .product-list-container {
       margin: 3em 0 5em;
     }
     .category-list-container {
-      margin-top: 2em;
+      margin-top: 3.5em;
     }
   }
   /*

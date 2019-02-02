@@ -13,6 +13,12 @@
   .content-area {
     background-color: $ZIP-dark-beige;
   }
+  .delivered-today-preface {
+    max-width:600px;
+    /*background: $ZIP-dark-beige;*/
+    padding-bottom: 2em;
+    margin: 0 auto;
+  }
   h2 {
     display: inline-block;
     padding: 0em 0.5em 0em;
@@ -25,24 +31,23 @@
     margin: 0 auto;
     padding: 0em 1em 1em;
     font-size: 1.4rem;
-    background: $ZIP-dark-beige;
     font-family: Archia, sans-serif;
   }
   #delivered-today-order-now {
     margin-top: 1em;
-    background: $ZIP-dark-beige;
     padding: 0.9em 2em;
   }
   #todays-deliveries {
-    margin: 2.25em auto 0;
+    margin: .25em auto 0;
     text-align: left;
+    /*background-color: $ZIP-dark-beige;*/
     .todays-date {
       text-align: center;
       margin: 1em auto 1em;
       padding-bottom: 0.1em;
       text-transform: uppercase;
       line-height: 1.5em;
-      color: $ZIP-black-text;
+      color: #333333;
       font-weight: 700;
       letter-spacing: .07em;
       &:before {
@@ -55,6 +60,7 @@
 
 #section-subscribe {
   background: $ZIP-light-beige;
+  padding: 4em 0;
   p {
     font-size: 1.35em;
     max-width: 75%;
@@ -84,12 +90,13 @@
 
 #section-quick-order {
   background: url('/images/clamshell.png') repeat;
+  padding: 4em 0;
   li {
     background: none center bottom no-repeat #ffffff;
-    padding: 2em 3em 0;
+    padding: 3em 3em 0;
     width: 20em;
+    height: 20em;
     display: inline-block;
-    height: 18em;
     vertical-align: top;
     text-align: left;
     @media #{$ZIP-midsmall-screen}{
@@ -110,6 +117,7 @@
       max-width: 75%;
       height: 3.5em;
       letter-spacing: 0.02em;
+      margin-bottom: .25em;
     }
     span.quick-order-anchor:after {
       content: '\02192';
@@ -121,12 +129,12 @@
 }
 
 #section-favorites {
-  padding: 4em 0;
+  padding: 7em 0 6em;
   h2 {
-    margin-bottom: .75em;
+    margin-bottom: .5em;
   }
   .product-list-container {
-    margin: 2em auto;
+    margin: 3.5em auto 5em;
   }
   #favorites-order-now {
     padding: 0.9em 2em;
@@ -137,6 +145,7 @@
   text-align: center;
   border-top: 1px solid $ZIP-grey-rule;
   border-bottom: 1px solid $ZIP-grey-rule;
+  padding: 4em 0 5.5em;
   dl {
     margin: 0 auto;
     position: relative;
@@ -270,7 +279,7 @@
     }
   }
   h2 {
-    padding: 3em 0 1em;
+    padding: 7.5em 0 1em;
     font-size: 2em;
   }
 }

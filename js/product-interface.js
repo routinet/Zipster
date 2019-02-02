@@ -28,6 +28,8 @@ var ZJQ = ZJQ || {};
         $ul = $('<ul/>'),
         $menu = $('<nav/>').addClass('menu-nav-container').append($ul)
     ;
+    $toptarget.empty();
+
     // Build the category elements.
     $.each(data, function (i, v) {
       let $ele = Z.renderCategory(v),
@@ -70,7 +72,7 @@ var ZJQ = ZJQ || {};
     let $ele = Z.getTemplate('product-item-container'),
         $flags = $ele.find('product-item-flags-container');
     Z.renderProductData($ele, r);
-    $ele.attr('id', 'product-container-' + r.id)
+    $ele.attr('id', 'product-container-' + r.id);
     return $ele;
   };
 
@@ -89,7 +91,8 @@ var ZJQ = ZJQ || {};
     let $flags = $ele.find('.product-item-flags-container');
 
     $ele.attr('id', 'product-' + data.id)
-        .css('background-color', Z.randomColor())
+        .addClass('product-color-' + ZJQ.randomColor())
+        /*.css('background-color', Z.randomColor())*/
         .data('id', data.id);
     $ele.find('.product-item-price').html('$' + data.price);
     $ele.find('.product-item-desc').html(data.descript);
@@ -106,6 +109,11 @@ var ZJQ = ZJQ || {};
   }
 
   Z.getTemplate = function(t) {
+    let $source = $('#template-' + t + ' > div'),
+        $first = $source.first(),
+        $clone = $first.clone()
+    ;
+    return $clone;
     return $('#template-' + t + ' > div').first().clone();
   }
 })
