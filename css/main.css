@@ -490,7 +490,7 @@ main section {
   display: inline-block;
 }
 
-.product-item-flag-gf {
+.i-gluten-free {
   background-image: url("/images/product-flag-gf.png");
 }
 
@@ -505,16 +505,22 @@ main section {
 .product-list-container .product-item-container {
   height: 350px;
   width: 240px;
-  padding: 3em 0 1em;
+  padding: 2.5em 0 1em;
   margin: 2px;
   display: inline-block;
   vertical-align: top;
   position: relative;
+  cursor: pointer;
 }
 .product-list-container .product-item-container .product-item-image {
   display: block;
   margin: 0 auto;
-  max-width: max-content;
+  max-width: 240px;
+  text-align: center;
+}
+.product-list-container .product-item-container .product-item-image img {
+  max-width: 90%;
+  max-height: 150px;
 }
 .product-list-container .product-item-container .product-item-description-container {
   position: absolute;
@@ -651,6 +657,7 @@ main section {
   text-transform: uppercase;
   font-weight: 800;
   letter-spacing: 0.05em;
+  cursor: pointer;
 }
 
 #landing-page main {
@@ -982,6 +989,7 @@ main section {
   margin: 1em 0 0.5em;
   font-size: 1.5em;
   font-weight: bold;
+  text-transform: capitalize;
 }
 
 nav.menu-nav-container {

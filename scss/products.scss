@@ -63,7 +63,7 @@
   display: inline-block;
 }
 
-.product-item-flag-gf {
+.i-gluten-free {
   background-image: url('/images/product-flag-gf.png');
 }
 
@@ -79,15 +79,21 @@
   .product-item-container {
     height: 350px;
     width: 240px;
-    padding: 3em 0 1em;
+    padding: 2.5em 0 1em;
     margin: 2px;
     display: inline-block;
     vertical-align: top;
     position: relative;
+    cursor: pointer;
     .product-item-image {
       display: block;
       margin: 0 auto;
-      max-width: max-content;
+      max-width: 240px;
+      text-align: center;
+      img {
+        max-width: 90%;
+        max-height: 150px;
+      }
     }
     .product-item-description-container {
       position: absolute;
@@ -102,6 +108,7 @@
       right: 1em;
       text-align: left;
     }
+
   }
 }
 
@@ -223,6 +230,7 @@
       text-transform: uppercase;
       font-weight: 800;
       letter-spacing: .05em;
+      cursor: pointer;
     }
   }
 }

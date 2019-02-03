@@ -5,7 +5,6 @@ var ZJQ = ZJQ || {};
 
   /* For debugging only.  Remove, or set to false for production */
   Z.debug_logger = true;
-  Z.last_random_color = false;
 
   /* a console logger */
   Z.log = function () {
@@ -14,13 +13,10 @@ var ZJQ = ZJQ || {};
         console.log(arguments[i]);
       }
     }
-  }
+  };
 
   Z.jqxhr = {};
-  // default AJAX method
-  Z.ajax_method = "POST";
-  // default AJAX URL
-  Z.ajax_url = '/ajaxhandler.php';
+
   // default options for the flipboard library
   Z.flipboard_default_options = {
     width: 5,             // number of digits
@@ -31,6 +27,8 @@ var ZJQ = ZJQ || {};
     min_timing: 10,       // the minimum timing for digit animation
     threshhold: 100      // the point at which Flapper will switch from
   };
+  // Keep track of background colors for products.
+  Z.last_random_color = false;
   // Use-specific option overrides for flipboard library.
   Z.flipboard_options = {
     date_month: {
@@ -70,6 +68,28 @@ var ZJQ = ZJQ || {};
     return new_color;
   };
 
+  Z.trim = function (s, c) {
+    if (c === "]") c = "\\]";
+    if (c === "\\") c = "\\\\";
+    return s.replace(new RegExp(
+        "^[" + c + "]+|[" + c + "]+$", "g"
+    ), "");
+  };
+
+  Z.getTemplate = function (t) {
+    return $('#template-' + t + ' > div').first().clone();
+  };
+
+  Z.showProductOverlay = function ($ele) {
+    let id = $ele.data('id'),
+        cid = $ele.closest('.category-item-container').data('id')
+    ;
+    if (id && cid) {
+      Z.api.execute('product_overlay', cid, id);
+    }
+  };
+
+
   /* Simple management of AJAX calls
  This handler utilizes the request cache ZJQ.jqxhr, and formats an
  AJAX request to include fields required by the server.  It also
@@ -84,15 +104,14 @@ var ZJQ = ZJQ || {};
   Z.doAjax = function (n, o, cb) {
     n = n || 'default';
     o = o || {type: 'POST'};
-    let t = (o.type ? o.type : Z.ajax_method),
-        allcb = o.complete ? ($.isArray(o.complete) ? o.complete : [o.complete]) : []
+    let t = (o.type ? o.type : 'POST'),
+        allcb = Z.prepareCallback(o.complete)
     ;
     if (Z.jqxhr[n]) {
       try {
         Z.jqxhr[n].abort();
       } catch (e) {
       }
-      ;
       Z.jqxhr[n] = null;
     }
     (($.isArray(cb)) ? cb : [cb]).forEach(function (v, k) {
@@ -100,10 +119,10 @@ var ZJQ = ZJQ || {};
         allcb.push(v);
       }
     });
-    let oo = $.extend({type: t, dataType: 'json', url: Z.ajax_url}, o, {complete: Z.handlerDoAjax});
+    let oo = $.extend({type: t, dataType: 'json'}, o, {complete: Z.handlerDoAjax});
     Z.jqxhr[n] = $.ajax(oo);
     Z.jqxhr[n].userHandler = allcb;
-  }
+  };
 
   /* In case an AJAX call fails
      m = a message to use in the alert
@@ -123,8 +142,8 @@ var ZJQ = ZJQ || {};
   Z.handlerDoAjax = function (r, s) {
     var $this = this;
     Z.log('===AJAX response JSON', r.responseJSON);
-    if ((!r.responseJSON) || r.responseJSON.result != 'OK') {
-      Z.log('AJAX call failed! (' + s + ")", "result=", r.responseJSON.result, "\nmsg=", r.responseJSON.msg);
+    if (!r.responseJSON || r.status != 200 || r.statusText != 'OK') {
+      Z.log('AJAX call failed! (' + s + ")", r.statusText + ' (' + r.status + ')');
     }
     if (r.userHandler && r.userHandler.length) {
       r.userHandler.forEach(function (v, i) {
@@ -138,12 +157,14 @@ var ZJQ = ZJQ || {};
   }
 
   Z.prepareCallback = function (ref, cb) {
-    let o = ($.isArray(ref)) ? ref : [ref];
-    (($.isArray(cb)) ? cb : [cb]).forEach(function (v, k) {
-      if (v) {
-        o.push(v);
-      }
-    });
+    let o = ref ? ($.isArray(ref) ? ref : [ref]) : [];
+    if (cb) {
+      (($.isArray(cb)) ? cb : [cb]).forEach(function (v, k) {
+        if (v) {
+          o.push(v);
+        }
+      });
+    }
     return o;
   }
 

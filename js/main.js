@@ -34,12 +34,17 @@
 
     // Populate products and categories if a menu block exists.
     if ($('.category-list-container').length) {
-      ZJQ.getProductCatalog();
+      //ZJQ.getProductCatalog();
+      ZJQ.api.execute('catalog');
     }
 
     // Hook the click event for products
     $('body').on('click', '.product-item-container', function(e){
-      ZJQ.showProductOverlay(e.target);
+      let $e = $(e.target);
+      if (!$e.hasClass('product-item-container')) {
+        $e = $e.closest('.product-item-container');
+      }
+      ZJQ.showProductOverlay($e);
     });
 
     // Hook to close the product overlay
