@@ -1,0 +1,67 @@
+#account-create-page {
+  main {
+    max-width: initial;
+    padding: 2em 1em;
+  }
+  .content-area {
+    width: 100%;
+  }
+  .sign-in-controls {
+    text-align: center;
+    & > div {
+      display: inline-block;
+      vertical-align: middle;
+      width: 300px;
+      position: relative;
+    }
+    #create-account-info {
+      width: 400px;
+    }
+    .sign-in-facebook {
+      margin: 0 auto;
+      position: relative;
+      top: 50%;
+    }
+    .sign-in-separator {
+      width: 50px;
+      text-align: center;
+      margin: 0 1em;
+      line-height:300px;
+      border: 0 none;
+      &:before {
+        content: "or";
+        text-transform: uppercase;
+        transform: translate3d(-50%, -0%, 0);
+        background: #ffffff;
+        padding: 1.5em 0;
+        color: $ZIP-grey-rule;
+        position: static;
+      }
+    }
+    .separator-bar {
+      /*border-left: 2px solid $ZIP-grey-rule;
+      border-right: 2px solid $ZIP-grey-rule;
+      border-top: 0 none;
+      border-bottom: 0 none; */
+      border-width: 0 2px;
+      border-color: $ZIP-grey-rule;
+      border-style: none solid;
+      height: 100%;
+      width: 4px;
+      margin: 0 auto;
+      position: absolute;
+      top:0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: -1;
+    }
+  }
+  .sign-in-link {
+    display: inline-block;
+    a {
+      font-size: 0.7em;
+      font-weight: 400;
+      letter-spacing: .001em;
+    }
+  }
+}

@@ -1286,7 +1286,7 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   width: 0px;
   top: 70px;
   right: 0;
-  z-index: 100;
+  z-index: 99;
   background-color: white;
   border-left: solid 1px #e5e5e5;
   padding-top: 2em;
@@ -1340,17 +1340,12 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   text-align: right;
   color: #8d8d8d;
 }
-#cart-sidebar .cart-item-price:before {
-  content: "$";
-}
-#cart-sidebar .cart-item-total-label {
+#cart-sidebar .cart-summary-container .cart-item-name {
   float: left;
+  width: 50%;
 }
-#cart-sidebar .cart-item-total-price {
-  text-align: right;
-}
-#cart-sidebar .cart-item-total-price:before {
-  content: "$";
+#cart-sidebar .cart-summary-container .cart-item-price {
+  color: inherit;
 }
 
 .show-cart #cart-sidebar {
@@ -1366,6 +1361,72 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
 }
 .no-cart .cart-item-remove {
   display: none;
+}
+
+#account-create-page main {
+  max-width: initial;
+  padding: 2em 1em;
+}
+#account-create-page .content-area {
+  width: 100%;
+}
+#account-create-page .sign-in-controls {
+  text-align: center;
+}
+#account-create-page .sign-in-controls > div {
+  display: inline-block;
+  vertical-align: middle;
+  width: 300px;
+  position: relative;
+}
+#account-create-page .sign-in-controls #create-account-info {
+  width: 400px;
+}
+#account-create-page .sign-in-controls .sign-in-facebook {
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+}
+#account-create-page .sign-in-controls .sign-in-separator {
+  width: 50px;
+  text-align: center;
+  margin: 0 1em;
+  line-height: 300px;
+  border: 0 none;
+}
+#account-create-page .sign-in-controls .sign-in-separator:before {
+  content: "or";
+  text-transform: uppercase;
+  transform: translate3d(-50%, 0%, 0);
+  background: #ffffff;
+  padding: 1.5em 0;
+  color: #e5e5e5;
+  position: static;
+}
+#account-create-page .sign-in-controls .separator-bar {
+  /*border-left: 2px solid $ZIP-grey-rule;
+  border-right: 2px solid $ZIP-grey-rule;
+  border-top: 0 none;
+  border-bottom: 0 none; */
+  border-width: 0 2px;
+  border-color: #e5e5e5;
+  border-style: none solid;
+  height: 100%;
+  width: 4px;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+#account-create-page .sign-in-link {
+  display: inline-block;
+}
+#account-create-page .sign-in-link a {
+  font-size: 0.7em;
+  font-weight: 400;
+  letter-spacing: 0.001em;
 }
 
 /*# sourceMappingURL=main.css.map */
