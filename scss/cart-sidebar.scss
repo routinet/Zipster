@@ -4,7 +4,7 @@
   width: 0px;
   top: 70px;
   right: 0;
-  z-index: 100;
+  z-index: 99;
   background-color: white;
   border-left: solid 1px $ZIP-grey-rule;
   padding-top: 2em;
@@ -42,7 +42,7 @@
     position: absolute;
     right: 0;
     margin-right: .5em;
-    display:none;
+    display: none;
   }
 
   .cart-item-name {
@@ -62,19 +62,15 @@
   .cart-item-price {
     text-align: right;
     color: #8d8d8d;
-    &:before {
-      content: '$';
+  }
+
+  .cart-summary-container {
+    .cart-item-name {
+      float: left;
+      width: 50%;
     }
-  }
-
-  .cart-item-total-label {
-    float: left;
-  }
-
-  .cart-item-total-price {
-    text-align: right;
-    &:before {
-      content: '$';
+    .cart-item-price {
+      color: inherit;
     }
   }
 }

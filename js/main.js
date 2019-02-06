@@ -3,6 +3,8 @@
   $(document).ready(function () {
     let $body = $('body');
 
+    ZJQ.body_id = $body.attr('id');
+
     // All hooks delegated through body element.
     $body
         // Hook the click event for products
@@ -42,13 +44,37 @@
         .on('click', '#order-now-link', function (e) {
           if (!$body.hasClass('no-cart')) {
             e.preventDefault();
-            $body.toggleClass('show-cart');
+            ZJQ.showCartSidebar();
           }
+        })
+
+        // Hook to add selection to cart.
+        .on('click', '.add-to-cart-submit', function(e) {
+          ZJQ.add_to_cart($(e.target));
+        })
+
+        //Hook to delete selection from cart.
+        .on('click', '.cart-item-remove', function(e) {
+          ZJQ.delete_from_cart($(e.target));
+        })
+
+        // Hook to handle sign-in submission.
+        .on('submit', '.sign-in-credentials', function(e) {
+          e.preventDefault();
+          let $e = $(e.target),
+              name = $e.find('input[name="sign-in-email"]').val(),
+              pass = $e.find('input[name="sign-in-password"]').val();
+          ZJQ.api.execute('sign_in', name, pass);
         })
     ;
 
-    // Prevent the cart from showing on the landing page.
-    $('body#landing-page').addClass('no-cart');
+    // If on the landing page, suppress the cart.  Otherwise, populate it.
+    if (ZJQ.no_cart.includes(ZJQ.body_id.replace('-page', ''))) {
+      $body.addClass('no-cart');
+    }
+    else {
+      ZJQ.api.execute('get_cart');
+    }
 
 
     // Handle account page navigation

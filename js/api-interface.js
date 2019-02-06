@@ -8,11 +8,6 @@ var ZJQ = ZJQ || {};
    * Build out all the API-related functions and properties.
    */
 
-  A.authkey = {
-    key: '',
-    expire: 0
-  };
-
   A.defaults = {
     method: "GET",
     host: "staging.zokusushi.com",
@@ -22,7 +17,6 @@ var ZJQ = ZJQ || {};
   };
 
   A.definitions = {
-    login: {},
     catalog: {
       name: 'cities/NYC/stores/ZS/menus/all/items',
     },
@@ -32,11 +26,21 @@ var ZJQ = ZJQ || {};
     product_overlay: {
       name: 'cities/NYC/stores/ZS/menus/{1}/items/{2}'
     },
+    get_cart: {
+      auth_required: true,
+      name: 'cities/NYC/stores/ZS/cart',
+      method: 'GET',
+    },
     add_cart: {
       auth_required: true,
       name: 'cities/NYC/stores/ZS/items/{1}/cart/add',
       method: 'POST',
       data: {quantity: 2},
+    },
+    sign_in: {
+      name: 'customers/login',
+      method: 'POST',
+      data: {email: 1, password: 2},
     },
   };
 
@@ -63,12 +67,26 @@ var ZJQ = ZJQ || {};
       });
     }
     return name;
-  }
+  };
 
   A.resolveAuth = function () {
-    // if no cookie exists, authenticate and store
-    // read auth cookie
-    // create Bearer token
+    // if no cookie exists, forward to sign-in page
+    let token = document.Cookies.getItem('token');
+    if (!(token || $('body').hasClass('no-cart'))) {
+      window.location.href = '/sign-in.html'
+    }
+    return token ? 'Bearer ' + token : '';
+  };
+
+  A.setAuth = function(d) {
+    let a = false;
+    if (d.hasOwnProperty('auth_token')) {
+      document.Cookies.setItem('token', d.auth_token, 86400, '/', null, true);
+      delete d.auth_token;
+      a = true;
+    }
+    ZJQ.user_data = d || {};
+    return a;
   };
 
   A.execute = function (call) {
@@ -139,7 +157,8 @@ var ZJQ = ZJQ || {};
         }
       });
 
-      $('.menu-nav-link', $ul).first().addClass('active')
+      $('.menu-nav-link', $ul).first().addClass('active');
+
       $('header#top-header').append($menu);
 
       $('.category-item-container').show(750);
@@ -148,6 +167,31 @@ var ZJQ = ZJQ || {};
     product_overlay: function (r) {
       $('body').append(A.render.product_overlay(r));
     },
+
+    sign_in: function(r) {
+      let data = r.responseJSON || {};
+      if (data.hasOwnProperty('auth_token')) {
+        document.Cookies.setItem('token', data.auth_token, 86400, '/', null, true);
+        delete data.auth_token;
+        ZJQ.user_data = data;
+        if (A.setAuth(data)) {
+          window.history.go(-1);
+        }
+      }
+      else {
+        A.render.sign_in_fail();
+      }
+    },
+
+    get_cart: function(r) {
+      A.render.cart(r.responseJSON || {});
+    },
+
+    add_cart: function(r) {
+      A.handlers.get_cart(r);
+      ZJQ.showCartSidebar();
+    },
+
   };
 
   /**
@@ -202,6 +246,48 @@ var ZJQ = ZJQ || {};
       return $('<div/>').addClass('product-overlay-container')
           .append('<div class="product-overlay-background"/>')
           .append($ele);
+    },
+
+    sign_in_fail: function () {
+      alert('sign in failed');
+    },
+
+    cart: function (r) {
+      let $cart = $('#cart-sidebar').empty();
+      if (r.items.length) {
+        $cart.removeClass('has-empty-cart').addClass('has-cart-items');
+        $.each(r.items, function (i,v) {
+          $cart.append(A.render.cart_item(v));
+        });
+        $cart.append(A.render.cart_summary(r));
+      }
+      else {
+        $cart.removeClass('has-cart-items').addClass('has-empty-cart');
+      }
+      $('<div/>').addClass("cart-sidebar-checkout").html('Checkout').appendTo($cart);
+    },
+
+    cart_item: function (r) {
+      let $e = $('<div/>').addClass('cart-item').data('id', r.menu_item_id),
+          is_item = r.hasOwnProperty('quantity');
+      if (is_item) $('<div/>').addClass('cart-item-remove').appendTo($e);
+      $('<div/>').addClass('cart-item-name').html(r.name).appendTo($e);
+      if (is_item) $('<div/>').addClass('cart-item-qty').html(r.quantity).appendTo($e);
+      $('<div/>').addClass('cart-item-price').html(r.paid_price).appendTo($e);
+      return $e;
+    },
+
+    cart_summary: function (r) {
+      let $e = $('<div/>').addClass('cart-summary-container'),
+          s = r.summary;
+      if (s.hasOwnProperty('tax') && s.tax != '$0.00') {
+        $e.append(A.render.cart_item({name: 'Tax', paid_price: s.tax}).addClass('cart-summary-tax'));
+      }
+      if (s.hasOwnProperty('delivery_fee') && s.delivery_fee != '$0.00') {
+        $e.append(A.render.cart_item({name: 'Delivery Fee', paid_price: s.delivery_fee}).addClass('cart-summary-delivery'));
+      }
+      $e.append(A.render.cart_item({name: 'Total', paid_price: s.net_value}).addClass('cart-summary-total'));
+      return $e;
     },
   };
 

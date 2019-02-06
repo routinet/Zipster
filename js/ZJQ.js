@@ -17,6 +17,8 @@ var ZJQ = ZJQ || {};
 
   Z.jqxhr = {};
 
+  Z.no_cart = ['landing', 'sign-in', 'account-create'];
+
   // default options for the flipboard library
   Z.flipboard_default_options = {
     width: 5,             // number of digits
@@ -58,6 +60,8 @@ var ZJQ = ZJQ || {};
     }
   };
 
+  Z.user_data = {};
+
   // Helper function to generate random colors from a palette or scheme.
   Z.randomColor = function () {
     let num_colors = 9;
@@ -87,6 +91,34 @@ var ZJQ = ZJQ || {};
     if (id && cid) {
       Z.api.execute('product_overlay', cid, id);
     }
+  };
+
+  Z.showCartSidebar = function (t) {
+    if (t === undefined) {
+      $('body').toggleClass('show-cart');
+    }
+    else if (t) {
+      $('body').addClass('show-cart');
+    }
+    else {
+      $('body').removeClass('show-cart');
+    }
+  };
+
+  Z.add_to_cart = function ($e) {
+    let $target = $e.closest('form').find('.add-to-cart-quantity'),
+        qty = parseInt($target.val()),
+        id = $e.closest('.product-overlay-contents').data('id');
+    Z.api.execute('add_cart', id, qty);
+    Z.showCartSidebar(true);
+  };
+
+  Z.delete_from_cart = function ($e) {
+    let $top = $e.closest('.cart-item'),
+        id = $top.data('id'),
+        q = parseInt($top.find('.cart-item-qty').html());
+    Z.api.execute('add_cart', id, 0-q);
+    Z.showCartSidebar(true);
   };
 
 
