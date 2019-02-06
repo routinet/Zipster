@@ -78,7 +78,7 @@ var ZJQ = ZJQ || {};
     return token ? 'Bearer ' + token : '';
   };
 
-  A.setAuth = function(d) {
+  A.setAuth = function (d) {
     let a = false;
     if (d.hasOwnProperty('auth_token')) {
       document.Cookies.setItem('token', d.auth_token, 86400, '/', null, true);
@@ -168,26 +168,20 @@ var ZJQ = ZJQ || {};
       $('body').append(A.render.product_overlay(r));
     },
 
-    sign_in: function(r) {
-      let data = r.responseJSON || {};
-      if (data.hasOwnProperty('auth_token')) {
-        document.Cookies.setItem('token', data.auth_token, 86400, '/', null, true);
-        delete data.auth_token;
-        ZJQ.user_data = data;
-        if (A.setAuth(data)) {
-          window.history.go(-1);
-        }
+    sign_in: function (r) {
+      if (A.setAuth(r.responseJSON || {})) {
+        window.history.go(-1);
       }
       else {
         A.render.sign_in_fail();
       }
     },
 
-    get_cart: function(r) {
+    get_cart: function (r) {
       A.render.cart(r.responseJSON || {});
     },
 
-    add_cart: function(r) {
+    add_cart: function (r) {
       A.handlers.get_cart(r);
       ZJQ.showCartSidebar();
     },
@@ -256,7 +250,7 @@ var ZJQ = ZJQ || {};
       let $cart = $('#cart-sidebar').empty();
       if (r.items.length) {
         $cart.removeClass('has-empty-cart').addClass('has-cart-items');
-        $.each(r.items, function (i,v) {
+        $.each(r.items, function (i, v) {
           $cart.append(A.render.cart_item(v));
         });
         $cart.append(A.render.cart_summary(r));
@@ -284,7 +278,10 @@ var ZJQ = ZJQ || {};
         $e.append(A.render.cart_item({name: 'Tax', paid_price: s.tax}).addClass('cart-summary-tax'));
       }
       if (s.hasOwnProperty('delivery_fee') && s.delivery_fee != '$0.00') {
-        $e.append(A.render.cart_item({name: 'Delivery Fee', paid_price: s.delivery_fee}).addClass('cart-summary-delivery'));
+        $e.append(A.render.cart_item({
+          name: 'Delivery Fee',
+          paid_price: s.delivery_fee
+        }).addClass('cart-summary-delivery'));
       }
       $e.append(A.render.cart_item({name: 'Total', paid_price: s.net_value}).addClass('cart-summary-total'));
       return $e;
