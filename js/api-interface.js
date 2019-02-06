@@ -29,7 +29,6 @@ var ZJQ = ZJQ || {};
     get_cart: {
       auth_required: true,
       name: 'cities/NYC/stores/ZS/cart',
-      method: 'GET',
     },
     add_cart: {
       auth_required: true,
@@ -42,6 +41,11 @@ var ZJQ = ZJQ || {};
       method: 'POST',
       data: {email: 1, password: 2},
     },
+    create_account: {
+      name: 'customers/new',
+      method: 'POST',
+      data: {name: 1, lastname: 2, email: 3, password: 4, password_confirmation: 5, mobile: 6},
+    }
   };
 
   A.buildApiUrl = function (req, params) {
@@ -184,6 +188,15 @@ var ZJQ = ZJQ || {};
     add_cart: function (r) {
       A.handlers.get_cart(r);
       ZJQ.showCartSidebar();
+    },
+
+    create_account: function (r) {
+      if (A.setAuth(r.responseJSON || {})) {
+        window.history.go(-1);
+      }
+      else {
+        alert('CREATE ACCOUNT FAILED');
+      }
     },
 
   };

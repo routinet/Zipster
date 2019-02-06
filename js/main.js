@@ -7,7 +7,7 @@
 
     // All hooks delegated through body element.
     $body
-        // Hook the click event for products
+    // Hook the click event for products
         .on('click', '.product-item-container', function (e) {
           let $e = $(e.target);
           if (!$e.hasClass('product-item-container')) {
@@ -49,22 +49,35 @@
         })
 
         // Hook to add selection to cart.
-        .on('click', '.add-to-cart-submit', function(e) {
+        .on('click', '.add-to-cart-submit', function (e) {
           ZJQ.add_to_cart($(e.target));
         })
 
         //Hook to delete selection from cart.
-        .on('click', '.cart-item-remove', function(e) {
+        .on('click', '.cart-item-remove', function (e) {
           ZJQ.delete_from_cart($(e.target));
         })
 
         // Hook to handle sign-in submission.
-        .on('submit', '.sign-in-credentials', function(e) {
+        .on('submit', '.sign-in-credentials', function (e) {
           e.preventDefault();
           let $e = $(e.target),
               name = $e.find('input[name="sign-in-email"]').val(),
               pass = $e.find('input[name="sign-in-password"]').val();
           ZJQ.api.execute('sign_in', name, pass);
+        })
+
+        // Hook to submit create account form.
+        .on('submit', '#create-account-form', function (e) {
+          e.preventDefault();
+          let $e = $(e.target),
+              name = $e.find('input[name="name"]').val(),
+              lname = $e.find('input[name="lastname"]').val(),
+              email = $e.find('input[name="email"]').val(),
+              pass = $e.find('input[name="password"]').val(),
+              passc = $e.find('input[name="password_confirmation"]').val(),
+              mobile = $e.find('input[name="mobile"]').val();
+          ZJQ.api.execute('create_account', name, lname, email, pass, passc, mobile);
         })
     ;
 
@@ -91,7 +104,7 @@
 
     // Light up the flipboards
     $('tr:first-child .flipboard').each(function () {
-    //$('tr .flipboard').each(function () {
+      //$('tr .flipboard').each(function () {
       let $this = $(this),
           this_opts = $this.data('flip-option'),
           opts = JSON.parse(JSON.stringify(ZJQ.flipboard_default_options))
