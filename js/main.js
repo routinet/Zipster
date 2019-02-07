@@ -79,6 +79,25 @@
               mobile = $e.find('input[name="mobile"]').val();
           ZJQ.api.execute('create_account', name, lname, email, pass, passc, mobile);
         })
+
+        // Hook to delete an address.
+        .on('click', '.account-address-item-delete', function(e) {
+          let $e = $(e.target),
+              id = $e.closest('.address-list-item').data('id');
+          ZJQ.api.execute('account_delete_address', id);
+        })
+
+        // Hook to save a new address.
+        .on('click', '#account-add-address', function(e) {
+          let $e = $(e.target),
+              $top = $e.closest('.address-list-item'),
+              title = $top.find('input[name="address-name"]').val(),
+              addr = $top.find('input[name="address-street"]').val(),
+              apt = $top.find('input[name="address-apt"]').val(),
+              zip = $top.find('input[name="address-zip"]').val(),
+              phone = $top.find('input[name="address-phone"]').val();
+          ZJQ.api.execute('account_add_address', title, addr, apt, zip, phone);
+        })
     ;
 
     // If on the landing page, suppress the cart.  Otherwise, populate it.
@@ -89,6 +108,12 @@
       ZJQ.api.execute('get_cart');
     }
 
+    // If on the account page, populate the address list and user info.
+    if ($body.attr('id') == 'account-page') {
+      $body.find('input[name="account-full-name"]').val(ZJQ.user_data.name + ' ' + ZJQ.user_data.lastname);
+      $body.find('input[name="account-email"]').val(ZJQ.user_data.email);
+      ZJQ.api.execute('account_address_list');
+    }
 
     // Handle account page navigation
     $('#account-nav').on('click', 'li', function () {

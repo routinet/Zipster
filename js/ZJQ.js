@@ -177,6 +177,7 @@ var ZJQ = ZJQ || {};
     if (!r.responseJSON || r.status != 200 || r.statusText != 'OK') {
       Z.log('AJAX call failed! (' + s + ")", r.statusText + ' (' + r.status + ')');
     }
+    r.responseJSON = r.responseJSON || {};
     if (r.userHandler && r.userHandler.length) {
       r.userHandler.forEach(function (v, i) {
         if (v && typeof(v) == 'function') {

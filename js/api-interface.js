@@ -45,7 +45,27 @@ var ZJQ = ZJQ || {};
       name: 'customers/new',
       method: 'POST',
       data: {name: 1, lastname: 2, email: 3, password: 4, password_confirmation: 5, mobile: 6},
-    }
+    },
+    address_list: {
+      auth_required: true,
+      name: 'customers/addresses',
+    },
+    account_address_list: {
+      auth_required: true,
+      name: 'customers/addresses',
+    },
+    account_delete_address: {
+      auth_required: true,
+      name: 'customers/addresses/{1}',
+      method: 'DELETE',
+    },
+    account_add_address: {
+      auth_required: true,
+      name: 'customers/addresses/new',
+      method: 'POST',
+      data: {title: 1, address: 2, number: 3, zipcode: 4, contact_info: 5},
+      alter: 'account_add_address_alter',
+    },
   };
 
   A.buildApiUrl = function (req, params) {
@@ -122,6 +142,9 @@ var ZJQ = ZJQ || {};
       if (auth) {
         options.headers.Authorization = A.resolveAuth();
       }
+      if (c.alter && typeof(A.handlers[c.alter]) == 'function') {
+        options = A.handlers[c.alter](options);
+      }
       Z.doAjax(call, options);
     }
   };
@@ -173,7 +196,7 @@ var ZJQ = ZJQ || {};
     },
 
     sign_in: function (r) {
-      if (A.setAuth(r.responseJSON || {})) {
+      if (A.setAuth(r.responseJSON)) {
         window.history.go(-1);
       }
       else {
@@ -182,16 +205,16 @@ var ZJQ = ZJQ || {};
     },
 
     get_cart: function (r) {
-      A.render.cart(r.responseJSON || {});
+      A.render.cart(r.responseJSON);
     },
 
     add_cart: function (r) {
       A.handlers.get_cart(r);
-      ZJQ.showCartSidebar();
+      ZJQ.showCartSidebar(true);
     },
 
     create_account: function (r) {
-      if (A.setAuth(r.responseJSON || {})) {
+      if (A.setAuth(r.responseJSON)) {
         window.history.go(-1);
       }
       else {
@@ -199,6 +222,28 @@ var ZJQ = ZJQ || {};
       }
     },
 
+    address_list: function (r) {
+      A.render.address_list('checkout', r.responseJSON);
+    },
+
+    account_address_list: function (r) {
+      A.render.address_list('account', r.responseJSON);
+    },
+
+    account_delete_address: function (r) {
+      alert('done delete address');
+    },
+
+    account_add_address: function (r) {
+      alert('done add address');
+    },
+
+    account_add_address_alter: function (o) {
+      o.contentType = 'application/json';
+      o.processData = false;
+      o.data = JSON.stringify(o.data);
+      return o;
+    },
   };
 
   /**
@@ -261,7 +306,7 @@ var ZJQ = ZJQ || {};
 
     cart: function (r) {
       let $cart = $('#cart-sidebar').empty();
-      if (r.items.length) {
+      if (r.items.length && $cart.length) {
         $cart.removeClass('has-empty-cart').addClass('has-cart-items');
         $.each(r.items, function (i, v) {
           $cart.append(A.render.cart_item(v));
@@ -298,6 +343,39 @@ var ZJQ = ZJQ || {};
       }
       $e.append(A.render.cart_item({name: 'Total', paid_price: s.net_value}).addClass('cart-summary-total'));
       return $e;
+    },
+
+    account_address: function (r) {
+      let $e = Z.getTemplate('address-list-item');
+      $e.attr('id', 'address-item-' + r.id).data('id', r.id);
+      $e.find('input[name="address-name"]').val(r.title || '');
+      $e.find('input[name="address-street"]').val(r.address || '');
+      //$e.find('input[name="address-apt"]').val(r.address || '');
+      $e.find('input[name="address-zip"]').val(r.zipcode || '');
+      $e.find('input[name="address-phone"]').val(r.contact_info || '');
+      $e.find('input[name="address-default"]').prop('checked', r.selected || false);
+      return $e;
+    },
+
+    checkout_address: function () {
+    },
+
+    address_list: function (listtype, r) {
+      let rend = listtype == 'account' ? A.render.account_address : A.render.checkout_address,
+          $e = $('.address-list-container');
+      $e.empty();
+      if (r.length && $e.length) {
+        $.each(r, function (i, v) {
+          $e.append(rend(v));
+        });
+      }
+      if (listtype == 'account') {
+        let $new_addr = rend({id: 'new'}),
+            $b = $('<div/>').addClass('boxed').html('Add New Address'),
+            $d = $('<div/>').attr('id', 'account-add-address').append($b);
+        $new_addr.find('.account-address-item-delete').remove();
+        $new_addr.append($d).appendTo($e);
+      }
     },
   };
 
