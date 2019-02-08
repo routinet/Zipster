@@ -17,12 +17,6 @@ var ZJQ = ZJQ || {};
   };
 
   A.definitions = {
-    catalog: {
-      name: 'cities/NYC/stores/ZS/menus/all/items',
-    },
-    product: {
-      name: 'cities/NYC/stores/ZS/menus/{1}/items/{2}'
-    },
     product_overlay: {
       name: 'cities/NYC/stores/ZS/menus/{1}/items/{2}'
     },
@@ -35,36 +29,6 @@ var ZJQ = ZJQ || {};
       name: 'cities/NYC/stores/ZS/items/{1}/cart/add',
       method: 'POST',
       data: {quantity: 2},
-    },
-    sign_in: {
-      name: 'customers/login',
-      method: 'POST',
-      data: {email: 1, password: 2},
-    },
-    create_account: {
-      name: 'customers/new',
-      method: 'POST',
-      data: {name: 1, lastname: 2, email: 3, password: 4, password_confirmation: 5, mobile: 6},
-    },
-    address_list: {
-      auth_required: true,
-      name: 'customers/addresses',
-    },
-    account_address_list: {
-      auth_required: true,
-      name: 'customers/addresses',
-    },
-    account_delete_address: {
-      auth_required: true,
-      name: 'customers/addresses/{1}',
-      method: 'DELETE',
-    },
-    account_add_address: {
-      auth_required: true,
-      name: 'customers/addresses/new',
-      method: 'POST',
-      data: {title: 1, address: 2, number: 3, zipcode: 4, contact_info: 5},
-      alter: 'account_add_address_alter',
     },
   };
 
@@ -154,54 +118,8 @@ var ZJQ = ZJQ || {};
    */
 
   A.handlers = {
-    catalog: function (r) {
-      let data = r.responseJSON,
-          $toptarget = $('.category-list-container'),
-          $ul = $('<ul/>'),
-          $menu = $('<nav/>').addClass('menu-nav-container').append($ul)
-      ;
-      $toptarget.empty();
-
-      // Build the category elements.
-      $.each(data, function (i, v) {
-        if (v.included_items.length) {
-          let $ele = A.render.catalog(v),
-              $target = $ele.find('.product-list-container')
-          ;
-          // Build the product elements within this category.
-          $.each(v.included_items, function (i, v) {
-            $target.append(A.render.product(v));
-          });
-          $toptarget.append($ele.hide());
-
-          // Add the category nav menu item.
-          let $name = $ele.find('.category-item-title').text(),
-              $short = $ele.data('menu_name'),
-              $link = $('<a/>').attr('href', '#' + $ele.attr('id')).html($short),
-              $li = $('<li/>').html($link).addClass('menu-nav-link')
-          ;
-          $ul.append($li);
-        }
-      });
-
-      $('.menu-nav-link', $ul).first().addClass('active');
-
-      $('header#top-header').append($menu);
-
-      $('.category-item-container').show(750);
-    },
-
     product_overlay: function (r) {
-      $('body').append(A.render.product_overlay(r));
-    },
-
-    sign_in: function (r) {
-      if (A.setAuth(r.responseJSON)) {
-        window.history.go(-1);
-      }
-      else {
-        A.render.sign_in_fail();
-      }
+      $('body').append(A.render.product_overlay(r.responseJSON));
     },
 
     get_cart: function (r) {
@@ -212,62 +130,12 @@ var ZJQ = ZJQ || {};
       A.handlers.get_cart(r);
       ZJQ.showCartSidebar(true);
     },
-
-    create_account: function (r) {
-      if (A.setAuth(r.responseJSON)) {
-        window.history.go(-1);
-      }
-      else {
-        alert('CREATE ACCOUNT FAILED');
-      }
-    },
-
-    address_list: function (r) {
-      A.render.address_list('checkout', r.responseJSON);
-    },
-
-    account_address_list: function (r) {
-      A.render.address_list('account', r.responseJSON);
-    },
-
-    account_delete_address: function (r) {
-      alert('done delete address');
-    },
-
-    account_add_address: function (r) {
-      alert('done add address');
-    },
-
-    account_add_address_alter: function (o) {
-      o.contentType = 'application/json';
-      o.processData = false;
-      o.data = JSON.stringify(o.data);
-      return o;
-    },
   };
 
   /**
    * Build out the render/view functions.
    */
   A.render = {
-    catalog: function (r) {
-      let $ele = Z.getTemplate('category-item-container');
-      $ele.attr('id', 'category-container-' + r.id).data('id', r.id).data('menu_name', r.name);
-      $ele.find('.category-item-title').html(r.name);
-      $ele.find('.category-item-description').html(r.description);
-      if (r.imgpath) {
-        $ele.find('.category-item-preface').css('background-image', "url('" + r.imgpath + "')");
-      }
-      return $ele;
-    },
-
-    product: function (r) {
-      let $ele = Z.getTemplate('product-item-container');
-      A.render.product_data($ele, r);
-      $ele.attr('id', 'product-container-' + r.id);
-      return $ele;
-    },
-
     product_data: function ($ele, r) {
       let $flags = $ele.find('.product-item-flags-container');
       $ele.attr('id', 'product-' + r.id)
@@ -293,15 +161,11 @@ var ZJQ = ZJQ || {};
 
     product_overlay: function (r) {
       let $ele = Z.getTemplate('product-overlay-contents');
-      A.render.product_data($ele, r.responseJSON);
-      $ele.attr('id', 'product-overlay-' + r.responseJSON.id);
+      A.render.product_data($ele, r);
+      $ele.attr('id', 'product-overlay-' + r.id);
       return $('<div/>').addClass('product-overlay-container')
           .append('<div class="product-overlay-background"/>')
           .append($ele);
-    },
-
-    sign_in_fail: function () {
-      alert('sign in failed');
     },
 
     cart: function (r) {
@@ -345,38 +209,6 @@ var ZJQ = ZJQ || {};
       return $e;
     },
 
-    account_address: function (r) {
-      let $e = Z.getTemplate('address-list-item');
-      $e.attr('id', 'address-item-' + r.id).data('id', r.id);
-      $e.find('input[name="address-name"]').val(r.title || '');
-      $e.find('input[name="address-street"]').val(r.address || '');
-      //$e.find('input[name="address-apt"]').val(r.address || '');
-      $e.find('input[name="address-zip"]').val(r.zipcode || '');
-      $e.find('input[name="address-phone"]').val(r.contact_info || '');
-      $e.find('input[name="address-default"]').prop('checked', r.selected || false);
-      return $e;
-    },
-
-    checkout_address: function () {
-    },
-
-    address_list: function (listtype, r) {
-      let rend = listtype == 'account' ? A.render.account_address : A.render.checkout_address,
-          $e = $('.address-list-container');
-      $e.empty();
-      if (r.length && $e.length) {
-        $.each(r, function (i, v) {
-          $e.append(rend(v));
-        });
-      }
-      if (listtype == 'account') {
-        let $new_addr = rend({id: 'new'}),
-            $b = $('<div/>').addClass('boxed').html('Add New Address'),
-            $d = $('<div/>').attr('id', 'account-add-address').append($b);
-        $new_addr.find('.account-address-item-delete').remove();
-        $new_addr.append($d).appendTo($e);
-      }
-    },
   };
 
 })(jQuery, document, window, Math);

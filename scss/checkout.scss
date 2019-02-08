@@ -1,0 +1,141 @@
+.checkout-tab-container {
+  padding: 1px;
+}
+
+.checkout-tab {
+  border-width: 1px 0;
+  border-style: solid none;
+  border-color: $ZIP-grey-rule;
+  padding: 2em;
+  h1 {
+    font-size: 1.75rem;
+    margin-bottom: 2em;
+  }
+  form {
+    display: none;
+  }
+  &.active form {
+    display: block;
+  }
+}
+
+.checkout-tab-account {
+  margin-top: 2em;
+  #create-account-form {
+    & > div:first-child {
+      font-size: 0;
+      & > label {
+        font-size: .8rem;
+      }
+    }
+    #create-account-actions {
+      margin: 1em 5% 0 0;
+      text-align: right;
+    }
+    label {
+      display: inline-block;
+      width: 45%;
+      &.account-label-email {
+        width: 95%;
+      }
+      &.account-label-password, &.account-label-name {
+        margin-right: 5%;
+      }
+      input {
+        display: block;
+      }
+    }
+  }
+}
+
+.checkout-tab-delivery {
+  .address-list-item {
+    border: 0 none;
+    position: relative;
+    padding: 1em 0;
+    input[type='radio']:after {
+      width: 12px;
+      height: 12px;
+      top: 0px;
+      left: -1px;
+      position: relative;
+      background-color: #ffffff;
+      content: "";
+      display: inline-block;
+      border: 2px solid #000000;
+      border-radius: 50%;
+    }
+    input[type='radio']:checked:after {
+      background-color: $ZIP-green;
+    }
+    .address-name {
+      margin-left: .75em;
+    }
+  }
+  .address-new {
+    display: none;
+    &.active {
+      display: block;
+    }
+    label {
+      display: inline-block;
+      input {
+        display: block;
+      }
+    }
+    .delivery-time-container {
+      margin-top: 2em;
+      font-size: .8rem;
+      select {
+        background: $ZIP-dark-beige;
+        width: 40%;
+        padding: .5em;
+        margin-top: .5em;
+        display: block;
+      }
+    }
+    .label-address-street, .label-address-name {
+      width: 50%;
+      margin-right: 2%;
+    }
+    .label-address-apt, .label-address-zip {
+      width: 20%;
+      margin-right: 2%;
+    }
+    .label-address-phone {
+      width: 42%;
+    }
+  }
+  .address-pickup-text {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  .sign-in-submit {
+    margin-top: 2em;
+    text-align: right;
+    width: 95%;
+  }
+}
+
+.checkout-tab-payment {
+  label {
+    display: inline-block;
+    margin-right: 2%;
+  }
+  label[for="payment-zip"], label[for="payment-expire"] {
+    width: 15%;
+  }
+  label[for="payment-cvv"] {
+    width: 10%;
+  }
+  label[for="payment-ccnum"] {
+    width: 47%;
+  }
+  .sign-in-submit {
+    margin-top: 1em;
+    text-align: right;
+    width: 95%;
+  }
+}

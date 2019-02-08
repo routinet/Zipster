@@ -42,7 +42,7 @@
 
         // Hook to show/hide the cart.
         .on('click', '#order-now-link', function (e) {
-          if (!$body.hasClass('no-cart')) {
+          if ($body.hasClass('allow-cart')) {
             e.preventDefault();
             ZJQ.showCartSidebar();
           }
@@ -50,69 +50,32 @@
 
         // Hook to add selection to cart.
         .on('click', '.add-to-cart-submit', function (e) {
+          e.preventDefault();
           ZJQ.add_to_cart($(e.target));
         })
 
         //Hook to delete selection from cart.
         .on('click', '.cart-item-remove', function (e) {
+          e.preventDefault();
           ZJQ.delete_from_cart($(e.target));
         })
 
-        // Hook to handle sign-in submission.
-        .on('submit', '.sign-in-credentials', function (e) {
-          e.preventDefault();
-          let $e = $(e.target),
-              name = $e.find('input[name="sign-in-email"]').val(),
-              pass = $e.find('input[name="sign-in-password"]').val();
-          ZJQ.api.execute('sign_in', name, pass);
-        })
-
-        // Hook to submit create account form.
-        .on('submit', '#create-account-form', function (e) {
-          e.preventDefault();
-          let $e = $(e.target),
-              name = $e.find('input[name="name"]').val(),
-              lname = $e.find('input[name="lastname"]').val(),
-              email = $e.find('input[name="email"]').val(),
-              pass = $e.find('input[name="password"]').val(),
-              passc = $e.find('input[name="password_confirmation"]').val(),
-              mobile = $e.find('input[name="mobile"]').val();
-          ZJQ.api.execute('create_account', name, lname, email, pass, passc, mobile);
-        })
-
-        // Hook to delete an address.
-        .on('click', '.account-address-item-delete', function(e) {
-          let $e = $(e.target),
-              id = $e.closest('.address-list-item').data('id');
-          ZJQ.api.execute('account_delete_address', id);
-        })
-
-        // Hook to save a new address.
-        .on('click', '#account-add-address', function(e) {
-          let $e = $(e.target),
-              $top = $e.closest('.address-list-item'),
-              title = $top.find('input[name="address-name"]').val(),
-              addr = $top.find('input[name="address-street"]').val(),
-              apt = $top.find('input[name="address-apt"]').val(),
-              zip = $top.find('input[name="address-zip"]').val(),
-              phone = $top.find('input[name="address-phone"]').val();
-          ZJQ.api.execute('account_add_address', title, addr, apt, zip, phone);
+        // Hook to flip visibility on checkout delivery.
+        .on('click', 'input[name="address_id"]', function (e) {
+          let id = e.target.id;
+          $('.address-new,.address-pickup-text').removeClass('active');
+          if (id == 'address_id_new') {
+            $('.address-new').addClass('active');
+          }
+          else if (id == 'address_id_pickup') {
+            $('.address-pickup-text').addClass('active');
+          }
         })
     ;
 
-    // If on the landing page, suppress the cart.  Otherwise, populate it.
-    if (ZJQ.no_cart.includes(ZJQ.body_id.replace('-page', ''))) {
-      $body.addClass('no-cart');
-    }
-    else {
-      ZJQ.api.execute('get_cart');
-    }
-
-    // If on the account page, populate the address list and user info.
-    if ($body.attr('id') == 'account-page') {
-      $body.find('input[name="account-full-name"]').val(ZJQ.user_data.name + ' ' + ZJQ.user_data.lastname);
-      $body.find('input[name="account-email"]').val(ZJQ.user_data.email);
-      ZJQ.api.execute('account_address_list');
+    // If the page allows the cart, set a flag.
+    if (ZJQ.allow_cart()) {
+      $body.addClass('allow-cart');
     }
 
     // Handle account page navigation
@@ -127,6 +90,11 @@
     });
     $('#account-nav li.active').trigger('click');
 
+    // Set the background colors for any product containers.
+    $('.product-list-container .product-item-container').each(function () {
+      $(this).addClass('product-color-' + ZJQ.randomColor());
+    });
+
     // Light up the flipboards
     $('tr:first-child .flipboard').each(function () {
       //$('tr .flipboard').each(function () {
@@ -139,11 +107,6 @@
       }
       $this.flapper(opts).change();
     });
-
-    // Populate products and categories if a menu block exists.
-    if ($('.category-list-container').length) {
-      ZJQ.api.execute('catalog');
-    }
 
   });
 })

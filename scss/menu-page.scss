@@ -2,11 +2,7 @@
   main {
     padding-top: 4em;
     max-width: $ZIP-max-desktop-width;
-    margin: 0 auto;
-  }
-  &.no-cart {
-    main {
-    }
+    margin: 0 auto 0 2.5em;
   }
 }
 
@@ -21,6 +17,14 @@
 .category-item-description {
   max-width: 45%;
   color: $ZIP-light-black-text;
+}
+
+#category-omakase .category-item-preface {
+  background-image: url('/images/category-image-1.png');
+}
+
+#category-nigiri .category-item-preface {
+  background-image: url('/images/category-image-2.png');
 }
 
 .category-item-preface {
@@ -54,7 +58,7 @@ nav.menu-nav-container {
       &.active a, &:hover a {
         font-weight: 900;
         border-bottom: 2px solid #000000;
-        color:#515150;
+        color: #515150;
       }
     }
   }

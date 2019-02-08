@@ -1,0 +1,89 @@
+<div class="checkout-tab-container">
+  <div class="checkout-tab checkout-tab-account active">
+    <h1>Create Account</h1>
+    <form action="#" method="post" id="create-account-form">
+      <div>
+        <label class="account-label-name">First Name<input type="text" name="name"/></label>
+        <label class="account-label-lastname">Last Name<input type="text" name="lastname"/></label>
+        <label class="account-label-email">Email Address<input type="text" name="email"/></label>
+        <label class="account-label-password">Password<input type="text" name="password"/></label>
+        <label class="account-label-confirm">Confirm Password<input type="text" name="confirm"/></label>
+      </div>
+      <div id="create-account-actions">
+        <div class="sign-in-submit"><input type="submit" value="Continue"/></div>
+      </div>
+    </form>
+  </div>
+  <div class="checkout-tab checkout-tab-delivery active">
+    <h1>Pickup / Delivery</h1>
+    <form id="checkout-address-selection" action="#" method="POST">
+      <div class="address-list-item">
+        <label for="address_id_1">
+          <input type="radio" class="address-type-user" name="address_id" value="1" id="address_id_1"/>
+          <span class="address-name">Home</span>
+          <span class="address-hint">30-56 30th st, Queens, NY, 11102</span>
+        </label>
+      </div>
+      <div class="address-list-item">
+        <label for="address_id_2">
+          <input type="radio" class="address-type-user" name="address_id" value="2" id="address_id_2"/>
+          <span class="address-name">Work</span>
+          <span class="address-hint">184 5th ave Fl 6, Manhattan, NY 10001</span>
+        </label>
+      </div>
+      <div class="address-list-item">
+        <label for="address_id_new">
+          <input type="radio" class="address-type-new" name="address_id" value="new" id="address_id_new"/>
+          <span class="address-name">Other Address</span>
+        </label>
+      </div>
+      <div class="address-list-item">
+        <label for="address_id_pickup">
+          <input type="radio" class="address-type-pickup" name="address_id" value="pickup" id="address_id_pickup"/>
+          <span class="address-name">Pickup</span>
+        </label>
+      </div>
+      <div class="address-pickup-text">Orders can be picked up at our Midtown location at 555 3rd Avenue</div>
+      <div class="address-new">
+        <label class="label-address-street">Street Address<input type="text" name="address-street"/></label>
+        <label class="label-address-apt">Apartment No.<input type="text" name="address-apt"/></label>
+        <label class="label-address-zip">Zip Code<input type="text" name="address-zip"/></label>
+        <label class="label-address-name">Name<input type="text" name="address-name"/></label>
+        <label class="label-address-phone">Phone Number<input type="text" name="address-phone"/></label>
+        <div class="delivery-time-container">
+          Delivery Time
+          <select name="delivery-time">
+            <option value="1">11:00 - 12:00</option>
+            <option value="2">12:00 - 1:00</option>
+            <option value="3">1:00 - 2:00</option>
+            <option value="4">2:00 - 3:00</option>
+            <option value="5">3:00 - 4:00</option>
+          </select>
+        </div>
+      </div>
+      <div class="sign-in-submit"><input type="submit" value="Continue"/></div>
+    </form>
+  </div>
+  <div class="checkout-tab checkout-tab-payment active">
+    <h1>Payment</h1>
+    <form id="checkout-payment" action="#" method="POST">
+      <label for="payment-ccnum">
+        Card Number
+        <input type="text" name="ccnum" placeholder="0000 0000 0000 0000" id="payment-ccnum"/>
+      </label>
+      <label for="payment-cvv">
+        CVV
+        <input type="text" name="cvv" placeholder="000" id="payment-cvv"/>
+      </label>
+      <label for="payment-expire">
+        Expire
+        <input type="text" name="expire" placeholder="MM / YYYY" id="payment-expire"/>
+      </label>
+      <label for="payment-zip">
+        Zip Code
+        <input type="text" name="zip" placeholder="00000" id="payment-zip"/>
+      </label>
+      <div class="sign-in-submit"><input type="submit" value="Continue"/></div>
+    </form>
+  </div>
+</div>

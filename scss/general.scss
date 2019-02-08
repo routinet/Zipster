@@ -15,10 +15,6 @@ body {
   letter-spacing: .08em;
 }
 
-main {
-
-}
-
 a {
   color: $ZIP-black-text;
   text-decoration: none;
@@ -43,6 +39,27 @@ input {
   letter-spacing: .08em;
   &::placeholder {
     color: $ZIP-grey-rule;
+  }
+}
+
+label {
+  display: block;
+  font-size: .8rem;
+  margin: 1em auto;
+  text-align: left;
+  width: 80%;
+  input[type="text"], input[type="password"] {
+    display: block;
+    width: 100%;
+    margin-top: .3em;
+    padding: .75em 1em;
+    background: $ZIP-dark-beige;
+    color: $ZIP-light-black-text;
+    border: 1px solid $ZIP-dark-beige;
+    &:active, &:focus {
+      border: 1px solid $ZIP-green;
+      outline: none;
+    }
   }
 }
 

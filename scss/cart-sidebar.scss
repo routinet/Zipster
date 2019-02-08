@@ -27,6 +27,10 @@
     border-radius: .25em;
   }
 
+  &.has-empty-cart .cart-sidebar-checkout {
+    display:none;
+  }
+
   .cart-item {
     margin-bottom: 1.2em;
     position: relative;
@@ -83,11 +87,11 @@
   }
 }
 
-.no-cart {
+body.no-cart {
   #cart-sidebar {
-    display: none;
+    display: none !important;
   }
   .cart-item-remove {
-    display: none;
+    display: none !important;
   }
 }

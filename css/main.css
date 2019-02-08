@@ -86,6 +86,27 @@ input::placeholder {
   color: #e5e5e5;
 }
 
+label {
+  display: block;
+  font-size: 0.8rem;
+  margin: 1em auto;
+  text-align: left;
+  width: 80%;
+}
+label input[type=text], label input[type=password] {
+  display: block;
+  width: 100%;
+  margin-top: 0.3em;
+  padding: 0.75em 1em;
+  background: #f2f4ea;
+  color: #cbcbcb;
+  border: 1px solid #f2f4ea;
+}
+label input[type=text]:active, label input[type=text]:focus, label input[type=password]:active, label input[type=password]:focus {
+  border: 1px solid #83a02b;
+  outline: none;
+}
+
 h2 {
   font-weight: 900;
   font-size: 3.2rem;
@@ -108,7 +129,7 @@ h3 {
 
 .content-area {
   min-width: 470px;
-  max-width: 976px;
+  max-width: 1000px;
   margin: 0 auto;
   overflow: visible;
   width: 65%;
@@ -183,7 +204,7 @@ header#top-header {
 
 main {
   position: relative;
-  max-width: 976px;
+  max-width: 1000px;
   padding-top: 0px;
   margin-top: 70px;
   transition-property: width;
@@ -963,9 +984,10 @@ main section {
 
 #menu-page main {
   padding-top: 4em;
-  max-width: 976px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 0 auto 0 2.5em;
 }
+
 .category-list-container {
   margin-top: 4em;
 }
@@ -977,6 +999,14 @@ main section {
 .category-item-description {
   max-width: 45%;
   color: #cbcbcb;
+}
+
+#category-omakase .category-item-preface {
+  background-image: url("/images/category-image-1.png");
+}
+
+#category-nigiri .category-item-preface {
+  background-image: url("/images/category-image-2.png");
 }
 
 .category-item-preface {
@@ -1030,7 +1060,7 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   */
 }
 #catering-page main {
-  max-width: 976px;
+  max-width: 1000px;
   margin: 4em auto;
 }
 #catering-page main p {
@@ -1211,36 +1241,19 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
 .sign-in-controls {
   padding: 2em 1em;
 }
-.sign-in-controls label {
-  display: block;
-  font-size: 0.8rem;
-  margin: 1em auto;
-  text-align: left;
-  width: 80%;
-}
-.sign-in-controls label input[type=text], .sign-in-controls label input[type=password] {
-  display: block;
-  width: 100%;
-  margin-top: 0.3em;
-  padding: 0.75em 1em;
-  background: #f2f4ea;
-  border: 1px solid #f2f4ea;
-}
-.sign-in-controls label input[type=text]:active, .sign-in-controls label input[type=text]:focus, .sign-in-controls label input[type=password]:active, .sign-in-controls label input[type=password]:focus {
-  border: 1px solid #83a02b;
-  outline: none;
-}
-.sign-in-controls .sign-in-create {
+
+#create-account-form .sign-in-create, #sign-in-credentials .sign-in-create {
   display: inline-block;
   width: 40%;
   font-size: 0.8rem;
   margin-top: 2rem;
 }
-.sign-in-controls .sign-in-submit {
+
+.sign-in-submit {
   display: inline-block;
   width: 40%;
 }
-.sign-in-controls .sign-in-submit input[type=submit] {
+.sign-in-submit input[type=submit] {
   background: #83a02b;
   color: #ffffff;
   padding: 1em 2em;
@@ -1308,6 +1321,9 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   font-weight: 800;
   border-radius: 0.25em;
 }
+#cart-sidebar.has-empty-cart .cart-sidebar-checkout {
+  display: none;
+}
 #cart-sidebar .cart-item {
   margin-bottom: 1.2em;
   position: relative;
@@ -1356,11 +1372,11 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   display: initial;
 }
 
-.no-cart #cart-sidebar {
-  display: none;
+body.no-cart #cart-sidebar {
+  display: none !important;
 }
-.no-cart .cart-item-remove {
-  display: none;
+body.no-cart .cart-item-remove {
+  display: none !important;
 }
 
 #account-create-page main {
@@ -1427,6 +1443,142 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   font-size: 0.7em;
   font-weight: 400;
   letter-spacing: 0.001em;
+}
+
+.checkout-tab-container {
+  padding: 1px;
+}
+
+.checkout-tab {
+  border-width: 1px 0;
+  border-style: solid none;
+  border-color: #e5e5e5;
+  padding: 2em;
+}
+.checkout-tab h1 {
+  font-size: 1.75rem;
+  margin-bottom: 2em;
+}
+.checkout-tab form {
+  display: none;
+}
+.checkout-tab.active form {
+  display: block;
+}
+
+.checkout-tab-account {
+  margin-top: 2em;
+}
+.checkout-tab-account #create-account-form > div:first-child {
+  font-size: 0;
+}
+.checkout-tab-account #create-account-form > div:first-child > label {
+  font-size: 0.8rem;
+}
+.checkout-tab-account #create-account-form #create-account-actions {
+  margin: 1em 5% 0 0;
+  text-align: right;
+}
+.checkout-tab-account #create-account-form label {
+  display: inline-block;
+  width: 45%;
+}
+.checkout-tab-account #create-account-form label.account-label-email {
+  width: 95%;
+}
+.checkout-tab-account #create-account-form label.account-label-password, .checkout-tab-account #create-account-form label.account-label-name {
+  margin-right: 5%;
+}
+.checkout-tab-account #create-account-form label input {
+  display: block;
+}
+
+.checkout-tab-delivery .address-list-item {
+  border: 0 none;
+  position: relative;
+  padding: 1em 0;
+}
+.checkout-tab-delivery .address-list-item input[type=radio]:after {
+  width: 12px;
+  height: 12px;
+  top: 0px;
+  left: -1px;
+  position: relative;
+  background-color: #ffffff;
+  content: "";
+  display: inline-block;
+  border: 2px solid #000000;
+  border-radius: 50%;
+}
+.checkout-tab-delivery .address-list-item input[type=radio]:checked:after {
+  background-color: #83a02b;
+}
+.checkout-tab-delivery .address-list-item .address-name {
+  margin-left: 0.75em;
+}
+.checkout-tab-delivery .address-new {
+  display: none;
+}
+.checkout-tab-delivery .address-new.active {
+  display: block;
+}
+.checkout-tab-delivery .address-new label {
+  display: inline-block;
+}
+.checkout-tab-delivery .address-new label input {
+  display: block;
+}
+.checkout-tab-delivery .address-new .delivery-time-container {
+  margin-top: 2em;
+  font-size: 0.8rem;
+}
+.checkout-tab-delivery .address-new .delivery-time-container select {
+  background: #f2f4ea;
+  width: 40%;
+  padding: 0.5em;
+  margin-top: 0.5em;
+  display: block;
+}
+.checkout-tab-delivery .address-new .label-address-street, .checkout-tab-delivery .address-new .label-address-name {
+  width: 50%;
+  margin-right: 2%;
+}
+.checkout-tab-delivery .address-new .label-address-apt, .checkout-tab-delivery .address-new .label-address-zip {
+  width: 20%;
+  margin-right: 2%;
+}
+.checkout-tab-delivery .address-new .label-address-phone {
+  width: 42%;
+}
+.checkout-tab-delivery .address-pickup-text {
+  display: none;
+}
+.checkout-tab-delivery .address-pickup-text.active {
+  display: block;
+}
+.checkout-tab-delivery .sign-in-submit {
+  margin-top: 2em;
+  text-align: right;
+  width: 95%;
+}
+
+.checkout-tab-payment label {
+  display: inline-block;
+  margin-right: 2%;
+}
+.checkout-tab-payment label[for=payment-zip], .checkout-tab-payment label[for=payment-expire] {
+  width: 15%;
+}
+.checkout-tab-payment label[for=payment-cvv] {
+  width: 10%;
+}
+.checkout-tab-payment label[for=payment-ccnum] {
+  width: 47%;
+}
+.checkout-tab-payment .sign-in-submit {
+  margin-top: 1em;
+  text-align: right;
+  width: 95%;
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -17,7 +17,27 @@
 <body id="{pagetype}-page">
 <div id="top-container">
   <header id="top-header" class="clearfix">{load header}</header>
-  <div id="cart-sidebar" class="has-empty-cart"></div>
+  <div id="cart-sidebar" class="has-empty-cart">
+    <div class="cart-item">
+      <div class="cart-item-remove"></div>
+      <div class="cart-item-name">Shake Nagiri</div>
+      <div class="cart-item-qty">1</div>
+      <div class="cart-item-price">23.23</div>
+    </div>
+    <div class="cart-item">
+      <div class="cart-item-remove"></div>
+      <div class="cart-item-name">Shake Nagiri</div>
+      <div class="cart-item-qty">1</div>
+      <div class="cart-item-price">23.23</div>
+    </div>
+    <div class="cart-summary-container">
+      <div class="cart-item cart-item-total">
+        <div class="cart-item-name">Total</div>
+        <div class="cart-item-price">46.46</div>
+      </div>
+    </div>
+    <div class="cart-sidebar-checkout">Checkout</div>
+  </div>
   <main>{loadmain}</main>
   <footer id="top-footer" class="clearfix">{load footer}</footer>
 </div>
