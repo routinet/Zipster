@@ -1,0 +1,84 @@
+#order-complete-page main {
+  background: url(/images/landing-background.png) repeat $ZIP-dark-beige;
+  padding: 1px;
+  max-width: 100vw;
+}
+
+.order-complete-container {
+  max-width: 500px;
+  margin: 5em auto;
+  text-align: center;
+  background: #ffffff;
+  .order-history-item {
+    width: 100%;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    margin: 2em 0 4em 0;
+    padding: 2em;
+  }
+  .order-history-header {
+    display: table;
+    width: 100%;
+    & > div {
+      display: table-cell;
+    }
+  }
+  .order-history-date {
+    text-align: left;
+  }
+  .order-history-order-number {
+    text-align: right;
+  }
+  table.order-history-item-details {
+    tbody {
+      td {
+        border-bottom: 1px solid grey;
+        &.order-history-item-description {
+          text-align: left;
+          line-height: 4em;
+        }
+      }
+    }
+    tfoot {
+      td {
+        line-height: 4em;
+        text-align: left;
+        &.order-history-item-price {
+          text-align: right;
+        }
+      }
+    }
+  }
+
+}
+
+.order-complete-preface {
+  text-align: left;
+  font-size: 1.5em;
+  background: $ZIP-dark-beige;
+  padding: 2em 1.5em 1.5em;
+  font-weight: bold;
+  .order-complete-message {
+    font-size: 1.5em;
+    font-weight: 900;
+    margin: 0 15% 0 20%;
+    position: relative;
+    &:before {
+      content: '';
+      display: block;
+      background-image: url('/images/checkmark.png');
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 40px;
+      width: 54px;
+      position: absolute;
+      left: -80px;
+      top: 9px;
+    }
+  }
+  .order-complete-delivery {
+    font-size: 1rem;
+    margin: 1.5em 5% 0 20%;
+  }
+}
+

@@ -108,7 +108,7 @@
   text-align: right;
 }
 
-#order-history {
+/*#order-history {*/
   .order-history-item {
     width: 95%;
     font-size: .9rem;
@@ -124,18 +124,20 @@
     padding: 1.5em;
     line-height: 2em;
   }
-  .order-item-qty {
-    margin-left: 1em;
-    color: $ZIP-light-black-text;
-  }
-  .order-history-item-price {
-    text-align: right;
-    color: $ZIP-light-black-text;
-  }
-  tfoot {
-    td, td.order-history-item-price {
-      color: #000000;
-      font-weight: bold;
+  .order-history-item-details {
+    tfoot {
+      td, td.order-history-item-price {
+        color: #000000;
+        font-weight: bold;
+      }
+    }
+    .order-item-qty {
+      margin-left: 1em;
+      color: $ZIP-light-black-text;
+    }
+    .order-history-item-price {
+      text-align: right;
+      color: $ZIP-light-black-text;
     }
   }
-}
+/*}*/
