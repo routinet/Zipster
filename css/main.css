@@ -54,13 +54,13 @@
 body {
   font-family: Archia, sans-serif;
   font-size: 12pt;
-  color: #000000;
+  color: #333333;
   text-align: left;
   letter-spacing: 0.08em;
 }
 
 a {
-  color: #000000;
+  color: #333333;
   text-decoration: none;
 }
 a:hover {
@@ -92,6 +92,7 @@ label {
   margin: 1em auto;
   text-align: left;
   width: 80%;
+  color: #cbcbcb;
 }
 label input[type=text], label input[type=password] {
   display: block;
@@ -693,11 +694,12 @@ main section {
   padding: 0;
 }
 #section-delivered-today .content-area {
-  background-color: #f2f4ea;
+  background-color: transparent;
+  /*$ZIP-dark-beige;*/
 }
 #section-delivered-today .delivered-today-preface {
   max-width: 600px;
-  /*background: $ZIP-dark-beige;*/
+  background: #f2f4ea;
   padding-bottom: 2em;
   margin: 0 auto;
 }
@@ -720,19 +722,22 @@ main section {
   padding: 0.9em 2em;
 }
 #section-delivered-today #todays-deliveries {
-  margin: 0.25em auto 0;
+  margin: 0 auto;
   text-align: left;
-  /*background-color: $ZIP-dark-beige;*/
+  background-color: transparent;
+  /*$ZIP-dark-beige;*/
 }
 #section-delivered-today #todays-deliveries .todays-date {
   text-align: center;
-  margin: 1em auto 1em;
-  padding-bottom: 0.1em;
+  margin: 0 auto;
+  padding-bottom: 1.1em;
   text-transform: uppercase;
   line-height: 1.5em;
   color: #333333;
   font-weight: 700;
   letter-spacing: 0.07em;
+  background-color: #f2f4ea;
+  max-width: 600px;
 }
 #section-delivered-today #todays-deliveries .todays-date:before {
   content: "Arrivals";
@@ -983,13 +988,18 @@ main section {
 }
 
 #menu-page main {
-  padding-top: 4em;
   max-width: 1000px;
+  padding-top: 4em;
+  margin: 0 auto;
+  transition-property: margin-left;
+  transition-duration: 0.45s;
+}
+#menu-page.show-cart main {
   margin: 0 auto 0 2.5em;
 }
 
 .category-list-container {
-  margin-top: 4em;
+  margin-top: 5em;
 }
 
 .category-item-container {
@@ -1131,6 +1141,11 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   background: #f2f4ea;
   padding: 0.75em 2em 0.75em 0.5em;
   font-size: 0.9rem;
+  overflow: hidden;
+  letter-spacing: 0.01em;
+}
+#account-page-sidebar #need-support {
+  color: #cbcbcb;
 }
 
 #account-nav-pages {
@@ -1222,7 +1237,7 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
 
 /*}*/
 #sign-in-page main {
-  background: url(/images/landing-background.png) repeat #f2f4ea;
+  background: url(/images/landing-background.png) repeat #eaecdd;
   padding: 1px;
   max-width: 100vw;
 }
@@ -1232,6 +1247,7 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   margin: 5em auto;
   text-align: center;
   background: #ffffff;
+  color: #cbcbcb;
 }
 
 .sign-in-header {
@@ -1239,18 +1255,24 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   font-size: 1.5em;
   background: #f2f4ea;
   padding: 2em 1.5em 1.5em;
-  font-weight: bold;
+  font-weight: 900;
+  color: #333333;
 }
 
 .sign-in-controls {
   padding: 2em 1em;
+  color: #cbcbcb;
 }
 
-#create-account-form .sign-in-create, #sign-in-credentials .sign-in-create {
+#create-account-form .sign-in-create, #create-account-form .sign-in-link, #sign-in-credentials .sign-in-create, #sign-in-credentials .sign-in-link {
   display: inline-block;
-  width: 40%;
+  width: 45%;
   font-size: 0.8rem;
   margin-top: 2rem;
+}
+#create-account-form .sign-in-create a, #create-account-form .sign-in-link a, #sign-in-credentials .sign-in-create a, #sign-in-credentials .sign-in-link a {
+  color: #cbcbcb;
+  text-decoration: underline;
 }
 
 .sign-in-submit {
@@ -1473,6 +1495,9 @@ body.no-cart .cart-item-remove {
 .checkout-tab-account {
   margin-top: 2em;
 }
+.checkout-tab-account #create-account-form {
+  color: #cbcbcb;
+}
 .checkout-tab-account #create-account-form > div:first-child {
   font-size: 0;
 }
@@ -1520,6 +1545,9 @@ body.no-cart .cart-item-remove {
 .checkout-tab-delivery .address-list-item .address-name {
   margin-left: 0.75em;
 }
+.checkout-tab-delivery .address-list-item .address-hint {
+  color: #cbcbcb;
+}
 .checkout-tab-delivery .address-new {
   display: none;
 }
@@ -1528,6 +1556,7 @@ body.no-cart .cart-item-remove {
 }
 .checkout-tab-delivery .address-new label {
   display: inline-block;
+  color: #cbcbcb;
 }
 .checkout-tab-delivery .address-new label input {
   display: block;
@@ -1569,6 +1598,7 @@ body.no-cart .cart-item-remove {
 .checkout-tab-payment label {
   display: inline-block;
   margin-right: 2%;
+  color: #cbcbcb;
 }
 .checkout-tab-payment label[for=payment-zip], .checkout-tab-payment label[for=payment-expire] {
   width: 15%;

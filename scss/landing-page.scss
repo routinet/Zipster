@@ -11,11 +11,11 @@
   background: url(/images/landing-background.png) repeat $ZIP-dark-beige;
   padding: 0;
   .content-area {
-    background-color: $ZIP-dark-beige;
+    background-color: transparent; /*$ZIP-dark-beige;*/
   }
   .delivered-today-preface {
     max-width:600px;
-    /*background: $ZIP-dark-beige;*/
+    background: $ZIP-dark-beige;
     padding-bottom: 2em;
     margin: 0 auto;
   }
@@ -38,18 +38,20 @@
     padding: 0.9em 2em;
   }
   #todays-deliveries {
-    margin: .25em auto 0;
+    margin: 0 auto;
     text-align: left;
-    /*background-color: $ZIP-dark-beige;*/
+    background-color: transparent; /*$ZIP-dark-beige;*/
     .todays-date {
       text-align: center;
-      margin: 1em auto 1em;
-      padding-bottom: 0.1em;
+      margin: 0 auto ;
+      padding-bottom: 1.1em;
       text-transform: uppercase;
       line-height: 1.5em;
       color: #333333;
       font-weight: 700;
       letter-spacing: .07em;
+      background-color: $ZIP-dark-beige;
+      max-width: 600px;
       &:before {
         content: 'Arrivals';
         display: block;

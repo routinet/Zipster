@@ -10,13 +10,13 @@
 body {
   font-family: Archia, sans-serif;
   font-size: 12pt;
-  color: $ZIP-black-text;
+  color: $ZIP-black-background;
   text-align: left;
   letter-spacing: .08em;
 }
 
 a {
-  color: $ZIP-black-text;
+  color: $ZIP-black-background;
   text-decoration: none;
   &:hover {
     color: #000000;
@@ -48,6 +48,7 @@ label {
   margin: 1em auto;
   text-align: left;
   width: 80%;
+  color: $ZIP-light-black-text;
   input[type="text"], input[type="password"] {
     display: block;
     width: 100%;

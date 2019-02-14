@@ -22,6 +22,7 @@
 .checkout-tab-account {
   margin-top: 2em;
   #create-account-form {
+    color: $ZIP-light-black-text;
     & > div:first-child {
       font-size: 0;
       & > label {
@@ -71,6 +72,9 @@
     .address-name {
       margin-left: .75em;
     }
+    .address-hint {
+      color: $ZIP-light-black-text;
+    }
   }
   .address-new {
     display: none;
@@ -79,6 +83,7 @@
     }
     label {
       display: inline-block;
+      color: $ZIP-light-black-text;
       input {
         display: block;
       }
@@ -123,6 +128,7 @@
   label {
     display: inline-block;
     margin-right: 2%;
+    color: $ZIP-light-black-text;
   }
   label[for="payment-zip"], label[for="payment-expire"] {
     width: 15%;

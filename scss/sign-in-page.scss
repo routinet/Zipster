@@ -1,7 +1,7 @@
 #sign-in-page main {
-  background: url(/images/landing-background.png) repeat $ZIP-dark-beige;
+  background: url(/images/landing-background.png) repeat #eaecdd;
   padding: 1px;
-  max-width:100vw;
+  max-width: 100vw;
 }
 
 .sign-in-container {
@@ -9,6 +9,7 @@
   margin: 5em auto;
   text-align: center;
   background: #ffffff;
+  color: $ZIP-light-black-text;
 }
 
 .sign-in-header {
@@ -16,19 +17,26 @@
   font-size: 1.5em;
   background: $ZIP-dark-beige;
   padding: 2em 1.5em 1.5em;
-  font-weight: bold;
+  font-weight: 900;
+  color: $ZIP-black-background;
 }
 
 .sign-in-controls {
   padding: 2em 1em;
+  color: $ZIP-light-black-text;
 }
+
 #create-account-form, #sign-in-credentials {
 
-  .sign-in-create {
+  .sign-in-create, .sign-in-link {
     display: inline-block;
-    width: 40%;
+    width: 45%;
     font-size: .8rem;
     margin-top: 2rem;
+    a {
+      color: $ZIP-light-black-text;
+      text-decoration: underline;
+    }
   }
 }
 
