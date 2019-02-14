@@ -190,13 +190,24 @@ header#top-header {
 
 #main-nav {
   float: right;
-  margin: 0.3rem 2rem 0 0;
+  margin: 0.5rem 160px 0 0;
 }
 #main-nav li {
   display: inline-block;
   margin-left: 1rem;
 }
 #main-nav li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+#order-now-link {
+  position: absolute;
+  right: 25px;
+}
+#order-now-link a {
   text-decoration: none;
   text-transform: uppercase;
   font-size: 0.8rem;
@@ -228,11 +239,6 @@ main section {
   font-size: 0;
   background-color: #333333;
   color: #cbcbcb;
-}
-@media (max-width: 1000px) {
-  #top-footer {
-    display: none;
-  }
 }
 #top-footer > * {
   font-size: 1rem;
@@ -313,6 +319,82 @@ main section {
   width: 50%;
 }
 
+@media (max-width: 800px) {
+  #main-nav {
+    position: absolute;
+    z-index: 1;
+    left: -100vw;
+    top: 0;
+    width: 0;
+    height: 100vh;
+    margin: initial;
+    float: none;
+    overflow: visible;
+    display: table;
+    transition-property: width, left;
+    transition-duration: 0.5s;
+  }
+  #main-nav:before {
+    content: "";
+    height: 32px;
+    width: 32px;
+    background-image: url(/images/hamburger.png);
+    position: fixed;
+    left: 4vw;
+    top: 1em;
+  }
+  #main-nav ul {
+    display: table-cell;
+    vertical-align: bottom;
+    padding-bottom: 40%;
+    background-color: #f2f4ea;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.35s;
+  }
+  #main-nav ul li {
+    display: block;
+    margin-left: 3rem;
+  }
+  #main-nav ul li a {
+    font-size: 1.5rem;
+    line-height: 2em;
+    font-weight: 800;
+  }
+
+  .show-side-menu #main-nav {
+    width: 100vw;
+    left: 0;
+  }
+  .show-side-menu #main-nav:before {
+    background-image: url("/images/close-icon.png");
+    background-size: contain;
+  }
+  .show-side-menu #main-nav ul {
+    opacity: 1;
+    transition-duration: 0.2s;
+  }
+
+  #header-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+  }
+  #header-logo img {
+    max-width: 90px;
+    margin-left: initial;
+  }
+
+  #top-footer {
+    display: none;
+  }
+
+  #order-now-link {
+    position: absolute;
+    right: 1%;
+  }
+}
 .flipboard-container {
   background-color: #333333;
   color: #e5e5e5;
@@ -765,14 +847,6 @@ main section {
   border-radius: 0.2em;
   font-size: 1.3rem;
 }
-@media (max-width: 800px) {
-  #section-subscribe #main-subscription-form input {
-    display: block;
-    max-width: 300px;
-    width: 100%;
-    margin: 0 auto 0.7em auto;
-  }
-}
 
 #section-quick-order {
   background: url("/images/clamshell.png") repeat;
@@ -987,6 +1061,14 @@ main section {
   font-size: 2em;
 }
 
+@media (max-width: 800px) {
+  #section-subscribe #main-subscription-form input {
+    display: block;
+    max-width: 300px;
+    width: 100%;
+    margin: 0 auto 0.7em auto;
+  }
+}
 #menu-page main {
   max-width: 1000px;
   padding-top: 4em;
@@ -1056,6 +1138,11 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   color: #515150;
 }
 
+@media (max-width: 800px) {
+  .menu-nav-container {
+    display: none;
+  }
+}
 #catering-page {
   /*
   .product-overlay-container {
@@ -1235,7 +1322,26 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   color: #cbcbcb;
 }
 
-/*}*/
+@media (max-width: 800px) {
+  #account-page main nav ul li {
+    margin-right: 0.6em;
+  }
+
+  #account-details label {
+    display: block;
+    font-size: 0.8rem;
+    width: initial;
+  }
+
+  .account-address-item-delete {
+    left: -0.5em;
+    top: 1.8em;
+  }
+
+  #account-page-sidebar {
+    display: none;
+  }
+}
 #sign-in-page main {
   background: url(/images/landing-background.png) repeat #eaecdd;
   padding: 1px;
@@ -1319,6 +1425,11 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
   padding: 0 1.5em;
 }
 
+@media (max-width: 800px) {
+  #sign-in-page main {
+    height: 95vh;
+  }
+}
 #cart-sidebar {
   position: absolute;
   height: 90vh;
@@ -1471,6 +1582,33 @@ body.no-cart .cart-item-remove {
   letter-spacing: 0.001em;
 }
 
+@media (max-width: 800px) {
+  #account-create-page .sign-in-controls > div {
+    display: block;
+    margin: 0 auto;
+  }
+  #account-create-page .sign-in-controls .sign-in-separator {
+    width: 90%;
+    line-height: initial;
+    margin: 50px auto 25px;
+  }
+  #account-create-page .sign-in-controls .sign-in-separator:before {
+    padding: 0 1.5em;
+  }
+  #account-create-page .sign-in-controls .separator-bar {
+    border-width: 2px 0;
+    border-style: solid none;
+    width: 75vw;
+    position: relative;
+    top: -11px;
+    z-index: -1;
+    left: 0;
+    transform: none;
+  }
+  #account-create-page .sign-in-controls #create-account-info {
+    width: 90vw;
+  }
+}
 .checkout-tab-container {
   padding: 1px;
 }

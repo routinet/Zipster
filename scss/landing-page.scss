@@ -14,7 +14,7 @@
     background-color: transparent; /*$ZIP-dark-beige;*/
   }
   .delivered-today-preface {
-    max-width:600px;
+    max-width: 600px;
     background: $ZIP-dark-beige;
     padding-bottom: 2em;
     margin: 0 auto;
@@ -43,7 +43,7 @@
     background-color: transparent; /*$ZIP-dark-beige;*/
     .todays-date {
       text-align: center;
-      margin: 0 auto ;
+      margin: 0 auto;
       padding-bottom: 1.1em;
       text-transform: uppercase;
       line-height: 1.5em;
@@ -79,14 +79,6 @@
     border: 0 none transparent;
     border-radius: 0.2em;
     font-size: 1.3rem;
-  }
-  #main-subscription-form input {
-    @media #{$ZIP-small-screen} {
-      display: block;
-      max-width: 300px;
-      width: 100%;
-      margin: 0 auto .7em auto;
-    }
   }
 }
 
@@ -283,5 +275,16 @@
   h2 {
     padding: 7.5em 0 1em;
     font-size: 2em;
+  }
+}
+
+@media #{$ZIP-small-screen} {
+  #section-subscribe {
+    #main-subscription-form input {
+      display: block;
+      max-width: 300px;
+      width: 100%;
+      margin: 0 auto .7em auto;
+    }
   }
 }

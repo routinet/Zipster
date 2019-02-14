@@ -149,4 +149,31 @@
   }
 }
 
-/*}*/
+@media #{$ZIP-small-screen} {
+  #account-page {
+    main {
+      nav {
+        ul {
+          li {
+            margin-right: .6em;
+          }
+        }
+      }
+    }
+
+  }
+  #account-details {
+    label {
+      display: block;
+      font-size: .8rem;
+      width: initial;
+    }
+  }
+  .account-address-item-delete {
+    left: -0.5em;
+    top: 1.8em;
+  }
+  #account-page-sidebar {
+    display: none;
+  }
+}

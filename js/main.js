@@ -40,6 +40,11 @@
           $target.val(val);
         })
 
+        // Hook to show/hide side menu for mobile.
+        .on('click', '#main-nav', function (e) {
+          $body.toggleClass('show-side-menu');
+        })
+
         // Hook to show/hide the cart.
         .on('click', '#order-now-link', function (e) {
           if ($body.hasClass('allow-cart')) {

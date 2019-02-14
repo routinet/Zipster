@@ -20,7 +20,7 @@ header#top-header {
 
 #main-nav {
   float: right;
-  margin: .3rem 2rem 0 0;
+  margin: 0.5rem 160px 0 0;
   li {
     display: inline-block;
     margin-left: 1rem;
@@ -30,6 +30,17 @@ header#top-header {
       font-size: 0.8rem;
       font-weight: 900;
     }
+  }
+}
+
+#order-now-link {
+  position: absolute;
+  right: 25px;
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 900;
   }
 }
 
@@ -46,18 +57,17 @@ main {
     @extend .clearfix;
   }
 }
+
 .show-cart main {
   width: calc(100vw - 300px);
 }
+
 .no-cart main {
   /* width: 100vw; */
 }
 
 #top-footer {
-  @media #{$ZIP-midsmall-screen} {
-    display:none;
-  }
-    font-size: 0;
+  font-size: 0;
   background-color: $ZIP-black-background;
   color: $ZIP-light-black-text;
   & > * {
@@ -136,6 +146,81 @@ main {
     position: relative;
     left: 2rem;
     font-size: .5rem;
-    width:50%;
+    width: 50%;
+  }
+}
+
+@media #{$ZIP-small-screen} {
+  #main-nav {
+    position: absolute;
+    z-index: 1;
+    left: -100vw;
+    top: 0;
+    width: 0;
+    height: 100vh;
+    margin: initial;
+    float: none;
+    overflow: visible;
+    display: table;
+    transition-property: width, left;
+    transition-duration: 0.5s;
+    &:before {
+      content: "";
+      height: 32px;
+      width: 32px;
+      background-image: url(/images/hamburger.png);
+      position: fixed;
+      left: 4vw;
+      top: 1em;
+    }
+    ul {
+      display: table-cell;
+      vertical-align: bottom;
+      padding-bottom: 40%;
+      background-color: $ZIP-dark-beige;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: .35s;
+      li {
+        display: block;
+        margin-left: 3rem;
+        a {
+          font-size: 1.5rem;
+          line-height: 2em;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+  .show-side-menu {
+    #main-nav {
+      width: 100vw;
+      left: 0;
+      &:before {
+        background-image: url('/images/close-icon.png');
+        background-size: contain;
+      }
+      ul {
+        opacity: 1;
+        transition-duration: 0.2s;
+      }
+    }
+  }
+  #header-logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    img {
+      max-width: 90px;
+      margin-left: initial;
+    }
+  }
+  #top-footer {
+    display: none;
+  }
+  #order-now-link {
+    position: absolute;
+    right: 1%;
   }
 }

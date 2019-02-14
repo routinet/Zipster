@@ -83,3 +83,11 @@
     padding: 0 1.5em;
   }
 }
+
+@media #{$ZIP-small-screen} {
+  #sign-in-page {
+    main {
+      height: 95vh;
+    }
+  }
+}
