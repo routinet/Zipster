@@ -50,6 +50,9 @@
 }
 
 .checkout-tab-delivery {
+  #checkout-address-selection label > input {
+    vertical-align: top;
+  }
   .address-list-item {
     border: 0 none;
     position: relative;

@@ -1,6 +1,8 @@
 #landing-page {
   main {
     max-width: 100vw;
+    transition-property: left;
+    transition-duration: .4s;
   }
   section {
     text-align: center;
@@ -126,6 +128,7 @@
   padding: 7em 0 6em;
   h2 {
     margin-bottom: .5em;
+    font-size: 2.6em;
   }
   .product-list-container {
     margin: 3.5em auto 5em;
