@@ -216,13 +216,13 @@
     background: #ffffff;
     border: 3px dotted #ff0000;
     padding: 1em;
-    bottom: -5%;
+    bottom: 20%;
     max-width: 200px;
 
     @media #{$ZIP-midsmall-screen} {
       right: 15%;
       width: 40%;
-      top: 45%;
+      bottom: -3%;
     }
   }
 }
@@ -279,12 +279,21 @@
 }
 
 @media #{$ZIP-small-screen} {
+  #section-delivered-today {
+    p {
+      max-width: 300px;
+    }
+  }
   #section-subscribe {
     #main-subscription-form input {
       display: block;
       max-width: 300px;
       width: 100%;
       margin: 0 auto .7em auto;
+    }
+    p {
+      max-width: initial;
+      min-width: initial;
     }
   }
 }

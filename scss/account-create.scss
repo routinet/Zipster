@@ -11,11 +11,13 @@
     & > div {
       display: inline-block;
       vertical-align: middle;
-      width: 300px;
       position: relative;
     }
     #create-account-info {
       width: 400px;
+    }
+    #create-account-facebook {
+      margin-right: 3em;
     }
     .sign-in-facebook {
       margin: 0 auto;
@@ -96,7 +98,10 @@
         transform: none;
       }
       #create-account-info {
-        width: 90vw;
+        width: 100%;
+      }
+      #create-account-facebook {
+        margin-right: auto;
       }
     }
   }

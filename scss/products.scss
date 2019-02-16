@@ -234,3 +234,9 @@
     }
   }
 }
+
+@media #{$ZIP-midsmall-screen} {
+  .product-list-container {
+    text-align: center;
+  }
+}
