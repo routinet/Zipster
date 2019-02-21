@@ -1077,8 +1077,20 @@ main section {
 }
 
 @media (max-width: 800px) {
+  #section-philosophy h2 {
+    padding: 1.5em 0 1em;
+  }
+
+  #section-sourcing h2 {
+    padding: 1em 0 1em;
+  }
+
+  #section-favorites {
+    border-bottom: 1px solid #e5e5e5;
+  }
+
   #section-delivered-today p {
-    max-width: 300px;
+    font-size: 1em;
   }
 
   #section-subscribe #main-subscription-form input {
@@ -1168,6 +1180,7 @@ nav.menu-nav-container ul li.menu-nav-link.active a, nav.menu-nav-container ul l
 
   .category-item-preface {
     background: #fcfcfc center right 15% no-repeat;
+    background-image: none !important;
   }
 
   .category-item-description {

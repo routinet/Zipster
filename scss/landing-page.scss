@@ -282,9 +282,22 @@
 }
 
 @media #{$ZIP-small-screen} {
+  #section-philosophy {
+    h2 {
+      padding: 1.5em 0 1em;
+    }
+  }
+  #section-sourcing {
+    h2 {
+      padding: 1em 0 1em;
+    }
+  }
+  #section-favorites {
+    border-bottom: 1px solid $ZIP-grey-rule;
+  }
   #section-delivered-today {
     p {
-      max-width: 300px;
+      font-size: 1em;
     }
   }
   #section-subscribe {
